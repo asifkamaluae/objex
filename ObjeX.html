@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<template id="__bundler_thumbnail" data-bg-color="#0A0E13">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#0A0E13"/>
+    <rect x="470" y="250" width="260" height="260" rx="36" fill="#0F1922" stroke="#FFC62A" stroke-width="3"/>
+    <clipPath id="tnB"><circle cx="600" cy="380" r="78"/></clipPath>
+    <g clip-path="url(#tnB)" fill="none" stroke="#FFC62A" stroke-width="15" stroke-linecap="round">
+      <path d="M510 350 q30 -22 60 0 t60 0 t60 0 t60 0"/>
+      <path d="M510 381 q30 -22 60 0 t60 0 t60 0 t60 0"/>
+      <path d="M510 412 q30 -22 60 0 t60 0 t60 0 t60 0"/>
+    </g>
+    <text x="600" y="610" font-family="'Space Grotesk',sans-serif" font-size="72" font-weight="700" fill="#FFC62A" text-anchor="middle" letter-spacing="8">OBJEX</text>
+  </svg>
+</template>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#0A0E13;color:#E9ECF1;font-family:'Manrope',sans-serif;-webkit-font-smoothing:antialiased}
+  ::selection{background:rgba(255,198,42,0.25)}
+  ::-webkit-scrollbar{width:9px;height:9px}
+  ::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.1);border-radius:6px}
+  ::-webkit-scrollbar-track{background:transparent}
+  @keyframes objxPulse{0%,100%{opacity:1}50%{opacity:0.35}}
+  @keyframes objxFloat{0%{transform:translateY(0)}50%{transform:translateY(-9px)}100%{transform:translateY(0)}}
+  @keyframes objxGrid{0%{background-position:0 0}100%{background-position:60px 60px}}
+  @keyframes objxRise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+</style>
+</helmet>
+
+<div style="min-height:100vh;background:#0A0E13">
+
+  <!-- ===================== LANDING ===================== -->
+  <sc-if value="{{ isLanding }}" hint-placeholder-val="{{ true }}">
+  <div style="position:relative;overflow:hidden">
+
+    <!-- top nav -->
+    <div style="position:sticky;top:0;z-index:40;backdrop-filter:blur(14px);background:rgba(10,11,14,0.72);border-bottom:1px solid rgba(255,255,255,0.06)">
+      <div style="max-width:1280px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between">
+        <div style="display:flex;align-items:center;gap:11px">
+          <div style="width:34px;height:34px;border-radius:9px;background:#0F1922;border:1px solid rgba(255,198,42,0.4);display:flex;align-items:center;justify-content:center;box-shadow:0 0 22px rgba(255,198,42,0.3)">
+            <svg viewBox="0 0 100 100" style="width:23px;height:23px;display:block"><defs><clipPath id="objxA"><circle cx="50" cy="50" r="33"/></clipPath></defs><g clip-path="url(#objxA)" fill="none" stroke="#FFC62A" stroke-width="6.5" stroke-linecap="round"><path d="M0 37 q12.5 -9 25 0 t25 0 t25 0 t25 0"></path><path d="M0 50 q12.5 -9 25 0 t25 0 t25 0 t25 0"></path><path d="M0 63 q12.5 -9 25 0 t25 0 t25 0 t25 0"></path></g></svg>
+          </div>
+          <span style="font-family:'Space Grotesk';font-weight:700;font-size:20px;letter-spacing:3px;color:#FFC62A">OBJEX</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:30px;font-size:14px;color:#8A909C;font-weight:500">
+          <span style="cursor:pointer">Protocol</span>
+          <span style="cursor:pointer">Pools</span>
+          <span style="cursor:pointer">Business</span>
+          <span style="cursor:pointer">Docs</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px">
+          <button onClick="{{ launch }}" style="font-family:'Manrope';font-weight:600;font-size:14px;color:#0A0E13;background:#FFC62A;border:none;padding:10px 20px;border-radius:9px;cursor:pointer;box-shadow:0 0 20px rgba(255,198,42,0.35)">Launch App</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- hero -->
+    <div style="position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,198,42,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,198,42,0.05) 1px,transparent 1px);background-size:60px 60px;animation:objxGrid 9s linear infinite;mask-image:radial-gradient(ellipse 80% 55% at 50% 0%,#000,transparent)"></div>
+    <div style="position:absolute;top:-180px;left:50%;transform:translateX(-50%);width:760px;height:520px;background:radial-gradient(ellipse,rgba(255,198,42,0.18),transparent 65%);pointer-events:none"></div>
+
+    <div style="position:relative;max-width:1080px;margin:0 auto;padding:96px 32px 60px;text-align:center">
+      <div style="display:inline-flex;align-items:center;gap:9px;padding:7px 15px;border:1px solid rgba(255,198,42,0.3);border-radius:100px;background:rgba(255,198,42,0.06);font-size:12.5px;font-weight:600;color:#FFC62A;margin-bottom:30px;letter-spacing:0.2px">
+        <span style="width:6px;height:6px;border-radius:50%;background:#FFC62A;animation:objxPulse 1.8s infinite"></span>
+        A NEW FINANCIAL CATEGORY
+      </div>
+      <h1 style="font-family:'Space Grotesk';font-weight:700;font-size:74px;line-height:1.02;letter-spacing:-2.5px;margin-bottom:24px">
+        Community<br><span style="background:linear-gradient(120deg,#FFC62A,#FFE08A 55%,#F2A93C);-webkit-background-clip:text;background-clip:text;color:transparent">Capital Markets</span>
+      </h1>
+      <p style="font-size:21px;line-height:1.5;color:#9aa1ad;max-width:660px;margin:0 auto 14px;font-weight:500">Transforming community savings into programmable trading capital.</p>
+      <p style="font-size:16px;line-height:1.6;color:#6c727d;max-width:560px;margin:0 auto 40px">Access community-funded buying power. Trade global markets. Secure future obligations through code — not trust.</p>
+      <div style="display:flex;gap:14px;justify-content:center;margin-bottom:64px">
+        <button onClick="{{ launch }}" style="font-family:'Manrope';font-weight:700;font-size:15.5px;color:#0A0E13;background:#FFC62A;border:none;padding:15px 30px;border-radius:11px;cursor:pointer;box-shadow:0 8px 30px rgba(255,198,42,0.4)">Join Community Pool</button>
+        <button onClick="{{ launchTrading }}" style="font-family:'Manrope';font-weight:600;font-size:15.5px;color:#E9ECF1;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);padding:15px 30px;border-radius:11px;cursor:pointer">Start Trading</button>
+      </div>
+
+      <!-- hero stat strip -->
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.07);border-radius:16px;overflow:hidden;max-width:920px;margin:0 auto">
+        <sc-for list="{{ heroStats }}" as="s" hint-placeholder-count="4">
+          <div style="background:#0f141c;padding:24px 18px">
+            <div style="font-family:'JetBrains Mono';font-weight:700;font-size:27px;color:#E9ECF1;letter-spacing:-1px">{{ s.value }}</div>
+            <div style="font-size:12.5px;color:#6c727d;margin-top:6px;font-weight:500">{{ s.label }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+
+    <!-- the problem / rosca -->
+    <div style="max-width:1180px;margin:0 auto;padding:60px 32px">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+        <div style="background:linear-gradient(180deg,#121821,#0d121a);border:1px solid rgba(255,255,255,0.07);border-radius:18px;padding:34px">
+          <div style="font-size:12px;font-weight:700;letter-spacing:1.5px;color:#F2B04A;margin-bottom:14px">WHY ROSCA WORKED</div>
+          <p style="font-size:16px;line-height:1.65;color:#aab0bb">For centuries, communities pooled money in rotating circles — ROSCA, Committee, Chit Funds, Hui, Tanda, Susu — giving every member access to a lump sum of capital they could never save alone. Trust was the protocol.</p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:20px">
+            <sc-for list="{{ roscaNames }}" as="n" hint-placeholder-count="6">
+              <span style="font-size:12.5px;font-weight:600;color:#cdd2da;padding:6px 12px;border-radius:8px;background:rgba(242,176,74,0.08);border:1px solid rgba(242,176,74,0.18)">{{ n }}</span>
+            </sc-for>
+          </div>
+        </div>
+        <div style="background:linear-gradient(180deg,#121821,#0d121a);border:1px solid rgba(255,255,255,0.07);border-radius:18px;padding:34px">
+          <div style="font-size:12px;font-weight:700;letter-spacing:1.5px;color:#FF6B6B;margin-bottom:14px">WHY ROSCA FAILED</div>
+          <div style="display:flex;flex-direction:column;gap:14px">
+            <sc-for list="{{ roscaFails }}" as="f" hint-placeholder-count="4">
+              <div style="display:flex;gap:12px;align-items:flex-start">
+                <div style="width:18px;height:18px;border-radius:5px;background:rgba(255,107,107,0.14);color:#FF6B6B;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px">!</div>
+                <div style="font-size:14.5px;line-height:1.5;color:#aab0bb">{{ f }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- how it works -->
+    <div style="max-width:1180px;margin:0 auto;padding:40px 32px 20px">
+      <div style="text-align:center;margin-bottom:42px">
+        <div style="font-size:12px;font-weight:700;letter-spacing:1.5px;color:#FFC62A;margin-bottom:10px">HOW OBJEX WORKS</div>
+        <h2 style="font-family:'Space Grotesk';font-weight:700;font-size:40px;letter-spacing:-1.5px">Savings circles, made programmable</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px">
+        <sc-for list="{{ howSteps }}" as="h" hint-placeholder-count="4">
+          <div style="background:#0f141c;border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:26px;position:relative">
+            <div style="font-family:'JetBrains Mono';font-size:13px;font-weight:700;color:#FFC62A;margin-bottom:18px">0{{ h.n }}</div>
+            <div style="font-family:'Space Grotesk';font-weight:600;font-size:18px;margin-bottom:9px">{{ h.title }}</div>
+            <div style="font-size:13.5px;line-height:1.55;color:#7d838f">{{ h.body }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+
+    <!-- business model flywheel -->
+    <div style="max-width:1180px;margin:0 auto;padding:56px 32px">
+      <div style="background:radial-gradient(ellipse at 50% 0%,rgba(255,198,42,0.08),transparent 60%),#0d121a;border:1px solid rgba(255,255,255,0.08);border-radius:22px;padding:48px 40px">
+        <div style="text-align:center;margin-bottom:38px">
+          <div style="font-size:12px;font-weight:700;letter-spacing:1.5px;color:#5B8DEF;margin-bottom:10px">BUSINESS MODEL</div>
+          <h2 style="font-family:'Space Grotesk';font-weight:700;font-size:34px;letter-spacing:-1px">The Community Capital Flywheel</h2>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:10px">
+          <sc-for list="{{ flywheel }}" as="f" hint-placeholder-count="9">
+            <div style="display:flex;align-items:center;gap:10px">
+              <div style="padding:13px 18px;border-radius:11px;background:{{ f.bg }};border:1px solid {{ f.border }};font-size:13.5px;font-weight:600;color:{{ f.color }};white-space:nowrap">{{ f.label }}</div>
+              <span style="color:#3a3f48;font-size:18px">{{ f.arrow }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <div style="max-width:820px;margin:0 auto;padding:30px 32px 90px">
+      <h2 style="font-family:'Space Grotesk';font-weight:700;font-size:30px;letter-spacing:-1px;text-align:center;margin-bottom:30px">Frequently asked</h2>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <sc-for list="{{ faqs }}" as="q" hint-placeholder-count="5">
+          <div style="background:#0f141c;border:1px solid rgba(255,255,255,0.07);border-radius:13px;padding:22px 24px">
+            <div style="font-family:'Space Grotesk';font-weight:600;font-size:16px;margin-bottom:8px">{{ q.q }}</div>
+            <div style="font-size:14px;line-height:1.6;color:#7d838f">{{ q.a }}</div>
+          </div>
+        </sc-for>
+      </div>
+      <div style="text-align:center;margin-top:48px">
+        <button onClick="{{ launch }}" style="font-family:'Manrope';font-weight:700;font-size:16px;color:#0A0E13;background:#FFC62A;border:none;padding:16px 36px;border-radius:12px;cursor:pointer;box-shadow:0 8px 30px rgba(255,198,42,0.4)">Launch the Protocol →</button>
+      </div>
+    </div>
+
+    <div style="border-top:1px solid rgba(255,255,255,0.06);padding:26px 32px;text-align:center;font-size:12.5px;color:#565C68">OBJEX · Community Capital Markets · Mock prototype for demonstration · © 2026</div>
+  </div>
+  </sc-if>
+
+  <!-- ===================== APP SHELL ===================== -->
+  <sc-if value="{{ isApp }}" hint-placeholder-val="{{ false }}">
+  <div style="display:flex;min-height:100vh">
+
+    <!-- sidebar -->
+    <div style="width:248px;flex-shrink:0;background:#0d121a;border-right:1px solid rgba(255,255,255,0.06);display:flex;flex-direction:column;position:sticky;top:0;height:100vh">
+      <div onClick="{{ goLanding }}" style="padding:22px 22px 20px;display:flex;align-items:center;gap:11px;cursor:pointer;border-bottom:1px solid rgba(255,255,255,0.05)">
+        <div style="width:34px;height:34px;border-radius:9px;background:#0F1922;border:1px solid rgba(255,198,42,0.4);display:flex;align-items:center;justify-content:center;box-shadow:0 0 20px rgba(255,198,42,0.28)">
+          <svg viewBox="0 0 100 100" style="width:23px;height:23px;display:block"><defs><clipPath id="objxB"><circle cx="50" cy="50" r="33"/></clipPath></defs><g clip-path="url(#objxB)" fill="none" stroke="#FFC62A" stroke-width="6.5" stroke-linecap="round"><path d="M0 37 q12.5 -9 25 0 t25 0 t25 0 t25 0"></path><path d="M0 50 q12.5 -9 25 0 t25 0 t25 0 t25 0"></path><path d="M0 63 q12.5 -9 25 0 t25 0 t25 0 t25 0"></path></g></svg>
+        </div>
+        <span style="font-family:'Space Grotesk';font-weight:700;font-size:19px;letter-spacing:3px;color:#FFC62A">OBJEX</span>
+      </div>
+      <div style="padding:14px 12px;flex:1;overflow-y:auto">
+        <div style="font-size:11px;font-weight:700;letter-spacing:1px;color:#4a4f59;padding:8px 12px 6px">PROTOCOL</div>
+        <sc-for list="{{ nav }}" as="item" hint-placeholder-count="8">
+          <div onClick="{{ item.onClick }}" style="{{ item.style }}">
+            <span style="display:flex;width:18px;height:18px;color:{{ item.iconColor }}">{{ item.icon }}</span>
+            <span>{{ item.label }}</span>
+          </div>
+        </sc-for>
+      </div>
+      <div style="padding:16px;border-top:1px solid rgba(255,255,255,0.05)">
+        <div style="display:flex;align-items:center;gap:11px;padding:8px;border-radius:10px;background:rgba(255,255,255,0.03)">
+          <div style="width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,#5B8DEF,#9b6bef);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;color:#fff">AK</div>
+          <div style="flex:1;min-width:0">
+            <div style="font-size:13px;font-weight:600">Amara Kone</div>
+            <div style="font-size:11px;color:#6c727d">Member · Verified</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- main -->
+    <div style="flex:1;min-width:0;display:flex;flex-direction:column">
+      <!-- topbar -->
+      <div style="position:sticky;top:0;z-index:30;backdrop-filter:blur(14px);background:rgba(10,11,14,0.78);border-bottom:1px solid rgba(255,255,255,0.06);padding:15px 30px;display:flex;align-items:center;justify-content:space-between">
+        <div>
+          <div style="font-family:'Space Grotesk';font-weight:700;font-size:20px;letter-spacing:-0.5px">{{ screenTitle }}</div>
+          <div style="font-size:12.5px;color:#6c727d;margin-top:1px">{{ screenSub }}</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:14px">
+          <div style="display:flex;align-items:center;gap:8px;padding:8px 14px;border-radius:10px;background:rgba(255,198,42,0.06);border:1px solid rgba(255,198,42,0.18)">
+            <span style="font-size:11.5px;color:#7d838f;font-weight:500">Buying Power</span>
+            <span style="font-family:'JetBrains Mono';font-size:14px;font-weight:700;color:#FFC62A">$200,000</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;padding:8px 14px;border-radius:10px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08)">
+            <span style="font-size:11.5px;color:#7d838f;font-weight:500">Equity</span>
+            <span style="font-family:'JetBrains Mono';font-size:14px;font-weight:700;color:#E9ECF1">$1.00M</span>
+          </div>
+          <div style="width:38px;height:38px;border-radius:10px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;cursor:pointer;position:relative">
+            <span style="color:#9aa1ad;font-size:16px">◔</span>
+            <span style="position:absolute;top:9px;right:9px;width:7px;height:7px;border-radius:50%;background:#FF6B6B;border:1.5px solid #0A0E13"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- screen content -->
+      <div style="flex:1;padding:28px 30px 60px;max-width:1480px;width:100%">
+
+        <!-- MARKETPLACE -->
+        <sc-if value="{{ isMarketplace }}" hint-placeholder-val="{{ false }}">
+        <div>
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px">
+            <div style="display:flex;gap:10px">
+              <sc-for list="{{ poolFilters }}" as="pf" hint-placeholder-count="4">
+                <span style="font-size:13px;font-weight:600;padding:8px 15px;border-radius:9px;cursor:pointer;background:{{ pf.bg }};color:{{ pf.color }};border:1px solid {{ pf.border }}">{{ pf.label }}</span>
+              </sc-for>
+            </div>
+            <div style="display:flex;align-items:center;gap:16px">
+              <div style="font-size:13px;color:#6c727d">{{ poolCount }} pools · $2.4M community capital</div>
+              <button onClick="{{ goCreate }}" style="font-family:'Manrope';font-weight:700;font-size:13px;color:#0A0E13;background:#FFC62A;border:none;padding:9px 16px;border-radius:9px;cursor:pointer;box-shadow:0 4px 16px rgba(255,198,42,0.3)">+ Create Pool</button>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px">
+            <sc-for list="{{ pools }}" as="p" hint-placeholder-count="6">
+              <div onClick="{{ p.onClick }}" style="background:linear-gradient(180deg,#121821,#0d121a);border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:22px;cursor:pointer;transition:border-color .2s" style-hover="border-color:rgba(255,198,42,0.4)">
+                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px">
+                  <div style="display:flex;align-items:center;gap:11px">
+                    <div style="width:38px;height:38px;border-radius:10px;background:{{ p.badgeBg }};display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk';font-weight:700;font-size:15px;color:{{ p.badgeColor }}">{{ p.initials }}</div>
+                    <div>
+                      <div style="font-family:'Space Grotesk';font-weight:600;font-size:16px">{{ p.name }}</div>
+                      <div style="font-size:11.5px;color:#6c727d">{{ p.region }}</div>
+                    </div>
+                  </div>
+                  <span style="font-size:11px;font-weight:700;padding:4px 10px;border-radius:7px;background:{{ p.statusBg }};color:{{ p.statusColor }}">{{ p.status }}</span>
+                </div>
+                <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px">
+                  <span style="font-size:10.5px;font-weight:700;padding:4px 10px;border-radius:7px;background:rgba(91,141,239,0.12);color:#5B8DEF">{{ p.cycleLabel }} cycle</span>
+                  <span style="font-size:11.5px;color:#7d838f;font-family:'JetBrains Mono'">{{ p.durationLabel }}</span>
+                </div>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px">
+                  <div><div style="font-size:11px;color:#6c727d;margin-bottom:3px">Contribution Amount</div><div style="font-family:'JetBrains Mono';font-weight:600;font-size:15px">{{ p.contribution }}</div></div>
+                  <div><div style="font-size:11px;color:#6c727d;margin-bottom:3px">Participants</div><div style="font-family:'JetBrains Mono';font-weight:600;font-size:15px">{{ p.participantsLabel }}</div></div>
+                  <div><div style="font-size:11px;color:#6c727d;margin-bottom:3px">Pool Size</div><div style="font-family:'JetBrains Mono';font-weight:600;font-size:15px">{{ p.size }}</div></div>
+                  <div><div style="font-size:11px;color:#6c727d;margin-bottom:3px">Buying Power</div><div style="font-family:'JetBrains Mono';font-weight:600;font-size:15px;color:#FFC62A">{{ p.buyingPower }}</div></div>
+                </div>
+                <div style="font-size:10.5px;color:#565C68;font-family:'JetBrains Mono';margin-bottom:14px">{{ p.contribution }} × {{ p.participants }} participants</div>
+                <div style="margin-bottom:14px">
+                  <div style="display:flex;justify-content:space-between;font-size:11.5px;margin-bottom:6px"><span style="color:#6c727d">Allocation · {{ p.allocLabel }}</span><span style="color:#9aa1ad;font-weight:600">{{ p.filledPct }}%</span></div>
+                  <div style="height:6px;border-radius:4px;background:rgba(255,255,255,0.06);overflow:hidden"><div style="height:100%;width:{{ p.filledPct }}%;background:linear-gradient(90deg,#FFC62A,#FFD66B);border-radius:4px"></div></div>
+                </div>
+                <button style="width:100%;font-family:'Manrope';font-weight:600;font-size:13.5px;color:{{ p.btnColor }};background:{{ p.btnBg }};border:1px solid {{ p.btnBorder }};padding:10px;border-radius:9px;cursor:pointer">{{ p.btnLabel }}</button>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+        </sc-if>
+
+        <!-- CREATE POOL -->
+        <sc-if value="{{ isCreate }}" hint-placeholder-val="{{ false }}">
+        <div style="display:grid;grid-template-columns:1fr 380px;gap:20px;align-items:start">
+          <div style="background:#0f141c;border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:28px">
+            <div style="font-family:'Space Grotesk';font-weight:600;font-size:18px;margin-bottom:4px">Pool Configuration</div>
+            <div style="font-size:12.5px;color:#6c727d;margin-bottom:24px">Pool Size and Duration are calculated automatically and cannot be edited manually.</div>
+
+            <div style="margin-bottom:20px">
+              <label style="display:block;font-size:12px;color:#8A909C;font-weight:600;margin-bottom:8px">Pool Name</label>
+              <input value="{{ cpName }}" onChange="{{ onCpName }}" placeholder="e.g. Horizon Circle" style="width:100%;font-family:'Manrope';font-size:14px;color:#E9ECF1;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:12px 14px;outline:none" />
+            </div>
+
+            <div style="margin-bottom:20px">
+              <label style="display:block;font-size:12px;color:#8A909C;font-weight:600;margin-bottom:8px">Cycle Type</label>
+              <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px">
+                <sc-for list="{{ cpCycleOptions }}" as="c" hint-placeholder-count="3">
+                  <div onClick="{{ c.onClick }}" style="text-align:center;font-family:'Manrope';font-weight:600;font-size:13.5px;padding:12px;border-radius:10px;cursor:pointer;background:{{ c.bg }};color:{{ c.color }};border:1px solid {{ c.border }}">{{ c.label }}</div>
+                </sc-for>
+              </div>
+            </div>
+
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
+              <div>
+                <label style="display:block;font-size:12px;color:#8A909C;font-weight:600;margin-bottom:8px">Contribution Amount (USD)</label>
+                <div style="display:flex;align-items:center;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:0 14px">
+                  <span style="color:#6c727d;font-family:'JetBrains Mono';font-size:14px">$</span>
+                  <input value="{{ cpContribution }}" onChange="{{ onCpContribution }}" inputmode="numeric" style="width:100%;font-family:'JetBrains Mono';font-size:14px;color:#E9ECF1;background:transparent;border:none;padding:12px 8px;outline:none" />
+                </div>
+              </div>
+              <div>
+                <label style="display:block;font-size:12px;color:#8A909C;font-weight:600;margin-bottom:8px">Number of Participants</label>
+                <input value="{{ cpParticipants }}" onChange="{{ onCpParticipants }}" inputmode="numeric" style="width:100%;font-family:'JetBrains Mono';font-size:14px;color:#E9ECF1;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:12px 14px;outline:none" />
+              </div>
+            </div>
+
+            <div style="margin-bottom:24px">
+              <label style="display:block;font-size:12px;color:#8A909C;font-weight:600;margin-bottom:8px">Start Date</label>
+              <input value="{{ cpStart }}" onChange="{{ onCpStart }}" type="date" style="width:100%;font-family:'JetBrains Mono';font-size:14px;color:#E9ECF1;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:11px 14px;outline:none;color-scheme:dark" />
+            </div>
+
+            <sc-for list="{{ cpErrors }}" as="err" hint-placeholder-count="0">
+              <div style="display:flex;align-items:center;gap:9px;font-size:12.5px;color:#FF6B6B;margin-bottom:10px"><span style="width:16px;height:16px;border-radius:4px;background:rgba(255,107,107,0.14);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:11px">!</span>{{ err }}</div>
+            </sc-for>
+
+            <button onClick="{{ createPool }}" style="width:100%;margin-top:8px;font-family:'Manrope';font-weight:700;font-size:14.5px;color:#0A0E13;background:#FFC62A;border:none;padding:14px;border-radius:11px;cursor:pointer;box-shadow:0 6px 22px rgba(255,198,42,0.3)">Launch Community Pool</button>
+          </div>
+
+          <!-- live auto-calc panel -->
+          <div style="display:flex;flex-direction:column;gap:18px;position:sticky;top:90px">
+            <div style="background:radial-gradient(ellipse at 50% 0%,rgba(255,198,42,0.1),transparent 60%),linear-gradient(180deg,#121821,#0d121a);border:1px solid rgba(255,198,42,0.18);border-radius:16px;padding:24px">
+              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px">
+                <div style="font-size:12px;font-weight:700;letter-spacing:1px;color:#FFC62A">AUTO-CALCULATED</div>
+                <span style="font-size:10px;font-weight:700;padding:4px 9px;border-radius:6px;background:{{ cpStatusBg }};color:{{ cpStatusColor }}">{{ cpStatus }}</span>
+              </div>
+              <div style="margin-bottom:20px">
+                <div style="font-size:11.5px;color:#7d838f;margin-bottom:7px">Pool Size / Buying Power</div>
+                <div style="font-family:'JetBrains Mono';font-weight:700;font-size:34px;letter-spacing:-1.5px;color:#FFC62A">{{ cpSizeDisplay }}</div>
+                <div style="font-size:11px;color:#565C68;font-family:'JetBrains Mono';margin-top:5px">{{ cpFormula }}</div>
+              </div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.07)">
+                <div><div style="font-size:11.5px;color:#7d838f;margin-bottom:6px">Duration</div><div style="font-family:'JetBrains Mono';font-weight:700;font-size:18px">{{ cpDurationDisplay }}</div></div>
+                <div><div style="font-size:11.5px;color:#7d838f;margin-bottom:6px">Allocation Events</div><div style="font-family:'JetBrains Mono';font-weight:700;font-size:18px;color:#5B8DEF">{{ cpParticipants }}</div></div>
+              </div>
+            </div>
+            <div style="background:#0f141c;border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:22px">
+              <div style="font-family:'Space Grotesk';font-weight:600;font-size:14px;margin-bottom:14px">Protocol Rules</div>
+              <div style="display:flex;flex-direction:column;gap:12px">
+                <div style="display:flex;gap:10px"><span style="color:#FFC62A;font-weight:700;flex-shrink:0">=</span><div style="font-size:12.5px;color:#aab0bb;line-height:1.45">Participants always equals the number of allocation cycles.</div></div>
+                <div style="display:flex;gap:10px"><span style="color:#FFC62A;font-weight:700;flex-shrink:0">×</span><div style="font-size:12.5px;color:#aab0bb;line-height:1.45">Pool Size is proportional to contribution × participants.</div></div>
+                <div style="display:flex;gap:10px"><span style="color:#FFC62A;font-weight:700;flex-shrink:0">1</span><div style="font-size:12.5px;color:#aab0bb;line-height:1.45">One participant receives buying power each cycle.</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </sc-if>
+
+        <!-- POOL SIMULATOR -->
+        <sc-if value="{{ isSimulator }}" hint-placeholder-val="{{ false }}">
+        <div>
+          <div style="background:radial-gradient(ellipse at 0% 0%,rgba(255,198,42,0.08),transparent 55%),linear-gradient(180deg,#121821,#0d121a);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:18px 24px;margin-bottom:20px;display:flex;align-items:center;gap:14px">
+            <div style="width:38px;height:38px;border-radius:10px;background:rgba(255,198,42,0.12);color:#FFC62A;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk';font-weight:700;font-size:17px">∑</div>
+            <div style="font-size:13px;color:#aab0bb;line-height:1.5;font-weight:500">Adjust the inputs to model any community pool. <span style="color:#FFC62A">Pool Size = Contribution × Participants.</span> Participants always equals the number of allocation cycles. Every output recalculates instantly.</div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:400px 1fr;gap:20px;align-items:start">
+            <!-- INPUTS -->
+            <div style="background:#0f141c;border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:26px">
+              <div style="font-family:'Space Grotesk';font-weight:600;font-size:16px;margin-bottom:22px">Inputs</div>
+
+              <div style="margin-bottom:20px">
+                <label style="display:block;font-size:12px;color:#8A909C;font-weight:600;margin-bottom:8px">Cycle Type</label>
+                <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:9px">
+                  <sc-for list="{{ simCycleOptions }}" as="c" hint-placeholder-count="3">
+                    <div onClick="{{ c.onClick }}" style="text-align:center;font-family:'Manrope';font-weight:600;font-size:13px;padding:11px;border-radius:9px;cursor:pointer;background:{{ c.bg }};color:{{ c.color }};border:1px solid {{ c.border }}">{{ c.label }}</div>
+                  </sc-for>
+                </div>
+              </div>
+
+              <div style="margin-bottom:20px">
+                <label style="display:block;font-size:12px;color:#8A909C;font-weight:600;margin-bottom:8px">Contribution Amount (USD)</label>
+                <div style="display:flex;align-items:center;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:0 14px">
+                  <span style="color:#6c727d;font-family:'JetBrains Mono';font-size:14px">$</span>
+                  <input value="{{ simContribution }}" onChange="{{ onSimContribution }}" inputmode="numeric" style="width:100%;font-family:'JetBrains Mono';font-size:15px;color:#E9ECF1;background:transparent;border:none;padding:12px 8px;outline:none" />
+                </div>
+              </div>
+
+              <div style="margin-bottom:20px">
+                <label style="display:block;font-size:12px;color:#8A909C;font-weight:600;margin-bottom:8px">Number of Participants <span style="color:#565C68;font-weight:500">= {{ simParticipants }} cycles</span></label>
+                <input value="{{ simParticipants }}" onChange="{{ onSimParticipants }}" inputmode="numeric" style="width:100%;font-family:'JetBrains Mono';font-size:15px;color:#E9ECF1;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:12px 14px;outline:none" />
+              </div>
+
+              <div style="margin-bottom:20px">
+                <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px">
+                  <label style="font-size:12px;color:#8A909C;font-weight:600">Allocation Position</label>
+                  <span style="font-family:'JetBrains Mono';font-size:12.5px;font-weight:700;color:#FFC62A">{{ simAllocLabel }}</span>
+                </div>
+                <input type="range" min="1" max="{{ simAllocMax }}" value="{{ simAllocPos }}" onInput="{{ onSimAllocPos }}" style="width:100%;accent-color:#FFC62A;cursor:pointer" />
+                <div style="display:flex;justify-content:space-between;font-size:10.5px;color:#565C68;margin-top:4px;font-family:'JetBrains Mono'"><span>1st</span><span>last</span></div>
+              </div>
+
+              <div style="margin-bottom:8px">
+                <label style="display:block;font-size:12px;color:#8A909C;font-weight:600;margin-bottom:8px">Current Equity (USD)</label>
+                <div style="display:flex;align-items:center;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:0 14px">
+                  <span style="color:#6c727d;font-family:'JetBrains Mono';font-size:14px">$</span>
+                  <input value="{{ simEquity }}" onChange="{{ onSimEquity }}" inputmode="numeric" style="width:100%;font-family:'JetBrains Mono';font-size:15px;color:#E9ECF1;background:transparent;border:none;padding:12px 8px;outline:none" />
+                </div>
+                <div style="font-size:11px;color:#565C68;margin-top:7px">Live trading account value after deploying buying power.</div>
+              </div>
+            </div>
+
+            <!-- RESULTS -->
+            <div style="display:flex;flex-direction:column;gap:20px">
+              <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px">
+                <sc-for list="{{ simDerived }}" as="d" hint-placeholder-count="4">
+                  <div style="background:#0f141c;border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:18px"><div style="font-size:11.5px;color:#6c727d;margin-bottom:8px">{{ d.label }}</div><div style="font-family:'JetBrains Mono';font-weight:700;font-size:20px;letter-spacing:-0.5px;color:{{ d.color }}">{{ d.value }}</div></div>
+                </sc-for>
+              </div>
+
+              <!-- equation -->
+              <div style="background:radial-gradient(ellipse at 100% 0%,rgba(255,198,42,0.1),transparent 55%),linear-gradient(180deg,#121821,#0d121a);border:1px solid rgba(255,198,42,0.18);border-radius:16px;padding:26px">
+                <div style="font-size:12px;font-weight:700;letter-spacing:1px;color:#FFC62A;margin-bottom:20px">WITHDRAWABLE BALANCE</div>
+                <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap">
+                  <div style="min-width:170px"><div style="font-size:12px;color:#7d838f;margin-bottom:7px">Current Equity</div><div style="font-family:'JetBrains Mono';font-weight:700;font-size:26px;color:#E9ECF1;letter-spacing:-1px">{{ simEquityFmt }}</div></div>
+                  <div style="font-size:26px;color:#3a3f48;font-weight:300">−</div>
+                  <div style="min-width:170px"><div style="font-size:12px;color:#7d838f;margin-bottom:7px">Remaining Obligation</div><div style="font-family:'JetBrains Mono';font-weight:700;font-size:26px;color:#FF6B6B;letter-spacing:-1px">{{ simRemObl }}</div><div style="font-size:11px;color:#565C68;margin-top:4px;font-family:'JetBrains Mono'">{{ simOblFormula }}</div></div>
+                  <div style="font-size:26px;color:#3a3f48;font-weight:300">=</div>
+                  <div style="min-width:190px"><div style="font-size:12px;color:#7d838f;margin-bottom:7px">Withdrawable Balance</div><div style="font-family:'JetBrains Mono';font-weight:700;font-size:32px;color:#FFC62A;letter-spacing:-1px">{{ simWithdraw }}</div></div>
+                </div>
+              </div>
+
+              <!-- timeline -->
+              <div style="background:#0f141c;border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:24px">
+                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px">
+                  <div><div style="font-family:'Space Grotesk';font-weight:600;font-size:16px">Cycle Timeline</div><div style="font-size:12px;color:#6c727d;margin-top:2px">{{ simDuration }} · {{ simParticipants }} allocation events · one per {{ simCycleUnit }}</div></div>
+                  <div style="display:flex;gap:14px;font-size:11px;color:#7d838f">
+                    <span style="display:flex;align-items:center;gap:5px"><span style="width:8px;height:8px;border-radius:2px;background:#FFC62A"></span>Allocation</span>
+                    <span style="display:flex;align-items:center;gap:5px"><span style="width:8px;height:8px;border-radius:2px;background:#F2B04A"></span>Obligation</span>
+                    <span style="display:flex;align-items:center;gap:5px"><span style="width:8px;height:8px;border-radius:2px;background:#5B8DEF"></span>Completed</span>
+                  </div>
+                </div>
+                <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px">
+                  <sc-for list="{{ simTimeline }}" as="t" hint-placeholder-count="10">
+                    <div style="display:flex;align-items:center;gap:12px;padding:11px 14px;border-radius:10px;background:{{ t.bg }};border:1px solid rgba(255,255,255,0.05)">
+                      <div style="width:24px;height:24px;border-radius:7px;background:rgba(0,0,0,0.25);color:{{ t.color }};display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0">{{ t.mark }}</div>
+                      <div style="flex:1;min-width:0"><div style="font-size:13px;font-weight:600;color:#E9ECF1">{{ t.label }}</div><div style="font-size:11.5px;font-weight:600;color:{{ t.color }}">{{ t.state }}</div></div>
+                      <div style="font-family:'JetBrains Mono';font-size:12px;color:#7d838f;text-align:right">{{ t.obl }}</div>
+                    </div>
+                  </sc-for>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </sc-if>
+
+        <sc-if value="{{ isAllocation }}" hint-placeholder-val="{{ false }}">
+        <div>
+          <!-- equation hero -->
+          <div style="background:radial-gradient(ellipse at 0% 0%,rgba(255,198,42,0.1),transparent 55%),linear-gradient(180deg,#121821,#0d121a);border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:32px;margin-bottom:20px">
+            <div style="font-size:12px;font-weight:700;letter-spacing:1.2px;color:#FFC62A;margin-bottom:22px">CAPITAL ALLOCATION ENGINE</div>
+            <div style="display:flex;align-items:stretch;gap:18px;flex-wrap:wrap">
+              <sc-for list="{{ allocEquation }}" as="e" hint-placeholder-count="5">
+                <div style="display:flex;align-items:center;gap:18px">
+                  <div style="min-width:190px">
+                    <div style="font-size:12.5px;color:#7d838f;margin-bottom:7px;font-weight:500">{{ e.label }}</div>
+                    <div style="font-family:'JetBrains Mono';font-weight:700;font-size:30px;letter-spacing:-1px;color:{{ e.color }}">{{ e.value }}</div>
+                    <div style="font-size:11.5px;color:#565C68;margin-top:5px">{{ e.note }}</div>
+                  </div>
+                  <div style="font-size:28px;color:#3a3f48;font-weight:300">{{ e.op }}</div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:1.5fr 1fr;gap:18px">
+            <div style="background:#0f141c;border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:24px">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px"><div style="font-family:'Space Grotesk';font-weight:600;font-size:16px">Equity Growth vs Obligation</div><div style="font-size:12px;color:#FFC62A;font-weight:600">▲ Withdrawable expanding</div></div>
+              <div style="font-size:12.5px;color:#6c727d;margin-bottom:18px">As trading equity grows and obligations amortize, withdrawable capital compounds.</div>
+              <div style="height:230px">{{ allocChart }}</div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:18px">
+              <div style="background:#0f141c;border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:24px">
+                <div style="font-family:'Space Grotesk';font-weight:600;font-size:15px;margin-bottom:18px">Capital Composition</div>
+                <div style="display:flex;align-items:center;gap:22px">
+                  <div style="width:130px;height:130px;flex-shrink:0">{{ allocDonut }}</div>
+                  <div style="flex:1;display:flex;flex-direction:column;gap:11px">
+                    <sc-for list="{{ allocLegend }}" as="l" hint-placeholder-count="3">
+                      <div style="display:flex;align-items:center;gap:9px"><span style="width:9px;height:9px;border-radius:3px;background:{{ l.color }}"></span><span style="font-size:13px;color:#aab0bb;flex:1">{{ l.label }}</span><span style="font-family:'JetBrains Mono';font-size:13px;font-weight:600">{{ l.value }}</span></div>
+                    </sc-for>
+                  </div>
+                </div>
+              </div>
+              <div style="background:linear-gradient(135deg,rgba(255,198,42,0.1),rgba(255,198,42,0.02));border:1px solid rgba(255,198,42,0.2);border-radius:16px;padding:22px">
+                <div style="font-size:12px;color:#7d838f;margin-bottom:6px">AVAILABLE TO WITHDRAW NOW</div>
+                <div style="font-family:'JetBrains Mono';font-weight:700;font-size:32px;color:#FFC62A;letter-spacing:-1px">$820,000</div>
+                <button style="width:100%;margin-top:16px;font-family:'Manrope';font-weight:700;font-size:14px;color:#0A0E13;background:#FFC62A;border:none;padding:12px;border-radius:10px;cursor:pointer">Withdraw Profits</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        </sc-if>
+
+        <!-- TRADING -->
+        <sc-if value="{{ isTrading }}" hint-placeholder-val="{{ false }}">
+        <div>
+          <div style="display:grid;grid-template-columns:300px 1fr 280px;gap:16px;align-items:start">
+            <!-- markets -->
+            <div style="background:#0f141c;border:1px solid rgba(255,255,255,0.07);border-radius:14px;overflow:hidden">
+              <div style="padding:14px 16px;border-bottom:1px solid rgba(255,255,255,0.06);font-family:'Space Grotesk';font-weight:600;font-size:14px">Markets</div>
+              <sc-for list="{{ markets }}" as="m" hint-placeholder-count="3">
+                <div style="padding:14px 16px;border-bottom:1px solid rgba(255,255,255,0.04);display:flex;align-items:center;gap:12px;cursor:pointer;background:{{ m.activeBg }}">
+                  <div style="width:30px;height:30px;border-radius:8px;background:{{ m.iconBg }};display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;color:{{ m.iconColor }}">{{ m.sym }}</div>
+                  <div style="flex:1"><div style="font-size:13.5px;font-weight:600">{{ m.pair }}</div><div style="font-size:11px;color:#6c727d">{{ m.vol }}</div></div>
+                  <div style="text-align:right"><div style="font-family:'JetBrains Mono';font-size:13px;font-weight:600">{{ m.price }}</div><div style="font-family:'JetBrains Mono';font-size:11px;color:{{ m.chgColor }}">{{ m.chg }}</div></div>
+                </div>
+              </sc-for>
+            </div>
+            <!-- chart + positions -->
+            <div style="display:flex;flex-direction:column;gap:16px">
+              <div style="background:#0f141c;border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:20px">
+                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px">
+                  <div style="display:flex;align-items:center;gap:14px">
+                    <div style="font-family:'Space Grotesk';font-weight:700;font-size:20px">BTC/USDT</div>
+                    <div style="font-family:'JetBrains Mono';font-weight:700;font-size:20px;color:#FFC62A">$68,420</div>
+                    <span style="font-family:'JetBrains Mono';font-size:13px;color:#FFC62A;font-weight:600">+2.84%</span>
+                  </div>
+                  <div style="display:flex;gap:6px">
+                    <sc-for list="{{ timeframes }}" as="t" hint-placeholder-count="5">
+                      <span style="font-size:11.5px;font-weight:600;padding:5px 11px;border-radius:7px;cursor:pointer;background:{{ t.bg }};color:{{ t.color }}">{{ t.label }}</span>
+                    </sc-for>
+                  </div>
+                </div>
+                <div style="height:260px">{{ tradeChart }}</div>
+              </div>
+              <div style="background:#0f141c;border:1px solid rgba(255,255,255,0.07);border-radius:14px;overflow:hidden">
+                <div style="padding:14px 18px;border-bottom:1px solid rgba(255,255,255,0.06);display:flex;gap:22px">
+                  <span style="font-size:13px;font-weight:600;color:#E9ECF1;border-bottom:2px solid #FFC62A;padding-bottom:14px;margin-bottom:-14px">Open Positions</span>
+                  <span style="font-size:13px;font-weight:500;color:#6c727d">Orders</span>
+                  <span style="font-size:13px;font-weight:500;color:#6c727d">History</span>
+                </div>
+                <div style="padding:8px 0">
+                  <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1fr;padding:8px 18px;font-size:11px;color:#565C68;font-weight:600;letter-spacing:0.3px">
+                    <span>MARKET</span><span>SIZE</span><span>ENTRY</span><span>MARK</span><span style="text-align:right">PnL</span>
+                  </div>
+                  <sc-for list="{{ positions }}" as="pos" hint-placeholder-count="3">
+                    <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1fr;padding:13px 18px;border-top:1px solid rgba(255,255,255,0.04);align-items:center">
+                      <div style="display:flex;align-items:center;gap:9px"><span style="font-size:10px;font-weight:700;padding:2px 7px;border-radius:5px;background:{{ pos.sideBg }};color:{{ pos.sideColor }}">{{ pos.side }}</span><span style="font-size:13px;font-weight:600">{{ pos.pair }}</span><span style="font-size:11px;color:#6c727d">{{ pos.lev }}</span></div>
+                      <span style="font-family:'JetBrains Mono';font-size:13px">{{ pos.size }}</span>
+                      <span style="font-family:'JetBrains Mono';font-size:13px;color:#9aa1ad">{{ pos.entry }}</span>
+                      <span style="font-family:'JetBrains Mono';font-size:13px;color:#9aa1ad">{{ pos.mark }}</span>
+                      <span style="font-family:'JetBrains Mono';font-size:13px;font-weight:600;text-align:right;color:{{ pos.pnlColor }}">{{ pos.pnl }}</span>
+                    </div>
+                  </sc-for>
+                </div>
+              </div>
+            </div>
+            <!-- order panel -->
+            <div style="display:flex;flex-direction:column;gap:16px">
+              <div style="background:#0f141c;border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:18px">
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px">
+                  <button style="font-family:'Manrope';font-weight:700;font-size:13.5px;padding:10px;border-radius:9px;border:none;background:rgba(255,198,42,0.15);color:#FFC62A;cursor:pointer">Buy / Long</button>
+                  <button style="font-family:'Manrope';font-weight:700;font-size:13.5px;padding:10px;border-radius:9px;border:none;background:rgba(255,255,255,0.04);color:#7d838f;cursor:pointer">Sell / Short</button>
+                </div>
+                <div style="font-size:11.5px;color:#6c727d;margin-bottom:6px">Order Size (USDT)</div>
+                <div style="display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:9px;padding:11px 13px;margin-bottom:14px"><span style="font-family:'JetBrains Mono';font-size:15px;font-weight:600">250,000</span><span style="font-size:12px;color:#6c727d">USDT</span></div>
+                <div style="font-size:11.5px;color:#6c727d;margin-bottom:8px">Leverage · <span style="color:#FFC62A;font-weight:700">5×</span></div>
+                <div style="height:5px;border-radius:4px;background:rgba(255,255,255,0.06);margin-bottom:5px;position:relative"><div style="height:100%;width:42%;background:#FFC62A;border-radius:4px"></div><div style="position:absolute;left:42%;top:50%;transform:translate(-50%,-50%);width:14px;height:14px;border-radius:50%;background:#fff;box-shadow:0 0 8px rgba(255,198,42,0.6)"></div></div>
+                <div style="display:flex;justify-content:space-between;font-size:10.5px;color:#565C68;margin-bottom:16px"><span>1×</span><span>5×</span><span>20×</span></div>
+                <button style="width:100%;font-family:'Manrope';font-weight:700;font-size:14.5px;color:#0A0E13;background:#FFC62A;border:none;padding:13px;border-radius:10px;cursor:pointer;box-shadow:0 6px 22px rgba(255,198,42,0.3)">Place Long Order</button>
+              </div>
+              <div style="background:#0f141c;border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:18px">
+                <div style="font-family:'Space Grotesk';font-weight:600;font-size:14px;margin-bottom:16px">Account</div>
+                <sc-for list="{{ tradeAccount }}" as="a" hint-placeholder-count="4">
+                  <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.04)"><span style="font-size:12.5px;color:#7d838f">{{ a.label }}</span><span style="font-family:'JetBrains Mono';font-size:13px;font-weight:600;color:{{ a.color }}">{{ a.value }}</span></div>
+                </sc-for>
+              </div>
+            </div>
+          </div>
+        </div>
+        </sc-if>
+
+        <!-- POOL DETAIL -->
+        <sc-if value="{{ isDetail }}" hint-placeholder-val="{{ false }}">
+        <div style="display:grid;grid-template-columns:1fr 360px;gap:18px;align-items:start">
+          <div style="display:flex;flex-direction:column;gap:18px">
+            <div style="background:radial-gradient(ellipse at 0% 0%,rgba(255,198,42,0.08),transparent 55%),#0f141c;border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:26px">
+              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:22px">
+                <div style="display:flex;align-items:center;gap:14px">
+                  <div style="width:48px;height:48px;border-radius:12px;background:rgba(255,198,42,0.12);display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk';font-weight:700;font-size:18px;color:#FFC62A">{{ detailInitials }}</div>
+                  <div><div style="font-family:'Space Grotesk';font-weight:700;font-size:22px">{{ detailName }}</div><div style="font-size:12.5px;color:#6c727d">{{ detailRegion }}</div></div>
+                </div>
+                <span style="font-size:11px;font-weight:700;padding:5px 12px;border-radius:8px;background:rgba(255,198,42,0.14);color:#FFC62A">{{ detailStatusBadge }}</span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px">
+                <sc-for list="{{ detailStats }}" as="d" hint-placeholder-count="4">
+                  <div><div style="font-size:11.5px;color:#6c727d;margin-bottom:5px">{{ d.label }}</div><div style="font-family:'JetBrains Mono';font-weight:700;font-size:19px;color:{{ d.color }}">{{ d.value }}</div></div>
+                </sc-for>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:18px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.06)">
+                <sc-for list="{{ detailMeta }}" as="m" hint-placeholder-count="5">
+                  <div><div style="font-size:10.5px;color:#565C68;margin-bottom:4px;letter-spacing:0.2px">{{ m.label }}</div><div style="font-family:'JetBrains Mono';font-size:13px;font-weight:600;color:#aab0bb">{{ m.value }}</div></div>
+                </sc-for>
+              </div>
+              <div style="margin-top:20px">
+                <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:7px"><span style="color:#6c727d">{{ detailFunding }}</span><span style="color:#FFC62A;font-weight:700">{{ detailFundingPct }}%</span></div>
+                <div style="height:8px;border-radius:5px;background:rgba(255,255,255,0.06);overflow:hidden"><div style="height:100%;width:{{ detailFundingPct }}%;background:linear-gradient(90deg,#FFC62A,#FFD66B)"></div></div>
+              </div>
+            </div>
+            <div style="background:#0f141c;border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:24px">
+              <div style="font-family:'Space Grotesk';font-weight:600;font-size:16px;margin-bottom:4px">Allocation Auction</div>
+              <div style="font-size:12.5px;color:#6c727d;margin-bottom:18px">Members bid down to win this cycle's community buying power.</div>
+              <div style="height:200px">{{ detailChart }}</div>
+            </div>
+            <div style="background:#0f141c;border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:24px">
+              <div style="font-family:'Space Grotesk';font-weight:600;font-size:16px;margin-bottom:16px">Participants · Contribution Schedule</div>
+              <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;padding:0 4px 10px;font-size:11px;color:#565C68;font-weight:600;letter-spacing:0.3px"><span>MEMBER</span><span>STATUS</span><span>CONTRIBUTED</span><span style="text-align:right">CYCLE WON</span></div>
+              <sc-for list="{{ participants }}" as="m" hint-placeholder-count="6">
+                <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;padding:11px 4px;border-top:1px solid rgba(255,255,255,0.04);align-items:center">
+                  <div style="display:flex;align-items:center;gap:10px"><div style="width:28px;height:28px;border-radius:8px;background:{{ m.avBg }};display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff">{{ m.av }}</div><span style="font-size:13px;font-weight:500">{{ m.name }}</span></div>
+                  <span style="font-size:12px;font-weight:600;color:{{ m.statusColor }}">{{ m.status }}</span>
+                  <span style="font-family:'JetBrains Mono';font-size:12.5px;color:#aab0bb">{{ m.contributed }}</span>
+                  <span style="font-family:'JetBrains Mono';font-size:12.5px;text-align:right;color:#9aa1ad">{{ m.cycle }}</span>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:18px">
+            <div style="background:#0f141c;border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:22px">
+              <div style="font-family:'Space Grotesk';font-weight:600;font-size:15px;margin-bottom:16px">Pool Economics</div>
+              <sc-for list="{{ poolEconomics }}" as="e" hint-placeholder-count="5">
+                <div style="display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.04)"><span style="font-size:12.5px;color:#7d838f">{{ e.label }}</span><span style="font-family:'JetBrains Mono';font-size:13px;font-weight:600;color:{{ e.color }}">{{ e.value }}</span></div>
+              </sc-for>
+              <button style="width:100%;margin-top:18px;font-family:'Manrope';font-weight:700;font-size:14px;color:#0A0E13;background:#FFC62A;border:none;padding:13px;border-radius:10px;cursor:pointer;box-shadow:0 6px 22px rgba(255,198,42,0.3)">{{ detailJoinLabel }}</button>
+            </div>
+            <div style="background:#0f141c;border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:22px">
+              <div style="font-family:'Space Grotesk';font-weight:600;font-size:15px;margin-bottom:16px">Activity Feed</div>
+              <div style="display:flex;flex-direction:column;gap:15px">
+                <sc-for list="{{ activity }}" as="a" hint-placeholder-count="5">
+                  <div style="display:flex;gap:11px"><div style="width:7px;height:7px;border-radius:50%;background:{{ a.dot }};margin-top:5px;flex-shrink:0"></div><div style="flex:1"><div style="font-size:12.5px;color:#cdd2da;line-height:1.4">{{ a.text }}</div><div style="font-size:11px;color:#565C68;margin-top:2px">{{ a.time }}</div></div></div>
+                </sc-for>
+              </div>
+            </div>
+          </div>
+        </div>
+        </sc-if>
+
+        <!-- OBLIGATION ENGINE -->
+        <sc-if value="{{ isObligation }}" hint-placeholder-val="{{ false }}">
+        <div>
+          <div style="background:linear-gradient(135deg,rgba(255,107,107,0.08),transparent 50%),#0f141c;border:1px solid rgba(255,107,107,0.18);border-radius:16px;padding:20px 24px;margin-bottom:18px;display:flex;align-items:center;gap:16px">
+            <div style="width:42px;height:42px;border-radius:11px;background:rgba(255,107,107,0.12);color:#FF6B6B;display:flex;align-items:center;justify-content:center"><span style="display:flex;width:22px;height:22px">{{ shieldIcon }}</span></div>
+            <div><div style="font-family:'Space Grotesk';font-weight:700;font-size:17px">The Programmable Moat</div><div style="font-size:12.5px;color:#7d838f">Future contributions are secured and amortized by code — profits stay withdrawable, commitments stay protected.</div></div>
+          </div>
+          <div style="background:#0f141c;border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:20px 24px;margin-bottom:18px">
+            <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px">
+              <div>
+                <div style="font-size:11.5px;color:#6c727d;margin-bottom:8px">Member receives their <span style="color:#aab0bb;font-weight:600">Allocation Event</span> in cycle — select to recompute obligation</div>
+                <div style="display:flex;gap:6px;flex-wrap:wrap">
+                  <sc-for list="{{ cycleButtons }}" as="c" hint-placeholder-count="10">
+                    <div onClick="{{ c.onClick }}" style="width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-family:'JetBrains Mono';font-size:13px;font-weight:600;background:{{ c.bgX }};color:{{ c.colorX }};border:1px solid {{ c.borderX }}">{{ c.label }}</div>
+                  </sc-for>
+                </div>
+              </div>
+              <div style="text-align:right">
+                <div style="font-size:11px;color:#565C68;letter-spacing:0.3px;margin-bottom:6px">REMAINING OBLIGATION = CONTRIBUTION × REMAINING CYCLES</div>
+                <div style="font-family:'JetBrains Mono';font-size:15px;font-weight:700;color:#FF6B6B">{{ oblFormula }}</div>
+              </div>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-bottom:18px">
+            <sc-for list="{{ oblStats }}" as="o" hint-placeholder-count="5">
+              <div style="background:#0f141c;border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:18px"><div style="font-size:11.5px;color:#6c727d;margin-bottom:8px">{{ o.label }}</div><div style="font-family:'JetBrains Mono';font-weight:700;font-size:21px;color:{{ o.color }};letter-spacing:-0.5px">{{ o.value }}</div></div>
+            </sc-for>
+          </div>
+          <div style="display:grid;grid-template-columns:1.3fr 1fr;gap:18px">
+            <div style="background:#0f141c;border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:24px">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px"><div><div style="font-family:'Space Grotesk';font-weight:600;font-size:16px">Allocation Schedule · One Event Per Cycle</div><div style="font-size:12px;color:#6c727d;margin-top:2px">Remaining obligation amortizes $20,000 each cycle · tap a bar to set the allocation cycle</div></div></div>
+              <div style="display:flex;align-items:flex-end;gap:10px;height:200px">
+                <sc-for list="{{ oblBars }}" as="b" hint-placeholder-count="10">
+                  <div onClick="{{ b.onClick }}" style="flex:1;display:flex;flex-direction:column;align-items:center;height:100%;justify-content:flex-end;cursor:pointer">
+                    <div style="font-family:'JetBrains Mono';font-size:10px;color:#7d838f;margin-bottom:6px">{{ b.label }}</div>
+                    <div style="width:100%;border-radius:5px 5px 0 0;background:{{ b.bg }};height:{{ b.h }}%"></div>
+                    <div style="font-size:10px;color:#565C68;margin-top:7px">{{ b.month }}</div>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+            <div style="background:#0f141c;border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:24px">
+              <div style="font-family:'Space Grotesk';font-weight:600;font-size:16px;margin-bottom:6px">Equity Coverage</div>
+              <div style="font-size:12px;color:#6c727d;margin-bottom:18px">Equity must always exceed remaining obligation. Surplus is withdrawable.</div>
+              <div style="height:180px;margin-bottom:18px">{{ oblChart }}</div>
+              <div style="display:flex;flex-direction:column;gap:10px">
+                <sc-for list="{{ oblLegend }}" as="l" hint-placeholder-count="3">
+                  <div style="display:flex;align-items:center;gap:9px"><span style="width:16px;height:3px;border-radius:2px;background:{{ l.color }}"></span><span style="font-size:12.5px;color:#aab0bb;flex:1">{{ l.label }}</span><span style="font-family:'JetBrains Mono';font-size:12.5px;font-weight:600;color:{{ l.color }}">{{ l.value }}</span></div>
+                </sc-for>
+              </div>
+            </div>
+          </div>
+        </div>
+        </sc-if>
+
+        <!-- PORTFOLIO -->
+        <sc-if value="{{ isPortfolio }}" hint-placeholder-val="{{ false }}">
+        <div>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:18px">
+            <sc-for list="{{ portfolioStats }}" as="p" hint-placeholder-count="6">
+              <div style="background:#0f141c;border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:20px">
+                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px"><span style="font-size:12px;color:#6c727d">{{ p.label }}</span><span style="font-size:11.5px;font-weight:600;color:{{ p.deltaColor }}">{{ p.delta }}</span></div>
+                <div style="font-family:'JetBrains Mono';font-weight:700;font-size:24px;color:{{ p.color }};letter-spacing:-0.5px">{{ p.value }}</div>
+              </div>
+            </sc-for>
+          </div>
+          <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:18px;margin-bottom:18px">
+            <div style="background:#0f141c;border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:24px">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:18px"><div style="font-family:'Space Grotesk';font-weight:600;font-size:16px">Portfolio Value</div><div style="font-family:'JetBrains Mono';font-weight:700;font-size:18px;color:#FFC62A">$1,026,290 <span style="font-size:12px">+12.4%</span></div></div>
+              <div style="height:230px">{{ portfolioChart }}</div>
+            </div>
+            <div style="background:#0f141c;border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:24px">
+              <div style="font-family:'Space Grotesk';font-weight:600;font-size:16px;margin-bottom:18px">Exposure</div>
+              <div style="display:flex;align-items:center;gap:22px"><div style="width:130px;height:130px;flex-shrink:0">{{ exposureDonut }}</div>
+                <div style="flex:1;display:flex;flex-direction:column;gap:11px">
+                  <sc-for list="{{ exposureLegend }}" as="l" hint-placeholder-count="4">
+                    <div style="display:flex;align-items:center;gap:9px"><span style="width:9px;height:9px;border-radius:3px;background:{{ l.color }}"></span><span style="font-size:12.5px;color:#aab0bb;flex:1">{{ l.label }}</span><span style="font-family:'JetBrains Mono';font-size:12.5px;font-weight:600">{{ l.value }}</span></div>
+                  </sc-for>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px">
+            <div style="background:#0f141c;border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:24px">
+              <div style="font-family:'Space Grotesk';font-weight:600;font-size:16px;margin-bottom:16px">Community Pools Joined</div>
+              <sc-for list="{{ joinedPools }}" as="j" hint-placeholder-count="3">
+                <div style="display:flex;align-items:center;gap:12px;padding:12px 0;border-top:1px solid rgba(255,255,255,0.04)">
+                  <div style="width:34px;height:34px;border-radius:9px;background:{{ j.bg }};display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:{{ j.c }}">{{ j.in }}</div>
+                  <div style="flex:1"><div style="font-size:13.5px;font-weight:600">{{ j.name }}</div><div style="font-size:11.5px;color:#6c727d">{{ j.sub }}</div></div>
+                  <div style="text-align:right"><div style="font-family:'JetBrains Mono';font-size:13px;font-weight:600;color:#FFC62A">{{ j.bp }}</div><div style="font-size:11px;color:#6c727d">buying power</div></div>
+                </div>
+              </sc-for>
+            </div>
+            <div style="background:#0f141c;border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:24px">
+              <div style="font-family:'Space Grotesk';font-weight:600;font-size:16px;margin-bottom:16px">Activity History</div>
+              <div style="display:flex;flex-direction:column;gap:14px">
+                <sc-for list="{{ portfolioActivity }}" as="a" hint-placeholder-count="5">
+                  <div style="display:flex;align-items:center;gap:11px"><div style="width:30px;height:30px;border-radius:8px;background:{{ a.bg }};color:{{ a.c }};display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700">{{ a.ic }}</div><div style="flex:1"><div style="font-size:12.5px;color:#cdd2da">{{ a.text }}</div><div style="font-size:11px;color:#565C68">{{ a.time }}</div></div><span style="font-family:'JetBrains Mono';font-size:12.5px;font-weight:600;color:{{ a.amtColor }}">{{ a.amt }}</span></div>
+                </sc-for>
+              </div>
+            </div>
+          </div>
+        </div>
+        </sc-if>
+
+        <!-- ANALYTICS -->
+        <sc-if value="{{ isAnalytics }}" hint-placeholder-val="{{ false }}">
+        <div>
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:18px">
+            <sc-for list="{{ analyticsKpis }}" as="k" hint-placeholder-count="8">
+              <div style="background:#0f141c;border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:20px"><div style="font-size:12px;color:#6c727d;margin-bottom:9px">{{ k.label }}</div><div style="font-family:'JetBrains Mono';font-weight:700;font-size:23px;letter-spacing:-0.5px;color:{{ k.color }}">{{ k.value }}</div><div style="font-size:11.5px;color:#FFC62A;margin-top:6px;font-weight:600">{{ k.delta }}</div></div>
+            </sc-for>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px">
+            <div style="background:#0f141c;border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:24px"><div style="font-family:'Space Grotesk';font-weight:600;font-size:16px;margin-bottom:4px">Trading Volume</div><div style="font-size:12px;color:#6c727d;margin-bottom:18px">Monthly notional deployed across markets</div><div style="height:210px">{{ volumeChart }}</div></div>
+            <div style="background:#0f141c;border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:24px"><div style="font-family:'Space Grotesk';font-weight:600;font-size:16px;margin-bottom:4px">Protocol Revenue</div><div style="font-size:12px;color:#6c727d;margin-bottom:18px">Fees from volume and allocation auctions</div><div style="height:210px">{{ revenueChart }}</div></div>
+          </div>
+          <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:18px">
+            <div style="background:#0f141c;border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:24px"><div style="font-family:'Space Grotesk';font-weight:600;font-size:16px;margin-bottom:4px">Community Growth</div><div style="font-size:12px;color:#6c727d;margin-bottom:18px">Capital and members compounding via the flywheel</div><div style="height:210px">{{ growthChart }}</div></div>
+            <div style="background:#0f141c;border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:24px"><div style="font-family:'Space Grotesk';font-weight:600;font-size:16px;margin-bottom:16px">Top Pools by Capital</div>
+              <sc-for list="{{ topPools }}" as="p" hint-placeholder-count="5">
+                <div style="padding:10px 0;border-top:1px solid rgba(255,255,255,0.04)"><div style="display:flex;justify-content:space-between;margin-bottom:6px"><span style="font-size:13px;font-weight:500">{{ p.name }}</span><span style="font-family:'JetBrains Mono';font-size:12.5px;font-weight:600">{{ p.value }}</span></div><div style="height:5px;border-radius:3px;background:rgba(255,255,255,0.06)"><div style="height:100%;width:{{ p.pct }}%;background:{{ p.color }};border-radius:3px"></div></div></div>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+        </sc-if>
+
+        <!-- ADMIN -->
+        <sc-if value="{{ isAdmin }}" hint-placeholder-val="{{ false }}">
+        <div>
+          <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-bottom:18px">
+            <sc-for list="{{ adminKpis }}" as="k" hint-placeholder-count="6">
+              <div style="background:#0f141c;border:1px solid rgba(255,255,255,0.07);border-radius:13px;padding:16px"><div style="font-size:11px;color:#6c727d;margin-bottom:7px">{{ k.label }}</div><div style="font-family:'JetBrains Mono';font-weight:700;font-size:18px;color:{{ k.color }}">{{ k.value }}</div></div>
+            </sc-for>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 340px;gap:18px">
+            <div style="background:#0f141c;border:1px solid rgba(255,255,255,0.07);border-radius:16px;overflow:hidden">
+              <div style="padding:18px 22px;border-bottom:1px solid rgba(255,255,255,0.06);display:flex;justify-content:space-between;align-items:center"><div style="font-family:'Space Grotesk';font-weight:600;font-size:16px">Allocations & Obligations</div><span style="font-size:12px;color:#FFC62A;font-weight:600">● All systems nominal</span></div>
+              <div style="display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr 1fr;padding:12px 22px;font-size:11px;color:#565C68;font-weight:600;letter-spacing:0.3px"><span>POOL</span><span>EQUITY</span><span>OBLIGATION</span><span>WITHDRAWABLE</span><span style="text-align:right">RISK</span></div>
+              <sc-for list="{{ adminRows }}" as="r" hint-placeholder-count="6">
+                <div style="display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr 1fr;padding:14px 22px;border-top:1px solid rgba(255,255,255,0.04);align-items:center">
+                  <span style="font-size:13px;font-weight:500">{{ r.pool }}</span>
+                  <span style="font-family:'JetBrains Mono';font-size:12.5px;color:#aab0bb">{{ r.equity }}</span>
+                  <span style="font-family:'JetBrains Mono';font-size:12.5px;color:#FF6B6B">{{ r.obligation }}</span>
+                  <span style="font-family:'JetBrains Mono';font-size:12.5px;color:#FFC62A">{{ r.withdrawable }}</span>
+                  <span style="text-align:right"><span style="font-size:10.5px;font-weight:700;padding:3px 9px;border-radius:6px;background:{{ r.riskBg }};color:{{ r.riskColor }}">{{ r.risk }}</span></span>
+                </div>
+              </sc-for>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:18px">
+              <div style="background:#0f141c;border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:22px">
+                <div style="font-family:'Space Grotesk';font-weight:600;font-size:15px;margin-bottom:16px">Risk & Liquidations</div>
+                <sc-for list="{{ riskMetrics }}" as="m" hint-placeholder-count="4">
+                  <div style="display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.04)"><span style="font-size:12.5px;color:#7d838f">{{ m.label }}</span><span style="font-family:'JetBrains Mono';font-size:13px;font-weight:600;color:{{ m.color }}">{{ m.value }}</span></div>
+                </sc-for>
+              </div>
+              <div style="background:#0f141c;border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:22px">
+                <div style="font-family:'Space Grotesk';font-weight:600;font-size:15px;margin-bottom:16px">System Health</div>
+                <sc-for list="{{ systemHealth }}" as="h" hint-placeholder-count="4">
+                  <div style="display:flex;align-items:center;gap:10px;padding:8px 0"><span style="width:8px;height:8px;border-radius:50%;background:{{ h.dot }}"></span><span style="font-size:12.5px;color:#aab0bb;flex:1">{{ h.label }}</span><span style="font-size:12px;color:#7d838f">{{ h.value }}</span></div>
+                </sc-for>
+              </div>
+            </div>
+          </div>
+        </div>
+        </sc-if>
+
+
+      </div>
+    </div>
+  </div>
+  </sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  state = { view: 'landing', screen: 'marketplace', seed: 7, activePool: 0,
+            cpName:'', cpCycle:'Monthly', cpContribution:20000, cpParticipants:10, cpStart:'2026-07-01',
+            oblAllocCycle:1,
+            simCycle:'Monthly', simContribution:20000, simParticipants:10, simAllocPos:1, simEquity:1000000 };
+
+  rnd(){ this.state.seed = (this.state.seed*1103515245 + 12345) & 0x7fffffff; return this.state.seed/0x7fffffff; }
+  series(n, start, drift, vol){ const a=[start]; for(let i=1;i<n;i++){ a.push(Math.max(1, a[i-1]*(1+drift+(this.rnd()-0.5)*vol))); } return a; }
+
+  go(s){ this.setState({ view:'app', screen:s }); }
+  // chart helpers ------------------------------------------------------
+  area(vals, color, id, w=600, h=200){
+    const pad=6, n=vals.length, min=Math.min(...vals), max=Math.max(...vals), rng=(max-min)||1;
+    const pts=vals.map((v,i)=>[pad+(i/(n-1))*(w-2*pad), pad+(1-(v-min)/rng)*(h-2*pad)]);
+    const line=pts.map((p,i)=>(i?'L':'M')+p[0].toFixed(1)+' '+p[1].toFixed(1)).join(' ');
+    const areaD=line+` L ${pts[n-1][0].toFixed(1)} ${h-pad} L ${pts[0][0].toFixed(1)} ${h-pad} Z`;
+    const e=React.createElement;
+    return e('svg',{viewBox:`0 0 ${w} ${h}`,preserveAspectRatio:'none',style:{width:'100%',height:'100%',display:'block'}},
+      e('defs',null,e('linearGradient',{id:id,x1:0,y1:0,x2:0,y2:1},
+        e('stop',{offset:'0%',stopColor:color,stopOpacity:0.32}),
+        e('stop',{offset:'100%',stopColor:color,stopOpacity:0}))),
+      [0.25,0.5,0.75].map((g,i)=>e('line',{key:i,x1:0,x2:w,y1:h*g,y2:h*g,stroke:'rgba(255,255,255,0.04)',strokeWidth:1})),
+      e('path',{d:areaD,fill:`url(#${id})`}),
+      e('path',{d:line,fill:'none',stroke:color,strokeWidth:2.2,strokeLinejoin:'round',strokeLinecap:'round'}));
+  }
+  multiArea(seriesList, w=600, h=220){
+    const e=React.createElement, pad=6;
+    const all=seriesList.flatMap(s=>s.vals); const min=Math.min(...all), max=Math.max(...all), rng=(max-min)||1, n=seriesList[0].vals.length;
+    const grid=[0.25,0.5,0.75].map((g,i)=>e('line',{key:'g'+i,x1:0,x2:w,y1:h*g,y2:h*g,stroke:'rgba(255,255,255,0.04)',strokeWidth:1}));
+    const paths=seriesList.flatMap((s,si)=>{
+      const pts=s.vals.map((v,i)=>[pad+(i/(n-1))*(w-2*pad), pad+(1-(v-min)/rng)*(h-2*pad)]);
+      const line=pts.map((p,i)=>(i?'L':'M')+p[0].toFixed(1)+' '+p[1].toFixed(1)).join(' ');
+      const areaD=line+` L ${pts[n-1][0].toFixed(1)} ${h-pad} L ${pts[0][0].toFixed(1)} ${h-pad} Z`;
+      return [ s.fill?e('path',{key:'a'+si,d:areaD,fill:`url(#mg${si})`}):null,
+               e('path',{key:'l'+si,d:line,fill:'none',stroke:s.color,strokeWidth:2.2,strokeDasharray:s.dash||'0',strokeLinejoin:'round'}) ];
+    });
+    const defs=e('defs',null,seriesList.map((s,si)=>e('linearGradient',{key:si,id:'mg'+si,x1:0,y1:0,x2:0,y2:1},
+      e('stop',{offset:'0%',stopColor:s.color,stopOpacity:0.28}),e('stop',{offset:'100%',stopColor:s.color,stopOpacity:0}))));
+    return e('svg',{viewBox:`0 0 ${w} ${h}`,preserveAspectRatio:'none',style:{width:'100%',height:'100%',display:'block'}},defs,grid,paths);
+  }
+  donut(segs, size=130, stroke=20){
+    const e=React.createElement, total=segs.reduce((a,s)=>a+s.value,0), r=(size-stroke)/2, c=2*Math.PI*r;
+    let off=0;
+    const circles=segs.map((s,i)=>{ const len=c*s.value/total; const el=e('circle',{key:i,cx:size/2,cy:size/2,r,fill:'none',stroke:s.color,strokeWidth:stroke,strokeDasharray:`${len} ${c-len}`,strokeDashoffset:-off,strokeLinecap:'butt',transform:`rotate(-90 ${size/2} ${size/2})`}); off+=len; return el; });
+    return e('svg',{viewBox:`0 0 ${size} ${size}`,style:{width:'100%',height:'100%'}},
+      e('circle',{cx:size/2,cy:size/2,r,fill:'none',stroke:'rgba(255,255,255,0.05)',strokeWidth:stroke}),circles);
+  }
+  icon(name){
+    const e=React.createElement; const P={fill:'none',stroke:'currentColor',strokeWidth:1.8,strokeLinecap:'round',strokeLinejoin:'round'};
+    const paths={
+      marketplace:['M3 4h7v7H3z','M14 4h7v7h-7z','M3 14h7v7H3z','M14 14h7v7h-7z'],
+      allocation:['M12 3v9l8 4','M12 21a9 9 0 1 1 8-13'],
+      trading:['M3 17l5-6 4 3 6-8','M3 21h18'],
+      obligation:['M4 5h16v16H4z','M4 9h16','M8 3v4','M16 3v4','M9 14h2','M14 14h2'],
+      portfolio:['M3 7h18v12H3z','M3 7l2-3h14l2 3','M16 13h2'],
+      analytics:['M5 21V9','M12 21V4','M19 21v-7'],
+      admin:['M12 3l8 4v6c0 4-3 7-8 8-5-1-8-4-8-8V7z','M9 12l2 2 4-4'],
+      detail:['M7 3h7l5 5v13H7z','M14 3v5h5','M10 14h6','M10 18h6'],
+      create:['M12 5v14','M5 12h14'],
+      simulator:['M4 6h10','M18 6h2','M4 12h4','M12 12h8','M4 18h12','M20 18h0','M14 4v4','M8 10v4','M16 16v4']
+    };
+    return e('svg',{viewBox:'0 0 24 24',style:{width:'100%',height:'100%'}}, (paths[name]||[]).map((d,i)=>e('path',Object.assign({key:i,d},P))));
+  }
+
+  // ----- proportional ROSCA helpers -----
+  money(n){ return '$'+Math.round(n).toLocaleString('en-US'); }
+  moneyShort(n){ if(n>=1e6) return '$'+(n/1e6).toFixed(n%1e6?2:1)+'M'; if(n>=1e3) return '$'+Math.round(n/1e3)+'K'; return '$'+Math.round(n); }
+  cycleMeta(type){
+    const m={Daily:{unit:'Days',single:'Day',adj:'Daily'},Weekly:{unit:'Weeks',single:'Week',adj:'Weekly'},Monthly:{unit:'Months',single:'Month',adj:'Monthly'}};
+    return m[type]||m.Monthly;
+  }
+  // Pool Size / Buying Power = Contribution × Participants ; Duration = Participants × Cycle
+  derivePool(p){
+    const size=p.contribution*p.participants;
+    const cm=this.cycleMeta(p.cycle);
+    const remainingCycles=p.participants - p.currentCycle; // cycles still owed after current allocation
+    const remainingObligation=p.contribution*remainingCycles;
+    return Object.assign({},p,{ cm, size, buyingPower:size, duration:p.participants+' '+cm.unit, remainingCycles, remainingObligation });
+  }
+
+  build(){
+    if(this._d) return this._d;
+    const obl=[180,160,140,120,100,80,60,40,20,0];
+    this._d = {
+      heroStats:[{value:'$2.4M',label:'Community Capital'},{value:'$12.1M',label:'Buying Power Created'},{value:'1,847',label:'Active Members'},{value:'$48.3M',label:'Trading Volume'}],
+      roscaNames:['ROSCA','Committee','Chit Fund','Hui','Tanda','Susu'],
+      roscaFails:['No enforcement — defaulting members broke the entire circle.','Capital sat idle, earning nothing between rotations.','Trust did not scale beyond a known community.','No transparency into where pooled money went.'],
+      howSteps:[
+        {n:1,title:'Form a Pool',body:'Members commit a monthly contribution into a programmable savings circle.'},
+        {n:2,title:'Win Allocation',body:'Each cycle, one member receives community buying power up front.'},
+        {n:3,title:'Deploy Capital',body:'Buying power trades global markets through perpetual infrastructure.'},
+        {n:4,title:'Fulfil by Code',body:'Future contributions are secured automatically. Profits stay withdrawable.'}
+      ],
+      flywheel:[
+        {label:'Community Participation',arrow:'→',bg:'rgba(242,176,74,0.1)',border:'rgba(242,176,74,0.25)',color:'#F2B04A'},
+        {label:'Capital Pools',arrow:'→',bg:'rgba(242,176,74,0.1)',border:'rgba(242,176,74,0.25)',color:'#F2B04A'},
+        {label:'Buying Power',arrow:'→',bg:'rgba(255,198,42,0.1)',border:'rgba(255,198,42,0.25)',color:'#FFC62A'},
+        {label:'Trading Activity',arrow:'→',bg:'rgba(91,141,239,0.1)',border:'rgba(91,141,239,0.25)',color:'#5B8DEF'},
+        {label:'Protocol Revenue',arrow:'↺',bg:'rgba(255,198,42,0.14)',border:'rgba(255,198,42,0.3)',color:'#FFC62A'},
+        {label:'More Participants',arrow:'',bg:'rgba(242,176,74,0.1)',border:'rgba(242,176,74,0.25)',color:'#F2B04A'}
+      ],
+      faqs:[
+        {q:'Is OBJEX a lending protocol?',a:'No. There is no lender and no interest. Buying power is generated by the community pool itself and secured by the protocol\u2019s obligation engine.'},
+        {q:'What happens to my future contributions?',a:'They become a programmable obligation. As your trading equity grows, the obligation amortizes automatically — and your profits remain withdrawable throughout.'},
+        {q:'Can I lose more than I put in?',a:'No. The obligation engine enforces collateralization. Future commitments are always protected before profits can be withdrawn.'},
+        {q:'How does OBJEX make money?',a:'A small protocol fee on trading volume and allocation auctions. Revenue recycles into seeding new community pools.'},
+        {q:'Is this real money?',a:'This is a demonstration prototype with mock data only — built to illustrate the ObjeX concept for partners and investors.'}
+      ],
+      // numeric, formula-driven: size = contribution × participants ; duration = participants × cycle
+      pools:[
+        {name:'Alpha Pool',region:'Global · USD',initials:'AP',cycle:'Monthly',contribution:20000,participants:10,currentCycle:3,filledPct:95,status:'OPEN'},
+        {name:'Sterling Circle',region:'London · GBP',initials:'SC',cycle:'Monthly',contribution:20000,participants:25,currentCycle:1,filledPct:88,status:'OPEN'},
+        {name:'Lagos Tanda',region:'Lagos · NGN',initials:'LT',cycle:'Weekly',contribution:10000,participants:12,currentCycle:12,filledPct:100,status:'FUNDED'},
+        {name:'Meridian Susu',region:'Accra · GHS',initials:'MS',cycle:'Monthly',contribution:20000,participants:15,currentCycle:5,filledPct:67,status:'OPEN'},
+        {name:'Pacific Hui',region:'Singapore · SGD',initials:'PH',cycle:'Monthly',contribution:50000,participants:20,currentCycle:8,filledPct:78,status:'OPEN'},
+        {name:'Atlas Committee',region:'Karachi · PKR',initials:'AC',cycle:'Daily',contribution:10000,participants:8,currentCycle:8,filledPct:100,status:'FUNDED'}
+      ],
+      obl,
+      positions:[
+        {side:'LONG',pair:'BTC/USDT',lev:'5×',size:'$620,000',entry:'66,540',mark:'68,420',pnl:'+$17,520',sideBg:'rgba(255,198,42,0.14)',sideColor:'#FFC62A',pnlColor:'#FFC62A'},
+        {side:'LONG',pair:'ETH/USDT',lev:'4×',size:'$280,000',entry:'3,540',mark:'3,612',pnl:'+$5,700',sideBg:'rgba(255,198,42,0.14)',sideColor:'#FFC62A',pnlColor:'#FFC62A'},
+        {side:'SHORT',pair:'SOL/USDT',lev:'3×',size:'$100,000',entry:'182.40',mark:'176.80',pnl:'+$3,070',sideBg:'rgba(255,107,107,0.14)',sideColor:'#FF6B6B',pnlColor:'#FFC62A'}
+      ]
+    };
+    return this._d;
+  }
+
+  renderVals(){
+    const d=this.build(); const s=this.state;
+    const navItems=[
+      ['marketplace','Pool Marketplace','#FFC62A'],['detail','Pool Detail','#5B8DEF'],['simulator','Pool Simulator','#FFD66B'],
+      ['allocation','Capital Allocation','#FFC62A'],['trading','Trading','#F2B04A'],['obligation','Obligation Engine','#FF6B6B'],
+      ['portfolio','Portfolio','#5B8DEF'],['analytics','Community Analytics','#FFC62A'],['create','Create Pool','#FFC62A'],['admin','Admin','#9b6bef']
+    ];
+    const nav=navItems.map(([key,label,col])=>{
+      const active = s.screen===key;
+      return { label, iconColor: active?col:'#6c727d', icon:this.icon(key),
+        onClick:()=>this.setState({screen:key}),
+        style:`display:flex;align-items:center;gap:11px;padding:10px 12px;border-radius:10px;cursor:pointer;font-size:13.5px;font-weight:${active?600:500};margin-bottom:2px;color:${active?'#E9ECF1':'#8A909C'};background:${active?'rgba(255,198,42,0.08)':'transparent'};border:1px solid ${active?'rgba(255,198,42,0.15)':'transparent'}` };
+    });
+    const titles={marketplace:['Community Pool Marketplace','Browse and join programmable savings circles'],create:['Create Community Pool','Participants = cycles · Pool Size = contribution × participants'],simulator:['Community Pool Simulator','Model any pool — see buying power, obligation and withdrawable balance update live'],detail:['Alpha Pool','$200,000 · 10 members · Global USD circle'],allocation:['Capital Allocation','Your community buying power, equity and obligations'],trading:['Trading','Deploy buying power across global perpetual markets'],obligation:['Obligation Engine','The programmable moat securing future commitments'],portfolio:['Portfolio','Your complete position across the protocol'],analytics:['Community Analytics','Protocol-wide capital, growth and revenue'],admin:['Admin Console','Operations, risk and system health']};
+    const t=titles[s.screen]||['',''];
+
+    const pf=(label,on)=>({label,bg:on?'rgba(255,198,42,0.1)':'rgba(255,255,255,0.03)',color:on?'#FFC62A':'#8A909C',border:on?'rgba(255,198,42,0.22)':'rgba(255,255,255,0.07)'});
+    const badge=(i)=>{const c=[['rgba(255,198,42,0.12)','#FFC62A'],['rgba(91,141,239,0.12)','#5B8DEF'],['rgba(242,176,74,0.12)','#F2B04A'],['rgba(155,107,239,0.12)','#9b6bef']][i%4];return c;};
+    const pools=d.pools.map((p,i)=>{const dp=this.derivePool(p);const funded=p.status==='FUNDED';const b=badge(i);return Object.assign({},dp,{
+      onClick:()=>this.setState({screen:'detail',activePool:i}), initials:p.initials, badgeBg:b[0],badgeColor:b[1],
+      size:this.money(dp.size), buyingPower:this.money(dp.buyingPower), contribution:this.money(p.contribution),
+      participantsLabel:p.participants+' / '+p.participants, cycleLabel:p.cycle, durationLabel:dp.duration,
+      contribCaption:dp.cm.adj+' contribution', allocLabel:'Cycle '+p.currentCycle+' of '+p.participants,
+      statusBg:funded?'rgba(91,141,239,0.14)':'rgba(255,198,42,0.14)',statusColor:funded?'#5B8DEF':'#FFC62A',
+      btnLabel:funded?'View Pool':'Join Pool', btnBg:funded?'rgba(255,255,255,0.04)':'rgba(255,198,42,0.12)',
+      btnColor:funded?'#9aa1ad':'#FFC62A', btnBorder:funded?'rgba(255,255,255,0.08)':'rgba(255,198,42,0.25)' });});
+
+    // active pool for detail
+    const ap=d.pools[s.activePool]||d.pools[0];
+    const dpd=this.derivePool(ap);
+    const dPool=Object.assign({},dpd,{p:ap.participants,contributionNum:ap.contribution,allocLabel:dpd.cm.single+' '+ap.currentCycle+' of '+ap.participants});
+
+    // create-pool live formula
+    const cpC=Math.max(0,Number(s.cpContribution)||0);
+    const cpN=Math.max(0,Math.floor(Number(s.cpParticipants)||0));
+    const cpCm=this.cycleMeta(s.cpCycle);
+    const cpSize=cpC*cpN;
+    const cpValid=cpN>1 && cpC>0;
+    const cpErrors=[];
+    if(cpN<=1) cpErrors.push('Participants must be greater than 1');
+    if(cpC<=0) cpErrors.push('Contribution amount must be greater than 0');
+    const setCp=(k,v)=>this.setState({[k]:v});
+
+    // ===== POOL SIMULATOR =====
+    const siCm=this.cycleMeta(s.simCycle);
+    const siC=Math.max(0,Number(s.simContribution)||0);
+    const siN=Math.max(1,Math.floor(Number(s.simParticipants)||1));
+    const siPos=Math.min(siN,Math.max(1,Math.floor(Number(s.simAllocPos)||1)));
+    const siEq=Math.max(0,Number(s.simEquity)||0);
+    const siSize=siC*siN;
+    const siRemCycles=siN-siPos;
+    const siRemObl=siC*siRemCycles;
+    const siWithdraw=Math.max(0,siEq-siRemObl);
+    const simTimeline=Array.from({length:siN},(_,i)=>{const k=i+1;let state,color,bg,mark;
+      if(k===siN && k>=siPos){state='Pool Completed';color='#5B8DEF';bg='rgba(91,141,239,0.1)';mark='●';}
+      else if(k<siPos){state='Contributing';color='#7d838f';bg='rgba(255,255,255,0.03)';mark='○';}
+      else if(k===siPos){state='Allocation Received';color='#FFC62A';bg='rgba(255,198,42,0.1)';mark='✓';}
+      else {state='Obligation Active';color='#F2B04A';bg='rgba(242,176,74,0.08)';mark='–';}
+      const oblAtK=k>=siPos?siC*(siN-k):siC*(siN-siPos);
+      return {label:siCm.single+' '+k,state,color,bg,mark,obl:k>=siPos?this.money(oblAtK):'—',isAlloc:k===siPos};});
+    const simCycleOptions=['Daily','Weekly','Monthly'].map(c=>{const sel=c===s.simCycle;return {label:c,sel,
+      bg:sel?'rgba(255,198,42,0.12)':'rgba(255,255,255,0.04)',color:sel?'#FFC62A':'#8A909C',border:sel?'rgba(255,198,42,0.4)':'rgba(255,255,255,0.08)',
+      onClick:()=>this.setState({simCycle:c})};});
+
+    // alloc
+    const eqSeries=this.series(40,640000,0.012,0.04);
+    const oblSeries=Array.from({length:40},(_,i)=>180000*(1-i/39));
+    const allocChart=this.multiArea([
+      {vals:eqSeries.map((v,i)=>v),color:'#FFC62A',fill:true},
+      {vals:oblSeries,color:'#FF6B6B',fill:false,dash:'5 4'}
+    ],600,230);
+    const allocDonut=this.donut([{value:820,color:'#FFC62A'},{value:180,color:'#FF6B6B'},{value:200,color:'#5B8DEF'}],130,20);
+
+    // trading
+    const tradeChart=this.area(this.series(80,58000,0.004,0.05),'#FFC62A','tg',600,260);
+    const mk=(sym,pair,price,chg,up,vol,active,ic,icc)=>({sym,pair,price,chg,vol,chgColor:up?'#FFC62A':'#FF6B6B',activeBg:active?'rgba(255,198,42,0.05)':'transparent',iconBg:ic,iconColor:icc});
+
+    // pool detail
+    const detailChart=this.area([200,199,197,196,194,193,191,190].map(v=>v*1000),'#5B8DEF','dc',600,200);
+    const avc=['#FFC62A','#5B8DEF','#F2B04A','#9b6bef','#FF6B6B'];
+    const pNames=['Amara Kone','Wei Chen','Diego Santos','Priya Nair','Tomas Berg','Fatima Al-Rashid'];
+    const participants=pNames.map((n,i)=>({name:n,av:n.split(' ').map(w=>w[0]).join(''),avBg:avc[i%5],
+      status:i<2?'Won':(i<4?'Active':'Pending'),statusColor:i<2?'#5B8DEF':(i<4?'#FFC62A':'#7d838f'),
+      contributed:'$'+((i<2?60:40)-(i*0)).toString()+',000',cycle:i<2?'Cycle '+(i+1):'—'}));
+    const activity=[
+      {dot:'#FFC62A',text:'Wei Chen placed allocation bid at $190,000',time:'2 min ago'},
+      {dot:'#5B8DEF',text:'Cycle 3 funding reached 95%',time:'18 min ago'},
+      {dot:'#F2B04A',text:'Diego Santos contributed $20,000',time:'1 hr ago'},
+      {dot:'#FFC62A',text:'Amara Kone deployed buying power to BTC/USDT',time:'3 hr ago'},
+      {dot:'#9b6bef',text:'Pool reserve rebalanced by obligation engine',time:'5 hr ago'}
+    ];
+
+    // obligation — driven by formula: RemainingObligation = Contribution × RemainingCycles
+    const oP={contribution:20000,participants:10,cycle:'Monthly',equity:1000000};
+    const oCm=this.cycleMeta(oP.cycle);
+    const allocCycle=Math.min(oP.participants,Math.max(1,s.oblAllocCycle));
+    const remCycles=oP.participants-allocCycle;
+    const remObligation=oP.contribution*remCycles;
+    const withdrawable=Math.max(0,oP.equity-remObligation);
+    // schedule: obligation remaining after each cycle k
+    const oblBars=Array.from({length:oP.participants},(_,i)=>{const k=i+1;const rem=oP.contribution*(oP.participants-k);const maxRem=oP.contribution*(oP.participants-1);const sel=k===allocCycle;
+      return {label:this.moneyShort(rem),month:oCm.single[0]+k,h:Math.max(3,(rem/maxRem)*100),sel,
+        bg:rem===0?'rgba(255,198,42,0.5)':(sel?'linear-gradient(180deg,#F2B04A,#c4862a)':'linear-gradient(180deg,#FF6B6B,#c43d3d)'),
+        onClick:()=>this.setState({oblAllocCycle:k})};});
+    const oblEq=Array.from({length:oP.participants},(_,i)=>oP.equity*0.64+i*((oP.equity*0.36)/(oP.participants-1)));
+    const oblOb=Array.from({length:oP.participants},(_,i)=>oP.contribution*(oP.participants-1-i));
+    const oblChart=this.multiArea([{vals:oblEq,color:'#FFC62A',fill:true},{vals:oblOb,color:'#FF6B6B',fill:false,dash:'5 4'}],600,180);
+    const cycleSel=['Daily','Weekly','Monthly'];
+
+    // portfolio
+    const portfolioChart=this.area(this.series(60,910000,0.003,0.03),'#FFC62A','pc',600,230);
+    const exposureDonut=this.donut([{value:620,color:'#F2B04A'},{value:280,color:'#5B8DEF'},{value:100,color:'#9b6bef'},{value:200,color:'#FFC62A'}],130,20);
+
+    // analytics
+    const volumeChart=this.area([12,18,15,24,29,26,34,41,38,46,52,48].map(v=>v*1e6),'#5B8DEF','vc',600,210);
+    const revenueChart=this.area([42,61,55,88,102,96,140,178,165,210,248,236].map(v=>v*1000),'#FFC62A','rc',600,210);
+    const growthChart=this.multiArea([{vals:[180,260,340,420,560,720,900,1180,1460,1847].map(v=>v*1000),color:'#FFC62A',fill:true},{vals:[120,180,260,380,520,710,980,1340,1760,2400].map(v=>v*1000),color:'#F2B04A',fill:false}],600,210);
+
+    return {
+      isLanding: s.view==='landing', isApp: s.view==='app',
+      launch:()=>this.go('marketplace'), launchTrading:()=>this.go('trading'), goLanding:()=>this.setState({view:'landing'}),
+      heroStats:d.heroStats, roscaNames:d.roscaNames, roscaFails:d.roscaFails, howSteps:d.howSteps, flywheel:d.flywheel, faqs:d.faqs,
+      nav, screenTitle:t[0], screenSub:t[1],
+      isMarketplace:s.screen==='marketplace', isCreate:s.screen==='create', isSimulator:s.screen==='simulator', isAllocation:s.screen==='allocation', isTrading:s.screen==='trading',
+      isDetail:s.screen==='detail', isObligation:s.screen==='obligation', isPortfolio:s.screen==='portfolio', isAnalytics:s.screen==='analytics', isAdmin:s.screen==='admin',
+      goCreate:()=>this.setState({screen:'create'}),
+      pools, poolCount:d.pools.length,
+      poolFilters:[pf('All Pools',true),pf('Open',false),pf('Funded',false),pf('My Pools',false)],
+      allocEquation:[
+        {label:'Current Equity',value:'$1,000,000',color:'#E9ECF1',note:'Live trading account value',op:'\u2212'},
+        {label:'Remaining Obligation',value:'$180,000',color:'#FF6B6B',note:'Contribution × remaining cycles',op:'='},
+        {label:'Withdrawable Balance',value:'$820,000',color:'#FFC62A',note:'Equity \u2212 Remaining Obligation',op:''}
+      ],
+      allocChart, allocDonut,
+      allocLegend:[{label:'Withdrawable',color:'#FFC62A',value:'$820K'},{label:'Obligation Reserve',color:'#FF6B6B',value:'$180K'},{label:'Community Principal',color:'#5B8DEF',value:'$200K'}],
+      markets:[
+        mk('₿','BTC/USDT','$68,420','+2.84%',true,'Vol $24.1M',true,'rgba(242,176,74,0.14)','#F2B04A'),
+        mk('Ξ','ETH/USDT','$3,612','+2.03%',true,'Vol $18.4M',false,'rgba(91,141,239,0.14)','#5B8DEF'),
+        mk('◎','SOL/USDT','$176.80','-3.07%',false,'Vol $9.8M',false,'rgba(155,107,239,0.14)','#9b6bef')
+      ],
+      timeframes:['15m','1H','4H','1D','1W'].map((l,i)=>({label:l,bg:i===2?'rgba(255,198,42,0.12)':'rgba(255,255,255,0.04)',color:i===2?'#FFC62A':'#8A909C'})),
+      tradeChart, positions:d.positions,
+      tradeAccount:[{label:'Buying Power',value:'$200,000',color:'#FFC62A'},{label:'Position Size',value:'$1,000,000',color:'#E9ECF1'},{label:'Effective Leverage',value:'5×',color:'#F2B04A'},{label:'Unrealized PnL',value:'+$26,290',color:'#FFC62A'}],
+
+      // pool detail (active pool, formula-driven)
+      detailName:dPool.name, detailRegion:dPool.region+' · '+dPool.cm.adj+' rotation', detailInitials:ap.initials,
+      detailStatusBadge:ap.status+' · '+dPool.cm.single.toUpperCase()+' '+ap.currentCycle+' OF '+ap.participants,
+      detailFunding:'Allocation · '+dPool.cm.single+' '+ap.currentCycle+' of '+ap.participants+' · '+ap.filledPct+'% funded',
+      detailFundingPct:ap.filledPct,
+      detailJoinLabel:'Join '+dPool.name+' · '+this.money(ap.contribution)+'/'+dPool.cm.single.toLowerCase(),
+      detailCycleBadge:dPool.cm.adj+' · '+dPool.allocLabel,
+      detailStats:[
+        {label:'Pool Size',value:this.money(dPool.size),color:'#E9ECF1'},
+        {label:'Buying Power',value:this.money(dPool.buyingPower),color:'#FFC62A'},
+        {label:'Participants',value:dPool.p+' (= '+dPool.p+' cycles)',color:'#E9ECF1'},
+        {label:'Contribution Amount',value:this.money(dPool.contributionNum),color:'#E9ECF1'}
+      ],
+      detailMeta:[
+        {label:'Cycle Type',value:dPool.cm.adj},{label:'Duration',value:dPool.duration},
+        {label:'Current Cycle',value:dPool.cm.single+' '+dPool.currentCycle+' of '+dPool.p},
+        {label:'Remaining Cycles',value:dPool.remainingCycles+''},{label:'Remaining Obligation',value:this.money(dPool.remainingObligation)}
+      ],
+      detailChart, participants,
+      poolEconomics:[
+        {label:'Pool Size',value:this.money(dPool.size),color:'#E9ECF1'},
+        {label:'Buying Power',value:this.money(dPool.buyingPower),color:'#FFC62A'},
+        {label:'Contribution × Participants',value:this.money(dPool.contributionNum)+' × '+dPool.p,color:'#7d838f'},
+        {label:'Allocation Events',value:dPool.p+' (one per cycle)',color:'#5B8DEF'},
+        {label:'Protocol Fee',value:'0.5%',color:'#7d838f'}
+      ],
+      activity,
+
+      // obligation — interactive, formula-driven
+      shieldIcon:this.icon('admin'),
+      oblFormula:this.money(oP.contribution)+' × '+remCycles+' remaining cycles = '+this.money(remObligation),
+      oblAllocLabel:oCm.single+' '+allocCycle,
+      cycleButtons:Array.from({length:oP.participants},(_,i)=>{const sel=(i+1)===allocCycle;return {n:i+1,label:(i+1)+'',
+        bgX:sel?'rgba(242,176,74,0.16)':'rgba(255,255,255,0.04)',colorX:sel?'#F2B04A':'#8A909C',borderX:sel?'rgba(242,176,74,0.4)':'rgba(255,255,255,0.07)',
+        onClick:()=>this.setState({oblAllocCycle:i+1})};}),
+      oblStats:[
+        {label:'Original Pool',value:this.money(oP.contribution*oP.participants),color:'#E9ECF1'},
+        {label:'Community Allocation',value:this.money(oP.contribution*oP.participants),color:'#5B8DEF'},
+        {label:'Current Equity',value:this.money(oP.equity),color:'#E9ECF1'},
+        {label:'Remaining Obligation',value:this.money(remObligation),color:'#FF6B6B'},
+        {label:'Withdrawable Balance',value:this.money(withdrawable),color:'#FFC62A'}
+      ],
+      oblBars, oblChart,
+      oblLegend:[{label:'Trading Equity',color:'#FFC62A',value:this.moneyShort(oP.equity)},{label:'Remaining Obligation',color:'#FF6B6B',value:this.moneyShort(remObligation)},{label:'Coverage Ratio',color:'#5B8DEF',value:(oP.equity/(remObligation||1)).toFixed(1)+'×'}],
+
+      // create pool
+      cp:{ name:s.cpName, cycle:s.cpCycle, contribution:s.cpContribution, participants:s.cpParticipants, start:s.cpStart },
+      cpName:s.cpName, cpCycle:s.cpCycle, cpContribution:s.cpContribution, cpParticipants:s.cpParticipants, cpStart:s.cpStart,
+      cpCycleOptions:cycleSel.map(c=>{const sel=c===s.cpCycle;return {label:c,val:c,sel,
+        bg:sel?'rgba(255,198,42,0.12)':'rgba(255,255,255,0.04)',color:sel?'#FFC62A':'#8A909C',border:sel?'rgba(255,198,42,0.4)':'rgba(255,255,255,0.08)',
+        onClick:()=>this.setState({cpCycle:c})};}),
+      cpStatusBg:cpValid?'rgba(255,198,42,0.14)':'rgba(242,176,74,0.14)', cpStatusColor:cpValid?'#FFC62A':'#F2B04A',
+      cpSizeDisplay:this.money(cpSize), cpDurationDisplay:cpN>0?(cpN+' '+cpCm.unit):('— '+cpCm.unit),
+      cpAllocDisplay:cpN>0?(cpN+' allocation events · one per '+cpCm.single.toLowerCase()):'—',
+      cpFormula:cpC>0&&cpN>0?(this.money(cpC)+' × '+cpN+' participants'):'Contribution × Participants',
+      cpValid, cpErrors, cpStatus:cpValid?'READY TO LAUNCH':'INCOMPLETE',
+      onCpName:(e)=>setCp('cpName',e.target.value),
+      onCpContribution:(e)=>setCp('cpContribution',e.target.value.replace(/[^0-9]/g,'')),
+      onCpParticipants:(e)=>setCp('cpParticipants',e.target.value.replace(/[^0-9]/g,'')),
+      onCpStart:(e)=>setCp('cpStart',e.target.value),
+      createPool:()=>{ if(cpValid) this.setState({screen:'marketplace'}); },
+
+      // ===== simulator =====
+      simContribution:s.simContribution, simParticipants:s.simParticipants, simAllocPos:siPos, simEquity:s.simEquity,
+      simCycleOptions, simCycleLabel:siCm.adj, simCycleUnit:siCm.single,
+      simSize:this.money(siSize), simBuyingPower:this.money(siSize),
+      simRemCycles:siRemCycles+'', simRemObl:this.money(siRemObl), simWithdraw:this.money(siWithdraw),
+      simEquityFmt:this.money(siEq),
+      simSizeFormula:siC>0?(this.money(siC)+' × '+siN+' participants'):'Contribution × Participants',
+      simOblFormula:this.money(siC)+' × '+siRemCycles+' remaining cycles',
+      simAllocLabel:siCm.single+' '+siPos+' of '+siN,
+      simDuration:siN+' '+siCm.unit,
+      simTimeline,
+      simDerived:[
+        {label:'Pool Size',value:this.money(siSize),color:'#E9ECF1'},
+        {label:'Buying Power',value:this.money(siSize),color:'#FFC62A'},
+        {label:'Remaining Cycles',value:siRemCycles+'',color:'#F2B04A'},
+        {label:'Remaining Obligation',value:this.money(siRemObl),color:'#FF6B6B'}
+      ],
+      onSimContribution:(e)=>this.setState({simContribution:e.target.value.replace(/[^0-9]/g,'')}),
+      onSimParticipants:(e)=>{const v=Math.max(1,Math.floor(Number(e.target.value.replace(/[^0-9]/g,''))||1));this.setState({simParticipants:v,simAllocPos:Math.min(v,Math.max(1,Number(s.simAllocPos)||1))});},
+      onSimEquity:(e)=>this.setState({simEquity:e.target.value.replace(/[^0-9]/g,'')}),
+      onSimAllocPos:(e)=>this.setState({simAllocPos:Number(e.target.value)}),
+      simAllocMax:siN,
+
+      // portfolio
+      portfolioStats:[
+        {label:'Total Buying Power',value:'$200,000',color:'#FFC62A',delta:'',deltaColor:'#FFC62A'},
+        {label:'Current Equity',value:'$1,000,000',color:'#E9ECF1',delta:'+12.4%',deltaColor:'#FFC62A'},
+        {label:'Trading PnL',value:'+$26,290',color:'#FFC62A',delta:'+2.7%',deltaColor:'#FFC62A'},
+        {label:'Withdrawable Funds',value:'$820,000',color:'#FFC62A',delta:'',deltaColor:'#FFC62A'},
+        {label:'Remaining Obligations',value:'$180,000',color:'#FF6B6B',delta:'−$20K/mo',deltaColor:'#FF6B6B'},
+        {label:'Pools Joined',value:'3',color:'#E9ECF1',delta:'Active',deltaColor:'#5B8DEF'}
+      ],
+      portfolioChart, exposureDonut,
+      exposureLegend:[{label:'BTC Long',color:'#F2B04A',value:'$620K'},{label:'ETH Long',color:'#5B8DEF',value:'$280K'},{label:'SOL Short',color:'#9b6bef',value:'$100K'},{label:'Cash',color:'#FFC62A',value:'$200K'}],
+      joinedPools:[
+        {name:'Alpha Pool',sub:'Cycle 3 · Global USD',bp:'$200,000',in:'AP',bg:'rgba(255,198,42,0.12)',c:'#FFC62A'},
+        {name:'Sterling Circle',sub:'Cycle 1 · London GBP',bp:'$500,000',in:'SC',bg:'rgba(91,141,239,0.12)',c:'#5B8DEF'},
+        {name:'Pacific Hui',sub:'Pending · Singapore',bp:'$1,000,000',in:'PH',bg:'rgba(242,176,74,0.12)',c:'#F2B04A'}
+      ],
+      portfolioActivity:[
+        {ic:'↑',bg:'rgba(255,198,42,0.12)',c:'#FFC62A',text:'Opened BTC/USDT long 5×',time:'2 hr ago',amt:'+$17,520',amtColor:'#FFC62A'},
+        {ic:'⤓',bg:'rgba(91,141,239,0.12)',c:'#5B8DEF',text:'Withdrew profits',time:'Yesterday',amt:'$45,000',amtColor:'#E9ECF1'},
+        {ic:'+',bg:'rgba(242,176,74,0.12)',c:'#F2B04A',text:'Contributed to Alpha Pool',time:'2 days ago',amt:'−$20,000',amtColor:'#FF6B6B'},
+        {ic:'↑',bg:'rgba(255,198,42,0.12)',c:'#FFC62A',text:'Opened ETH/USDT long 4×',time:'3 days ago',amt:'+$5,700',amtColor:'#FFC62A'},
+        {ic:'★',bg:'rgba(155,107,239,0.12)',c:'#9b6bef',text:'Won Sterling Circle allocation',time:'1 week ago',amt:'$500,000',amtColor:'#5B8DEF'}
+      ],
+
+      // analytics
+      analyticsKpis:[
+        {label:'Total Community Capital',value:'$2.4M',color:'#E9ECF1',delta:'+18% MoM'},
+        {label:'Buying Power Created',value:'$12.1M',color:'#FFC62A',delta:'+24% MoM'},
+        {label:'Active Pools',value:'34',color:'#E9ECF1',delta:'+6 this month'},
+        {label:'Participants',value:'1,847',color:'#E9ECF1',delta:'+312 MoM'},
+        {label:'Trading Volume',value:'$48.3M',color:'#5B8DEF',delta:'+31% MoM'},
+        {label:'Average Returns',value:'14.2%',color:'#FFC62A',delta:'Annualized'},
+        {label:'Protocol Revenue',value:'$1.86M',color:'#FFC62A',delta:'+27% MoM'},
+        {label:'Default Rate',value:'0.0%',color:'#FFC62A',delta:'Code-enforced'}
+      ],
+      volumeChart, revenueChart, growthChart,
+      topPools:[
+        {name:'Pacific Hui',value:'$1.00M',pct:100,color:'#F2B04A'},
+        {name:'Sterling Circle',value:'$500K',pct:50,color:'#5B8DEF'},
+        {name:'Meridian Susu',value:'$300K',pct:30,color:'#9b6bef'},
+        {name:'Alpha Pool',value:'$200K',pct:20,color:'#FFC62A'},
+        {name:'Lagos Tanda',value:'$120K',pct:12,color:'#FF6B6B'}
+      ],
+
+      // admin
+      adminKpis:[
+        {label:'Users',value:'1,847',color:'#E9ECF1'},{label:'Pools',value:'34',color:'#E9ECF1'},
+        {label:'Allocations',value:'218',color:'#5B8DEF'},{label:'Volume 24h',value:'$3.1M',color:'#E9ECF1'},
+        {label:'Revenue 24h',value:'$54.2K',color:'#FFC62A'},{label:'Liquidations',value:'2',color:'#F2B04A'}
+      ],
+      adminRows:[
+        {pool:'Alpha Pool',equity:'$1.00M',obligation:'$180K',withdrawable:'$820K',risk:'LOW',riskBg:'rgba(255,198,42,0.14)',riskColor:'#FFC62A'},
+        {pool:'Sterling Circle',equity:'$2.40M',obligation:'$420K',withdrawable:'$1.98M',risk:'LOW',riskBg:'rgba(255,198,42,0.14)',riskColor:'#FFC62A'},
+        {pool:'Pacific Hui',equity:'$4.10M',obligation:'$905K',withdrawable:'$3.20M',risk:'MED',riskBg:'rgba(242,176,74,0.14)',riskColor:'#F2B04A'},
+        {pool:'Meridian Susu',equity:'$880K',obligation:'$261K',withdrawable:'$619K',risk:'LOW',riskBg:'rgba(255,198,42,0.14)',riskColor:'#FFC62A'},
+        {pool:'Lagos Tanda',equity:'$340K',obligation:'$0',withdrawable:'$340K',risk:'DONE',riskBg:'rgba(91,141,239,0.14)',riskColor:'#5B8DEF'},
+        {pool:'Atlas Committee',equity:'$210K',obligation:'$72K',withdrawable:'$138K',risk:'MED',riskBg:'rgba(242,176,74,0.14)',riskColor:'#F2B04A'}
+      ],
+      riskMetrics:[
+        {label:'Protocol Coverage Ratio',value:'4.8×',color:'#FFC62A'},
+        {label:'Obligations at Risk',value:'$0',color:'#FFC62A'},
+        {label:'24h Liquidations',value:'$118K',color:'#F2B04A'},
+        {label:'Insurance Fund',value:'$2.1M',color:'#5B8DEF'}
+      ],
+      systemHealth:[
+        {dot:'#FFC62A',label:'Matching Engine',value:'Operational'},
+        {dot:'#FFC62A',label:'Obligation Engine',value:'Operational'},
+        {dot:'#FFC62A',label:'Oracle Feeds',value:'12ms'},
+        {dot:'#F2B04A',label:'Settlement Queue',value:'3 pending'}
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
