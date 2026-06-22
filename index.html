@@ -56,7 +56,7 @@
 
     <div style="position:relative;max-width:1180px;margin:0 auto;padding:60px 32px 30px;text-align:center">
       <div style="display:inline-flex;align-items:center;gap:9px;padding:7px 15px;border:1px solid rgba(242,194,51,0.3);border-radius:100px;background:rgba(242,194,51,0.06);font-size:12px;font-weight:600;color:#F2C233;margin-bottom:26px;letter-spacing:0.2px"><span style="width:6px;height:6px;border-radius:50%;background:#F2C233;animation:objxPulse 1.8s infinite"></span>LIVE PROTOCOL · A NEW FINANCIAL PRIMITIVE</div>
-      <h1 style="font-family:'Space Grotesk';font-weight:700;font-size:62px;line-height:1.04;letter-spacing:-2px;margin-bottom:20px">Community coordination,<br><span style="background:linear-gradient(120deg,#F2C233,#F7D06A 40%,#5B8DEF);-webkit-background-clip:text;background-clip:text;color:transparent">programmable buying power.</span></h1>
+      <h1 style="font-family:'Space Grotesk';font-weight:700;font-size:62px;line-height:1.04;letter-spacing:-2px;margin-bottom:20px">Transforming the World's Oldest Financial System into <span style="background:linear-gradient(120deg,#F2C233,#F7D06A 40%,#5B8DEF);-webkit-background-clip:text;background-clip:text;color:transparent">Programmable Trading Capital</span></h1>
       <p style="font-size:18px;line-height:1.5;color:#9aa1ad;max-width:600px;margin:0 auto 34px;font-weight:500">OBJEX transforms community savings into trading capital — access buying power, trade global markets, and fulfil obligations through code, not trust.</p>
 
       <!-- LIVE COUNTERS -->
@@ -205,7 +205,7 @@
         <div>
           <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px">
             <div style="font-size:13px;color:#6c727d">{{ poolCount }} live pools · $127.5M community capital · 1,427 active circles</div>
-            <button onClick="{{ openAuth }}" style="font-family:'Manrope';font-weight:600;font-size:13px;color:#F2C233;background:rgba(242,194,51,0.1);border:1px solid rgba(242,194,51,0.22);padding:8px 16px;border-radius:9px;cursor:pointer">+ Create Pool</button>
+                        <button onClick="{{ openCreate }}" style="font-family:'Manrope';font-weight:600;font-size:13px;color:#F2C233;background:rgba(242,194,51,0.1);border:1px solid rgba(242,194,51,0.22);padding:8px 16px;border-radius:9px;cursor:pointer">+ Create Pool</button>
           </div>
           <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px">
             <sc-for list="{{ pools }}" as="p" hint-placeholder-count="6">
@@ -220,11 +220,11 @@
                 <div style="display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-bottom:15px">
                   <div><div style="font-size:11px;color:#6c727d;margin-bottom:3px">Pool Size</div><div style="font-family:'JetBrains Mono';font-weight:600;font-size:15px">{{ p.size }}</div></div>
                   <div><div style="font-size:11px;color:#6c727d;margin-bottom:3px">Buying Power</div><div style="font-family:'JetBrains Mono';font-weight:600;font-size:15px;color:#F2C233">{{ p.buyingPower }}</div></div>
-                  <div><div style="font-size:11px;color:#6c727d;margin-bottom:3px">Members · Slots</div><div style="font-family:'JetBrains Mono';font-weight:600;font-size:15px">{{ p.participants }} · {{ p.slots }}</div></div>
+                  <div><div style="font-size:11px;color:#6c727d;margin-bottom:3px">Duration · Slots</div><div style="font-family:'JetBrains Mono';font-weight:600;font-size:15px">{{ p.duration }} · {{ p.participants }}</div></div>
                   <div><div style="font-size:11px;color:#6c727d;margin-bottom:3px">Monthly</div><div style="font-family:'JetBrains Mono';font-weight:600;font-size:15px">{{ p.contribution }}</div></div>
                 </div>
                 <div style="margin-bottom:12px">
-                  <div style="display:flex;justify-content:space-between;font-size:11.5px;margin-bottom:6px"><span style="color:#6c727d">Pool progress</span><span style="color:#9aa1ad;font-weight:600">{{ p.filledPct }}%</span></div>
+                  <div style="display:flex;justify-content:space-between;font-size:11.5px;margin-bottom:6px"><span style="color:#6c727d">{{ p.participants }} Members Total</span><span style="color:#9aa1ad;font-weight:600">{{ p.filled }} / {{ p.participants }} Filled</span></div>
                   <div style="height:6px;border-radius:4px;background:rgba(255,255,255,0.06);overflow:hidden"><div style="height:100%;width:{{ p.filledPct }}%;background:linear-gradient(90deg,#F2C233,#F7D06A);border-radius:4px"></div></div>
                 </div>
                 <div style="display:flex;align-items:center;gap:7px;margin-bottom:14px"><span style="width:6px;height:6px;border-radius:50%;background:#F2C233;animation:objxPulse 2s infinite"></span><span style="font-size:11.5px;color:#7d838f">{{ p.recent }}</span></div>
@@ -478,6 +478,62 @@
   </div>
   </sc-if>
 
+  <!-- CREATE POOL FLOW -->
+  <sc-if value="{{ createOpen }}" hint-placeholder-val="{{ false }}">
+  <div style="position:fixed;inset:0;z-index:80;background:rgba(7,11,20,0.8);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;padding:24px">
+    <div style="width:480px;max-width:100%;background:linear-gradient(180deg,#121A2C,#0C1019);border:1px solid rgba(255,255,255,0.1);border-radius:20px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,0.6)">
+
+      <!-- step 0: connect wallet -->
+      <sc-if value="{{ createStepConnect }}" hint-placeholder-val="{{ true }}">
+      <div style="padding:28px">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px"><span style="font-size:11px;font-weight:700;letter-spacing:1.2px;color:#F2C233">CREATE POOL · CONNECT WALLET</span><span onClick="{{ closeCreate }}" style="font-size:18px;color:#6c727d;cursor:pointer">✕</span></div>
+        <div style="font-family:'Space Grotesk';font-weight:700;font-size:23px;letter-spacing:-0.5px;margin-bottom:6px">Connect your wallet</div>
+        <div style="font-size:13px;color:#7d838f;margin-bottom:22px">Connect a wallet to deploy your community pool on the protocol.</div>
+        <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:18px">
+          <sc-for list="{{ wallets }}" as="w" hint-placeholder-count="4"><div onClick="{{ createConnect }}" style="display:flex;align-items:center;gap:13px;padding:14px;border-radius:12px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);cursor:pointer"><div style="width:34px;height:34px;border-radius:9px;background:{{ w.c }};opacity:0.9"></div><span style="font-size:14px;font-weight:600;flex:1">{{ w.n }}</span><span style="color:#565C68">→</span></div></sc-for>
+        </div>
+        <div style="font-size:11.5px;color:#565C68;text-align:center">Mock connection — no real wallet required.</div>
+      </div>
+      </sc-if>
+
+      <!-- step 1: pool creation form -->
+      <sc-if value="{{ createStepForm }}" hint-placeholder-val="{{ false }}">
+      <div style="padding:28px">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px"><span style="font-size:11px;font-weight:700;letter-spacing:1.2px;color:#F2C233">CREATE POOL · DETAILS</span><span onClick="{{ closeCreate }}" style="font-size:18px;color:#6c727d;cursor:pointer">✕</span></div>
+        <div style="display:flex;align-items:center;gap:9px;padding:10px 13px;border-radius:10px;background:rgba(242,194,51,0.08);border:1px solid rgba(242,194,51,0.2);margin-bottom:22px"><span style="width:18px;height:18px;border-radius:50%;background:#F2C233;color:#0A0E18;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800">✓</span><span style="font-size:12.5px;font-weight:600;color:#F2C233">Wallet connected successfully</span></div>
+        <div style="font-family:'Space Grotesk';font-weight:700;font-size:22px;letter-spacing:-0.5px;margin-bottom:20px">Configure your pool</div>
+
+        <div style="display:flex;flex-direction:column;gap:16px;margin-bottom:22px">
+          <div><div style="font-size:12px;color:#9aa1ad;font-weight:600;margin-bottom:7px">Pool Name</div><input type="text" value="{{ cpName }}" onInput="{{ onCpName }}" placeholder="e.g. Horizon Circle"></div>
+          <div style="display:flex;gap:14px">
+            <div style="flex:1"><div style="font-size:12px;color:#9aa1ad;font-weight:600;margin-bottom:7px">Monthly Contribution</div><input type="text" value="{{ cpContribution }}" onInput="{{ onCpContribution }}" placeholder="20000"></div>
+            <div style="flex:1"><div style="font-size:12px;color:#9aa1ad;font-weight:600;margin-bottom:7px">Participants</div><input type="text" value="{{ cpParticipants }}" onInput="{{ onCpParticipants }}" placeholder="10"></div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;padding:16px;border-radius:12px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07)">
+            <div><div style="font-size:11px;color:#6c727d;margin-bottom:5px">Pool Size</div><div style="font-family:'JetBrains Mono';font-weight:700;font-size:16px">{{ cpPoolSize }}</div></div>
+            <div><div style="font-size:11px;color:#6c727d;margin-bottom:5px">Buying Power</div><div style="font-family:'JetBrains Mono';font-weight:700;font-size:16px;color:#F2C233">{{ cpPoolSize }}</div></div>
+            <div><div style="font-size:11px;color:#6c727d;margin-bottom:5px">Duration</div><div style="font-family:'JetBrains Mono';font-weight:700;font-size:16px">{{ cpDuration }}</div></div>
+          </div>
+        </div>
+        <button onClick="{{ submitCreate }}" style="width:100%;font-family:'Manrope';font-weight:700;font-size:14px;color:#0A0E18;background:#F2C233;border:none;padding:13px;border-radius:11px;cursor:pointer">Launch Pool</button>
+      </div>
+      </sc-if>
+
+      <!-- step 2: success -->
+      <sc-if value="{{ createStepSuccess }}" hint-placeholder-val="{{ false }}">
+      <div style="padding:28px;text-align:center">
+        <div style="display:flex;justify-content:flex-end;margin-bottom:4px"><span onClick="{{ closeCreate }}" style="font-size:18px;color:#6c727d;cursor:pointer">✕</span></div>
+        <div style="position:relative;width:88px;height:88px;margin:8px auto 22px"><div style="position:absolute;inset:0;border-radius:50%;background:rgba(242,194,51,0.15);animation:objxRing 1.6s ease-out infinite"></div><div style="position:absolute;inset:0;border-radius:50%;background:linear-gradient(135deg,#F2C233,#B9830F);display:flex;align-items:center;justify-content:center;animation:objxPop .5s ease both"><span style="font-size:40px;color:#0A0E18">✓</span></div></div>
+        <div style="font-family:'Space Grotesk';font-weight:700;font-size:22px;letter-spacing:-0.5px;margin-bottom:8px">Pool created</div>
+        <div style="font-size:14px;color:#9aa1ad;line-height:1.5;margin-bottom:6px"><span style="color:#F2C233;font-weight:700">{{ cpNameDisplay }}</span> is live with {{ cpPoolSize }} of community buying power.</div>
+        <button onClick="{{ finishCreate }}" style="width:100%;margin-top:18px;font-family:'Manrope';font-weight:700;font-size:14px;color:#0A0E18;background:#F2C233;border:none;padding:13px;border-radius:11px;cursor:pointer">View in Marketplace →</button>
+      </div>
+      </sc-if>
+
+    </div>
+  </div>
+  </sc-if>
+
   <!-- DEMO MODE -->
   <sc-if value="{{ demoOn }}" hint-placeholder-val="{{ false }}">
   <div style="position:fixed;left:50%;bottom:28px;transform:translateX(-50%);z-index:90;width:560px;max-width:calc(100% - 40px)">
@@ -510,6 +566,7 @@ class Component extends DCLogic {
     realized:0, oblMonth:3,
     joinOpen:false, joinStep:0, joinPool:null,
     authOpen:false, authTab:'wallet', connected:false,
+    createOpen:false, createStep:0, cpName:'', cpContribution:20000, cpParticipants:10,
     demo:null, tick:0
   };
 
@@ -584,6 +641,15 @@ class Component extends DCLogic {
   closeAuth=()=>this.setState({authOpen:false});
   setAuthTab=(t)=>this.setState({authTab:t});
   doConnect=()=>this.setState({authOpen:false,connected:true,view:'app',screen:'marketplace'});
+  // create pool
+  openCreate=()=>this.setState({createOpen:true,createStep:0});
+  createConnect=()=>this.setState({createStep:1,connected:true});
+  submitCreate=()=>this.setState({createStep:2});
+  closeCreate=()=>this.setState({createOpen:false,createStep:0});
+  finishCreate=()=>this.setState({createOpen:false,createStep:0,view:'app',screen:'marketplace'});
+  onCpName=(ev)=>{const v=ev.target.value; this.setState({cpName:v});};
+  onCpContribution=(ev)=>{const v=Math.max(0,+String(ev.target.value).replace(/[^0-9]/g,'')||0); this.setState({cpContribution:v});};
+  onCpParticipants=(ev)=>{const v=Math.max(2,Math.min(50,+String(ev.target.value).replace(/[^0-9]/g,'')||2)); this.setState({cpParticipants:v});};
   // demo
   startDemo=()=>this.setState({demo:0,view:'app',screen:'marketplace'});
   demoNext=()=>{ this.setState(s=>{ const n=s.demo+1; if(n>=this.demoSteps.length) return {demo:null}; return {demo:n,screen:this.demoSteps[n].screen}; }); };
@@ -652,6 +718,7 @@ class Component extends DCLogic {
     // pools (alive)
     const pools=d.pools.map((p,i)=>{ const funded=p.status==='FUNDED'; const b=[['rgba(242,194,51,0.12)','#F2C233'],['rgba(91,141,239,0.12)','#5B8DEF'],['rgba(242,176,74,0.12)','#F2B04A'],['rgba(155,107,239,0.12)','#9b6bef']][i%4];
       return Object.assign({},p,{ onJoin:()=>this.openJoin(p), badgeBg:b[0],badgeColor:b[1], slots:Math.round(p.participantsN*(100-p.filledPct)/100),
+        duration:p.participantsN+' Mo', filled:Math.round(p.participantsN*p.filledPct/100),
         statusBg:funded?'rgba(91,141,239,0.14)':'rgba(242,194,51,0.14)',statusColor:funded?'#5B8DEF':'#F2C233',
         btnLabel:funded?'View Pool':'Join Pool', btnBg:funded?'rgba(255,255,255,0.04)':'rgba(242,194,51,0.12)', btnColor:funded?'#9aa1ad':'#F2C233', btnBorder:funded?'rgba(255,255,255,0.08)':'rgba(242,194,51,0.25)',
         recent:p.recent }); });
@@ -698,7 +765,7 @@ class Component extends DCLogic {
       oblBars, oblCoverage:(oblRemaining>0?(oblEquity/oblRemaining).toFixed(1):'∞')+'×', oblProgressPct:m/10*100,
       // portfolio
       portfolioStats:[{label:'Total Buying Power',value:'$200,000',color:'#F2C233',delta:'',deltaColor:'#F2C233'},{label:'Current Equity',value:this.money(1000000+totalPnl),color:'#E9ECF1',delta:'+12.4%',deltaColor:'#F2C233'},{label:'Trading PnL',value:(totalPnl>=0?'+':'')+this.money(totalPnl),color:totalPnl>=0?'#F2C233':'#FF6B6B',delta:'live',deltaColor:'#F2C233'},{label:'Withdrawable',value:'$820,000',color:'#F2C233',delta:'',deltaColor:'#F2C233'},{label:'Remaining Obligations',value:'$180,000',color:'#FF6B6B',delta:'−$20K/mo',deltaColor:'#FF6B6B'},{label:'Pools Joined',value:'3',color:'#E9ECF1',delta:'Active',deltaColor:'#5B8DEF'}],
-      portfolioChart:this.area(this.series(60,910000,0.003,0.03),'#F2C233','pc',600,230),
+      portfolioChart:(this._pchart || (this._pchart=this.area(this.series(60,910000,0.003,0.03),'#F2C233','pc',600,230))),
       exposureDonut:this.donut([{value:620,color:'#F2B04A'},{value:280,color:'#5B8DEF'},{value:100,color:'#9b6bef'},{value:200,color:'#F2C233'}],130,20),
       exposureLegend:[{label:'BTC Long',color:'#F2B04A',value:'$620K'},{label:'ETH Long',color:'#5B8DEF',value:'$280K'},{label:'SOL Short',color:'#9b6bef',value:'$100K'},{label:'Cash',color:'#F2C233',value:'$200K'}],
       joinedPools:[{name:'Alpha Pool',sub:'Cycle 3 · Global USD',bp:'$200,000',in:'AP',bg:'rgba(242,194,51,0.12)',c:'#F2C233'},{name:'Sterling Circle',sub:'Cycle 1 · London GBP',bp:'$500,000',in:'SC',bg:'rgba(91,141,239,0.12)',c:'#5B8DEF'},{name:'Pacific Hui',sub:'Pending · Singapore',bp:'$1,000,000',in:'PH',bg:'rgba(242,176,74,0.12)',c:'#F2B04A'}],
@@ -715,7 +782,13 @@ class Component extends DCLogic {
       joinOpen:s.joinOpen, joinStep:s.joinStep, joinPool:s.joinPool||{name:'',size:'',buyingPower:'',contribution:''},
       joinNext:this.joinNext, joinBack:this.joinBack, closeJoin:this.closeJoin, finishJoin:this.finishJoin,
       joinStepData:this.joinStepData(s.joinStep,s.joinPool), joinProgress:(s.joinStep+1)/6*100, joinIsLast:s.joinStep>=4, joinNotLast:s.joinStep<4,
-      authOpen:s.authOpen, closeAuth:this.closeAuth, doConnect:this.doConnect,
+      authOpen:s.authOpen, closeAuth:this.closeAuth, doConnect:this.doConnect, openCreate:this.openCreate,
+      createOpen:s.createOpen, createStepConnect:s.createStep===0, createStepForm:s.createStep===1, createStepSuccess:s.createStep===2,
+      createConnect:this.createConnect, submitCreate:this.submitCreate, closeCreate:this.closeCreate, finishCreate:this.finishCreate,
+      cpName:s.cpName, cpContribution:s.cpContribution, cpParticipants:s.cpParticipants,
+      onCpName:this.onCpName, onCpContribution:this.onCpContribution, onCpParticipants:this.onCpParticipants,
+      cpPoolSize:this.short(s.cpContribution*s.cpParticipants), cpDuration:s.cpParticipants+' Months',
+      cpNameDisplay:s.cpName||'Your Community Pool',
       authTabs:[{label:'Connect Wallet',k:'wallet'},{label:'Sign Up',k:'signup'},{label:'Login',k:'login'}].map(x=>({label:x.label,onClick:()=>this.setAuthTab(x.k),active:s.authTab===x.k,style:`flex:1;text-align:center;font-size:12.5px;font-weight:600;padding:9px;border-radius:8px;cursor:pointer;background:${s.authTab===x.k?'rgba(242,194,51,0.1)':'transparent'};color:${s.authTab===x.k?'#F2C233':'#8A909C'}`})),
       authTab:s.authTab, authIsWallet:s.authTab==='wallet', authIsSignup:s.authTab==='signup', authIsLogin:s.authTab==='login',
       wallets:[{n:'MetaMask',c:'#F2B04A'},{n:'Coinbase Wallet',c:'#5B8DEF'},{n:'WalletConnect',c:'#F2C233'},{n:'Phantom',c:'#9b6bef'}],
