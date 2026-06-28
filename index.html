@@ -9,8 +9,8 @@
 <x-dc>
 <helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   *{box-sizing:border-box;margin:0;padding:0}
   body{background:#0A0E18;color:#E9ECF1;font-family:'Manrope',sans-serif;-webkit-font-smoothing:antialiased}
@@ -44,9 +44,9 @@
           <span style="font-family:'Cormorant Garamond',serif;font-weight:700;font-size:25px;letter-spacing:3px;color:#F2C233">OBJEX</span>
         </div>
         <div style="display:flex;align-items:center;gap:12px">
-          <button onClick="{{ startDemo }}" style="font-family:'Manrope';font-weight:600;font-size:13.5px;color:#E9ECF1;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);padding:9px 17px;border-radius:9px;cursor:pointer;display:flex;align-items:center;gap:7px"><span style="width:7px;height:7px;border-radius:50%;background:#F2C233;animation:objxPulse 1.6s infinite"></span>Experience OBJEX</button>
-          <button onClick="{{ openAuth }}" style="font-family:'Manrope';font-weight:600;font-size:13.5px;color:#9aa1ad;background:transparent;border:1px solid rgba(255,255,255,0.1);padding:9px 17px;border-radius:9px;cursor:pointer">Sign In</button>
-          <button onClick="{{ launch }}" style="font-family:'Manrope';font-weight:700;font-size:13.5px;color:#0A0E18;background:#F2C233;border:none;padding:9px 18px;border-radius:9px;cursor:pointer;box-shadow:0 0 20px rgba(242,194,51,0.3)">Launch App</button>
+          <button onclick="{{ startDemo }}" style="font-family:'Manrope';font-weight:600;font-size:13.5px;color:#E9ECF1;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);padding:9px 17px;border-radius:9px;cursor:pointer;display:flex;align-items:center;gap:7px"><span style="width:7px;height:7px;border-radius:50%;background:#F2C233;animation:objxPulse 1.6s infinite"></span>Experience OBJEX</button>
+          <button onclick="{{ openAuth }}" style="font-family:'Manrope';font-weight:600;font-size:13.5px;color:#9aa1ad;background:transparent;border:1px solid rgba(255,255,255,0.1);padding:9px 17px;border-radius:9px;cursor:pointer">Sign In</button>
+          <button onclick="{{ launch }}" style="font-family:'Manrope';font-weight:700;font-size:13.5px;color:#0A0E18;background:#F2C233;border:none;padding:9px 18px;border-radius:9px;cursor:pointer;box-shadow:0 0 20px rgba(242,194,51,0.3)">Launch App</button>
         </div>
       </div>
     </div>
@@ -91,23 +91,23 @@
         <div style="display:flex;flex-direction:column;gap:24px">
           <div>
             <div style="display:flex;justify-content:space-between;margin-bottom:11px"><span style="font-size:13.5px;color:#9aa1ad;font-weight:600">Your Contribution</span><span style="font-family:'JetBrains Mono';font-size:15px;font-weight:700;color:#F2C233">{{ calc.contribution }}</span></div>
-            <input type="range" min="5000" max="100000" step="1000" value="{{ calc.contributionRaw }}" onChange="{{ setContribution }}" style="width:100%;accent-color:#F2C233">
+            <input type="range" min="5000" max="100000" step="1000" value="{{ calc.contributionRaw }}" onchange="{{ setContribution }}" style="width:100%;accent-color:#F2C233">
           </div>
           <div>
             <div style="display:flex;justify-content:space-between;margin-bottom:11px"><span style="font-size:13.5px;color:#9aa1ad;font-weight:600">Pool Participants</span><span style="font-family:'JetBrains Mono';font-size:15px;font-weight:700">{{ calc.participants }}</span></div>
-            <input type="range" min="4" max="50" step="1" value="{{ calc.participants }}" onChange="{{ setParticipants }}" style="width:100%;accent-color:#F2C233">
+            <input type="range" min="4" max="50" step="1" value="{{ calc.participants }}" onchange="{{ setParticipants }}" style="width:100%;accent-color:#F2C233">
           </div>
           <div>
             <div style="display:flex;justify-content:space-between;margin-bottom:11px"><span style="font-size:13.5px;color:#9aa1ad;font-weight:600">Trading Leverage</span><span style="font-family:'JetBrains Mono';font-size:15px;font-weight:700;color:#F2B04A">{{ calc.leverage }}×</span></div>
-            <input type="range" min="1" max="10" step="1" value="{{ calc.leverage }}" onChange="{{ setLeverage }}" style="width:100%;accent-color:#F2B04A">
+            <input type="range" min="1" max="10" step="1" value="{{ calc.leverage }}" onchange="{{ setLeverage }}" style="width:100%;accent-color:#F2B04A">
           </div>
           <div>
             <div style="display:flex;justify-content:space-between;margin-bottom:11px"><span style="font-size:13.5px;color:#9aa1ad;font-weight:600">Allocation Position</span><span style="font-family:'JetBrains Mono';font-size:15px;font-weight:700;color:#5B8DEF">#{{ calc.allocPos }} of {{ calc.participants }}</span></div>
-            <input type="range" min="1" max="{{ calc.participants }}" step="1" value="{{ calc.allocPos }}" onChange="{{ setAllocPos }}" style="width:100%;accent-color:#5B8DEF">
+            <input type="range" min="1" max="{{ calc.participants }}" step="1" value="{{ calc.allocPos }}" onchange="{{ setAllocPos }}" style="width:100%;accent-color:#5B8DEF">
           </div>
           <div style="display:flex;gap:8px">
             <sc-for list="{{ poolTypes }}" as="pt" hint-placeholder-count="3">
-              <div onClick="{{ pt.onClick }}" style="flex:1;text-align:center;font-size:12.5px;font-weight:600;padding:9px;border-radius:9px;cursor:pointer;background:{{ pt.bg }};color:{{ pt.color }};border:1px solid {{ pt.border }}">{{ pt.label }}</div>
+              <div onclick="{{ pt.onClick }}" style="flex:1;text-align:center;font-size:12.5px;font-weight:600;padding:9px;border-radius:9px;cursor:pointer;background:{{ pt.bg }};color:{{ pt.color }};border:1px solid {{ pt.border }}">{{ pt.label }}</div>
             </sc-for>
           </div>
         </div>
@@ -131,7 +131,7 @@
               </div>
             </sc-for>
           </div>
-          <button onClick="{{ launch }}" style="font-family:'Manrope';font-weight:700;font-size:14.5px;color:#0A0E18;background:#F2C233;border:none;padding:14px;border-radius:11px;cursor:pointer;box-shadow:0 6px 24px rgba(242,194,51,0.3)">Deploy This Buying Power →</button>
+          <button onclick="{{ launch }}" style="font-family:'Manrope';font-weight:700;font-size:14.5px;color:#0A0E18;background:#F2C233;border:none;padding:14px;border-radius:11px;cursor:pointer;box-shadow:0 6px 24px rgba(242,194,51,0.3)">Deploy This Buying Power →</button>
         </div>
       </div>
     </div>
@@ -164,6 +164,204 @@
       </div>
     </div>
 
+    <!-- ABOUT / WHY OBJEX EXISTS -->
+    <div style="position:relative;max-width:1180px;margin:0 auto;padding:54px 32px;border-top:1px solid rgba(255,255,255,0.06)">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center">
+        <div>
+          <div style="font-size:12px;font-weight:700;letter-spacing:1.4px;color:#F2C233;margin-bottom:16px">WHY OBJEX EXISTS</div>
+          <h2 style="font-family:'Cormorant Garamond',serif;font-weight:700;font-size:46px;line-height:1.04;letter-spacing:-1px;margin-bottom:20px">The world's oldest financial system, finally unbreakable.</h2>
+          <p style="font-size:15px;line-height:1.66;color:#9aa1ad;margin-bottom:15px">For centuries, billions have pooled money in rotating savings circles — <span style="color:#E9ECF1">ROSCAs, tandas, susus, hui, committees</span>. Members contribute every month; each takes a turn receiving the whole pot. It is how most of the world actually builds capital — an estimated <span style="color:#E9ECF1">$500B+</span> moves through these circles every year.</p>
+          <p style="font-size:15px;line-height:1.66;color:#9aa1ad">They share one fatal flaw: <span style="color:#FF6B6B">trust</span>. The moment a member is paid out early and walks away, the circle collapses. For a thousand years there was no fix. <span style="color:#F2C233;font-weight:600">Programmable smart contracts are the fix</span> — and they turn idle savings into productive trading capital.</p>
+        </div>
+        <div style="background:linear-gradient(180deg,#11192B,#0C1019);border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:8px">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+            <div style="padding:22px;border-radius:15px;background:rgba(255,107,107,0.04);border:1px solid rgba(255,107,107,0.16)">
+              <div style="font-size:10.5px;font-weight:700;letter-spacing:1px;color:#FF6B6B;margin-bottom:18px">TRADITIONAL ROSCA</div>
+              <div style="display:flex;flex-direction:column;gap:15px">
+                <div><div style="font-size:10.5px;color:#6c727d;margin-bottom:3px">Default risk</div><div style="font-size:14px;font-weight:600;color:#FF6B6B">High</div></div>
+                <div><div style="font-size:10.5px;color:#6c727d;margin-bottom:3px">Enforcement</div><div style="font-size:14px;font-weight:600;color:#E9ECF1">Social trust</div></div>
+                <div><div style="font-size:10.5px;color:#6c727d;margin-bottom:3px">Reach</div><div style="font-size:14px;font-weight:600;color:#E9ECF1">Local only</div></div>
+                <div><div style="font-size:10.5px;color:#6c727d;margin-bottom:3px">Your capital</div><div style="font-size:14px;font-weight:600;color:#E9ECF1">Idle until your turn</div></div>
+              </div>
+            </div>
+            <div style="padding:22px;border-radius:15px;background:rgba(242,194,51,0.05);border:1px solid rgba(242,194,51,0.24)">
+              <div style="font-size:10.5px;font-weight:700;letter-spacing:1px;color:#F2C233;margin-bottom:18px">OBJEX PROTOCOL</div>
+              <div style="display:flex;flex-direction:column;gap:15px">
+                <div><div style="font-size:10.5px;color:#6c727d;margin-bottom:3px">Default risk</div><div style="font-size:14px;font-weight:600;color:#F2C233">Zero — by code</div></div>
+                <div><div style="font-size:10.5px;color:#6c727d;margin-bottom:3px">Enforcement</div><div style="font-size:14px;font-weight:600;color:#F2C233">Obligation Engine</div></div>
+                <div><div style="font-size:10.5px;color:#6c727d;margin-bottom:3px">Reach</div><div style="font-size:14px;font-weight:600;color:#F2C233">Global · permissionless</div></div>
+                <div><div style="font-size:10.5px;color:#6c727d;margin-bottom:3px">Your capital</div><div style="font-size:14px;font-weight:600;color:#F2C233">Productive day one</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- THE MODEL: HYBRID PERP DEX + BUYING POWER -->
+    <div style="position:relative;background:radial-gradient(ellipse at 50% 0%,rgba(242,194,51,0.06),transparent 60%);border-top:1px solid rgba(255,255,255,0.06)">
+      <div style="max-width:1180px;margin:0 auto;padding:54px 32px">
+        <div style="text-align:center;margin-bottom:14px">
+          <div style="font-size:12px;font-weight:700;letter-spacing:1.4px;color:#F2B04A;margin-bottom:10px">THE HYBRID MODEL</div>
+          <h2 style="font-family:'Space Grotesk';font-weight:700;font-size:36px;letter-spacing:-1.2px">A Buying Power layer feeding a native Perp DEX</h2>
+          <p style="font-size:14.5px;color:#7d838f;margin-top:12px;max-width:680px;margin-left:auto;margin-right:auto;line-height:1.6">Communities mint buying power together. That capital can only be spent inside the OBJEX Perpetuals DEX — so every dollar of coordinated savings becomes live trading volume that never leaves the protocol.</p>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:34px">
+          <div style="background:#0E131F;border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:22px">
+            <div style="font-family:'JetBrains Mono';font-weight:700;font-size:14px;color:#F2C233;margin-bottom:16px">01</div>
+            <div style="font-family:'Space Grotesk';font-weight:600;font-size:16px;margin-bottom:7px">Join a Pool</div>
+            <div style="font-size:12.5px;color:#7d838f;line-height:1.55">Commit a fixed monthly contribution to a savings circle. Members coordinate capital none could reach alone.</div>
+          </div>
+          <div style="background:#0E131F;border:1px solid rgba(242,194,51,0.18);border-radius:16px;padding:22px">
+            <div style="font-family:'JetBrains Mono';font-weight:700;font-size:14px;color:#F2C233;margin-bottom:16px">02</div>
+            <div style="font-family:'Space Grotesk';font-weight:600;font-size:16px;margin-bottom:7px">Receive Buying Power</div>
+            <div style="font-size:12.5px;color:#7d838f;line-height:1.55">Win your allocation and the protocol grants buying power 1:1 with the pool — instantly, non-custodial.</div>
+          </div>
+          <div style="background:#0E131F;border:1px solid rgba(242,176,74,0.2);border-radius:16px;padding:22px">
+            <div style="font-family:'JetBrains Mono';font-weight:700;font-size:14px;color:#F2B04A;margin-bottom:16px">03</div>
+            <div style="font-family:'Space Grotesk';font-weight:600;font-size:16px;margin-bottom:7px">Trade the Perp DEX</div>
+            <div style="font-size:12.5px;color:#7d838f;line-height:1.55">Deploy that buying power across global perpetual markets at safe, community-backed leverage.</div>
+          </div>
+          <div style="background:#0E131F;border:1px solid rgba(91,141,239,0.2);border-radius:16px;padding:22px">
+            <div style="font-family:'JetBrains Mono';font-weight:700;font-size:14px;color:#5B8DEF;margin-bottom:16px">04</div>
+            <div style="font-family:'Space Grotesk';font-weight:600;font-size:16px;margin-bottom:7px">Withdraw &amp; Amortize</div>
+            <div style="font-size:12.5px;color:#7d838f;line-height:1.55">Take out your contribution paid plus profit. Future commitments amortize automatically in code.</div>
+          </div>
+        </div>
+        <div style="margin-top:18px;background:#0B0F1B;border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:20px 24px;display:flex;align-items:center;gap:18px;flex-wrap:wrap">
+          <div style="font-family:'JetBrains Mono';font-size:13px;color:#9aa1ad;display:flex;align-items:center;gap:10px;flex-wrap:wrap"><span style="color:#E9ECF1;font-weight:700">$20K / mo</span><span style="color:#565C68">contribution →</span><span style="color:#F2C233;font-weight:700">$200K</span><span style="color:#565C68">buying power × 5× →</span><span style="color:#F2B04A;font-weight:700">$1M</span><span style="color:#565C68">position. Withdrawable stays</span><span style="color:#F2C233;font-weight:700">paid-in + profit</span><span style="color:#565C68">— never the position.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CATEGORY: THE HYBRID PERP -->
+    <div style="position:relative;border-top:1px solid rgba(255,255,255,0.06);background:radial-gradient(ellipse at 50% 0%,rgba(91,141,239,0.06),transparent 60%)">
+      <div style="max-width:1000px;margin:0 auto;padding:60px 32px 26px;text-align:center">
+        <div style="font-size:12px;font-weight:700;letter-spacing:1.4px;color:#5B8DEF;margin-bottom:16px">A NEW CATEGORY</div>
+        <h2 style="font-family:'Space Grotesk';font-weight:700;font-size:clamp(28px,4.2vw,44px);line-height:1.08;letter-spacing:-1.4px;margin-bottom:20px">Every perp DEX is the same exchange<br>with a different logo.</h2>
+        <p style="font-size:15.5px;color:#9aa1ad;line-height:1.65;max-width:680px;margin:0 auto 18px">Same matching engine. Same mercenary liquidity that vanishes the day emissions dry up. Same race to zero fees. They are forks of forks — no moat, no loyalty, no reason to stay.</p>
+        <p style="font-size:18px;color:#E9ECF1;line-height:1.5;max-width:740px;margin:0 auto;font-weight:600">OBJEX is not another perp. It is the first <span style="color:#F2C233">Hybrid Perp</span> — a perpetuals exchange with a community <span style="color:#F2C233">Buying Power Layer</span> built underneath it.</p>
+      </div>
+      <div style="max-width:920px;margin:0 auto;padding:0 32px 58px">
+        <div style="background:#0E131F;border:1px solid rgba(255,255,255,0.08);border-radius:18px;overflow:hidden">
+          <div style="display:grid;grid-template-columns:1.1fr 1fr 1fr;padding:15px 24px;font-size:10.5px;font-weight:700;letter-spacing:0.6px;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="color:#565C68"></span><span style="color:#7d838f">GENERIC PERP DEX</span><span style="color:#F2C233">OBJEX · HYBRID PERP</span></div>
+          <div style="display:grid;grid-template-columns:1.1fr 1fr 1fr;padding:15px 24px;border-bottom:1px solid rgba(255,255,255,0.04);align-items:center"><span style="font-size:13px;color:#9aa1ad">Liquidity</span><span style="font-size:13.5px;color:#7d838f">Rented via incentives</span><span style="font-size:13.5px;font-weight:600;color:#F2C233">Community-owned</span></div>
+          <div style="display:grid;grid-template-columns:1.1fr 1fr 1fr;padding:15px 24px;border-bottom:1px solid rgba(255,255,255,0.04);align-items:center"><span style="font-size:13px;color:#9aa1ad">Moat</span><span style="font-size:13.5px;color:#7d838f">None — it's a fork</span><span style="font-size:13.5px;font-weight:600;color:#F2C233">The Buying Power Layer</span></div>
+          <div style="display:grid;grid-template-columns:1.1fr 1fr 1fr;padding:15px 24px;border-bottom:1px solid rgba(255,255,255,0.04);align-items:center"><span style="font-size:13px;color:#9aa1ad">Trader capital</span><span style="font-size:13.5px;color:#7d838f">Your own bankroll</span><span style="font-size:13.5px;font-weight:600;color:#F2C233">Community-funded, 1:1</span></div>
+          <div style="display:grid;grid-template-columns:1.1fr 1fr 1fr;padding:15px 24px;align-items:center"><span style="font-size:13px;color:#9aa1ad">Growth engine</span><span style="font-size:13.5px;color:#7d838f">Mercenary farming</span><span style="font-size:13.5px;font-weight:600;color:#F2C233">Self-reinforcing flywheel</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LIQUIDITY FLYWHEEL -->
+    <div style="position:relative;border-top:1px solid rgba(255,255,255,0.06)">
+      <div style="max-width:1180px;margin:0 auto;padding:56px 32px">
+        <div style="text-align:center;margin-bottom:6px">
+          <div style="font-size:12px;font-weight:700;letter-spacing:1.4px;color:#F2C233;margin-bottom:10px">THE MOAT</div>
+          <h2 style="font-family:'Space Grotesk';font-weight:700;font-size:36px;letter-spacing:-1.2px">The Community Liquidity Flywheel</h2>
+          <p style="font-size:14.5px;color:#7d838f;margin-top:12px;max-width:660px;margin-left:auto;margin-right:auto;line-height:1.6">Liquidity on OBJEX isn't rented — it's manufactured by the protocol and recycled back into itself. Every turn makes the next one bigger.</p>
+        </div>
+        <div style="position:relative;width:480px;height:480px;max-width:100%;margin:24px auto 6px">
+          <div style="position:absolute;left:50%;top:50%;width:300px;height:300px;transform:translate(-50%,-50%);border-radius:50%;border:1.5px dashed rgba(242,194,51,0.3)"></div>
+          <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);text-align:center;width:160px"><div style="font-size:34px;color:#F2C233;line-height:1">↻</div><div style="font-family:'Space Grotesk';font-weight:700;font-size:15px;margin-top:6px;line-height:1.2">Liquidity<br>Flywheel</div><div style="font-size:11px;color:#7d838f;margin-top:7px;line-height:1.3">compounds<br>every cycle</div></div>
+          <div style="position:absolute;left:240px;top:90px;transform:translate(-50%,-50%);width:150px;background:#0E131F;border:1px solid rgba(242,194,51,0.22);border-radius:12px;padding:12px 12px;text-align:center;box-shadow:0 6px 22px rgba(0,0,0,0.45)"><div style="font-family:'JetBrains Mono';font-size:11px;font-weight:700;color:#F2C233;margin-bottom:5px">01</div><div style="font-size:12.5px;font-weight:600;line-height:1.3">Communities form pools</div></div>
+          <div style="position:absolute;left:383px;top:194px;transform:translate(-50%,-50%);width:150px;background:#0E131F;border:1px solid rgba(242,194,51,0.22);border-radius:12px;padding:12px 12px;text-align:center;box-shadow:0 6px 22px rgba(0,0,0,0.45)"><div style="font-family:'JetBrains Mono';font-size:11px;font-weight:700;color:#F2C233;margin-bottom:5px">02</div><div style="font-size:12.5px;font-weight:600;line-height:1.3">Buying power minted 1:1</div></div>
+          <div style="position:absolute;left:328px;top:361px;transform:translate(-50%,-50%);width:150px;background:#0E131F;border:1px solid rgba(242,176,74,0.24);border-radius:12px;padding:12px 12px;text-align:center;box-shadow:0 6px 22px rgba(0,0,0,0.45)"><div style="font-family:'JetBrains Mono';font-size:11px;font-weight:700;color:#F2B04A;margin-bottom:5px">03</div><div style="font-size:12.5px;font-weight:600;line-height:1.3">Volume floods the Perp DEX</div></div>
+          <div style="position:absolute;left:152px;top:361px;transform:translate(-50%,-50%);width:150px;background:#0E131F;border:1px solid rgba(242,194,51,0.22);border-radius:12px;padding:12px 12px;text-align:center;box-shadow:0 6px 22px rgba(0,0,0,0.45)"><div style="font-family:'JetBrains Mono';font-size:11px;font-weight:700;color:#F2C233;margin-bottom:5px">04</div><div style="font-size:12.5px;font-weight:600;line-height:1.3">Fees &amp; spreads captured</div></div>
+          <div style="position:absolute;left:97px;top:194px;transform:translate(-50%,-50%);width:150px;background:#0E131F;border:1px solid rgba(91,141,239,0.24);border-radius:12px;padding:12px 12px;text-align:center;box-shadow:0 6px 22px rgba(0,0,0,0.45)"><div style="font-family:'JetBrains Mono';font-size:11px;font-weight:700;color:#5B8DEF;margin-bottom:5px">05</div><div style="font-size:12.5px;font-weight:600;line-height:1.3">Revenue funds new pools</div></div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px">
+          <div style="background:#0B0F1B;border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:20px"><div style="font-family:'Space Grotesk';font-weight:600;font-size:14.5px;margin-bottom:7px;color:#F2C233">Owned, not rented</div><div style="font-size:12.5px;color:#7d838f;line-height:1.55">Members fund the book. It can't flee to the next farm — so depth stays through every market.</div></div>
+          <div style="background:#0B0F1B;border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:20px"><div style="font-family:'Space Grotesk';font-weight:600;font-size:14.5px;margin-bottom:7px;color:#F2C233">Deeper every turn</div><div style="font-size:12.5px;color:#7d838f;line-height:1.55">Each cycle adds buying power and volume. Books thicken, spreads tighten, slippage falls.</div></div>
+          <div style="background:#0B0F1B;border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:20px"><div style="font-family:'Space Grotesk';font-weight:600;font-size:14.5px;margin-bottom:7px;color:#F2C233">Cheaper for the next trader</div><div style="font-size:12.5px;color:#7d838f;line-height:1.55">The spinning flywheel subsidizes execution — the protocol gets better as it grows, not worse.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- USP GRID -->
+    <div style="position:relative;max-width:1180px;margin:0 auto;padding:54px 32px;border-top:1px solid rgba(255,255,255,0.06)">
+      <div style="text-align:center;margin-bottom:34px">
+        <div style="font-size:12px;font-weight:700;letter-spacing:1.4px;color:#F2C233;margin-bottom:10px">THE UNFAIR ADVANTAGE</div>
+        <h2 style="font-family:'Space Grotesk';font-weight:700;font-size:36px;letter-spacing:-1.2px">Why this is a real use case for blockchain</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
+        <div style="background:#0E131F;border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:24px">
+          <div style="width:38px;height:38px;border-radius:10px;background:rgba(242,194,51,0.1);border:1px solid rgba(242,194,51,0.25);display:flex;align-items:center;justify-content:center;color:#F2C233;font-weight:700;margin-bottom:16px">↺</div>
+          <div style="font-family:'Space Grotesk';font-weight:600;font-size:16px;margin-bottom:8px">Capital that can't leave</div>
+          <div style="font-size:13px;color:#7d838f;line-height:1.6">Buying power is protocol-native credit, spendable only inside the OBJEX Perp DEX. Coordinated savings convert directly into captive trading volume.</div>
+        </div>
+        <div style="background:#0E131F;border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:24px">
+          <div style="width:38px;height:38px;border-radius:10px;background:rgba(242,194,51,0.1);border:1px solid rgba(242,194,51,0.25);display:flex;align-items:center;justify-content:center;color:#F2C233;font-weight:700;margin-bottom:16px">◇</div>
+          <div style="font-family:'Space Grotesk';font-weight:600;font-size:16px;margin-bottom:8px">Zero default, by design</div>
+          <div style="font-size:13px;color:#7d838f;line-height:1.6">The Obligation Engine amortizes every future commitment in code. No member can ever withdraw more than they've earned and paid in.</div>
+        </div>
+        <div style="background:#0E131F;border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:24px">
+          <div style="width:38px;height:38px;border-radius:10px;background:rgba(242,194,51,0.1);border:1px solid rgba(242,194,51,0.25);display:flex;align-items:center;justify-content:center;color:#F2C233;font-weight:700;margin-bottom:16px">▣</div>
+          <div style="font-family:'Space Grotesk';font-weight:600;font-size:16px;margin-bottom:8px">You withdraw only what's yours</div>
+          <div style="font-size:13px;color:#7d838f;line-height:1.6">Withdrawable = contribution paid + trading profit. Never your leveraged position size. Community principal is always protected.</div>
+        </div>
+        <div style="background:#0E131F;border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:24px">
+          <div style="width:38px;height:38px;border-radius:10px;background:rgba(91,141,239,0.1);border:1px solid rgba(91,141,239,0.25);display:flex;align-items:center;justify-content:center;color:#5B8DEF;font-weight:700;margin-bottom:16px">⤢</div>
+          <div style="font-family:'Space Grotesk';font-weight:600;font-size:16px;margin-bottom:8px">Community-backed leverage</div>
+          <div style="font-size:13px;color:#7d838f;line-height:1.6">Pooled capital absorbs coordination, so members trade meaningful size at dramatically lower liquidation risk than isolated margin.</div>
+        </div>
+        <div style="background:#0E131F;border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:24px">
+          <div style="width:38px;height:38px;border-radius:10px;background:rgba(242,176,74,0.1);border:1px solid rgba(242,176,74,0.25);display:flex;align-items:center;justify-content:center;color:#F2B04A;font-weight:700;margin-bottom:16px">⚘</div>
+          <div style="font-family:'Space Grotesk';font-weight:600;font-size:16px;margin-bottom:8px">A self-funding flywheel</div>
+          <div style="font-size:13px;color:#7d838f;line-height:1.6">Perp DEX trading fees recapitalize new pools. More pools mint more buying power, which drives more volume. The community compounds.</div>
+        </div>
+        <div style="background:#0E131F;border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:24px">
+          <div style="width:38px;height:38px;border-radius:10px;background:rgba(242,194,51,0.1);border:1px solid rgba(242,194,51,0.25);display:flex;align-items:center;justify-content:center;color:#F2C233;font-weight:700;margin-bottom:16px">⬡</div>
+          <div style="font-family:'Space Grotesk';font-weight:600;font-size:16px;margin-bottom:8px">Not speculation — formation</div>
+          <div style="font-size:13px;color:#7d838f;line-height:1.6">A 1,000-year-old human behavior, made trustless. The first genuinely programmable capital-formation primitive — blockchain solving what it was built for.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WHY TRADERS SWITCH -->
+    <div style="position:relative;max-width:1180px;margin:0 auto;padding:54px 32px;border-top:1px solid rgba(255,255,255,0.06)">
+      <div style="text-align:center;margin-bottom:34px">
+        <div style="font-size:12px;font-weight:700;letter-spacing:1.4px;color:#F2B04A;margin-bottom:10px">FOR TRADERS</div>
+        <h2 style="font-family:'Space Grotesk';font-weight:700;font-size:36px;letter-spacing:-1.2px">Obvious reasons to bring your size to OBJEX</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
+        <div style="background:#0E131F;border:1px solid rgba(242,194,51,0.18);border-radius:16px;padding:24px">
+          <div style="font-family:'Space Grotesk';font-weight:700;font-size:17px;margin-bottom:9px">Trade 10× your bankroll</div>
+          <div style="font-size:13px;color:#7d838f;line-height:1.6">Deploy community buying power, not just your own capital. $20K of contribution can stand behind a $1M position.</div>
+        </div>
+        <div style="background:#0E131F;border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:24px">
+          <div style="font-family:'Space Grotesk';font-weight:700;font-size:17px;margin-bottom:9px">Liquidity that won't run</div>
+          <div style="font-size:13px;color:#7d838f;line-height:1.6">Member-owned order books, not mercenary LPs chasing the next emissions program. Depth that's actually there when you need it.</div>
+        </div>
+        <div style="background:#0E131F;border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:24px">
+          <div style="font-family:'Space Grotesk';font-weight:700;font-size:17px;margin-bottom:9px">Get liquidated less</div>
+          <div style="font-size:13px;color:#7d838f;line-height:1.6">Community-backed margin is structurally safer than isolated leverage. Same position, a fraction of the blow-up risk.</div>
+        </div>
+        <div style="background:#0E131F;border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:24px">
+          <div style="font-family:'Space Grotesk';font-weight:700;font-size:17px;margin-bottom:9px">Keep 100% of your profit</div>
+          <div style="font-size:13px;color:#7d838f;line-height:1.6">Withdraw your contribution paid plus every dollar you earn. Your upside is yours — the obligation engine handles the rest.</div>
+        </div>
+        <div style="background:#0E131F;border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:24px">
+          <div style="font-family:'Space Grotesk';font-weight:700;font-size:17px;margin-bottom:9px">A perp you already know</div>
+          <div style="font-size:13px;color:#7d838f;line-height:1.6">Full order book, global perps, the leverage controls you expect. The Buying Power Layer just sits quietly underneath.</div>
+        </div>
+        <div style="background:#0E131F;border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:24px">
+          <div style="font-family:'Space Grotesk';font-weight:700;font-size:17px;margin-bottom:9px">Aligned, not adversarial</div>
+          <div style="font-size:13px;color:#7d838f;line-height:1.6">Your pool wins when you win. No house on the other side of your trade, no incentive to hunt your stops.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- THESIS CLOSER -->
+    <div style="position:relative;border-top:1px solid rgba(255,255,255,0.06)">
+      <div style="max-width:900px;margin:0 auto;padding:64px 32px;text-align:center">
+        <div style="font-size:12px;font-weight:700;letter-spacing:1.4px;color:#F2C233;margin-bottom:18px">OUR THESIS</div>
+        <h2 style="font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(34px,5vw,54px);line-height:1.06;letter-spacing:-1px;margin-bottom:22px">Transforming the world's oldest financial system into programmable trading capital.</h2>
+        <p style="font-size:15.5px;color:#9aa1ad;line-height:1.65;max-width:680px;margin:0 auto 28px">ROSCAs gave billions a way to save together. OBJEX gives that capital a destination — a community-funded Perp DEX where savings become buying power, buying power becomes positions, and code guarantees every obligation.</p>
+        <button onclick="{{ launch }}" style="font-family:'Manrope';font-weight:700;font-size:15px;color:#0A0E18;background:#F2C233;border:none;padding:15px 30px;border-radius:12px;cursor:pointer;box-shadow:0 8px 30px rgba(242,194,51,0.3)">Explore the Protocol →</button>
+      </div>
+    </div>
+
     <div style="border-top:1px solid rgba(255,255,255,0.06);padding:24px 32px;text-align:center;font-size:12.5px;color:#565C68">OBJEX · Community Capital Markets · Interactive prototype · mock data · © 2026</div>
   </div>
   </sc-if>
@@ -172,15 +370,15 @@
   <sc-if value="{{ isApp }}" hint-placeholder-val="{{ false }}">
   <div style="display:flex;min-height:100vh">
     <div style="width:236px;flex-shrink:0;background:#0C1019;border-right:1px solid rgba(255,255,255,0.06);display:flex;flex-direction:column;position:sticky;top:0;height:100vh">
-      <div onClick="{{ goHome }}" style="padding:20px 20px 18px;display:flex;align-items:center;gap:11px;cursor:pointer;border-bottom:1px solid rgba(255,255,255,0.05)">
+      <div onclick="{{ goHome }}" style="padding:20px 20px 18px;display:flex;align-items:center;gap:11px;cursor:pointer;border-bottom:1px solid rgba(255,255,255,0.05)">
         <div style="width:30px;height:30px;border-radius:8px;background:#13192a;border:1px solid rgba(242,194,51,0.45);display:flex;align-items:center;justify-content:center;box-shadow:0 0 22px rgba(242,194,51,0.4)"><svg viewBox="0 0 32 32" style="width:20px;height:20px;display:block"><defs><clipPath id="ow"><circle cx="16" cy="16" r="10.5"></circle></clipPath></defs><circle cx="16" cy="16" r="10.8" fill="none" stroke="#F2C233" stroke-width="1" opacity="0.45"></circle><g clip-path="url(#ow)" fill="none" stroke="#F2C233" stroke-width="2.1" stroke-linecap="round"><path d="M3 11 q4.3 -3.4 8.5 0 t8.5 0 t8.5 0"></path><path d="M3 16 q4.3 -3.4 8.5 0 t8.5 0 t8.5 0"></path><path d="M3 21 q4.3 -3.4 8.5 0 t8.5 0 t8.5 0"></path></g></svg></div>
         <span style="font-family:'Cormorant Garamond',serif;font-weight:700;font-size:24px;letter-spacing:3px;color:#F2C233">OBJEX</span>
       </div>
       <div style="padding:12px 10px;flex:1;overflow-y:auto">
         <sc-for list="{{ nav }}" as="item" hint-placeholder-count="8">
-          <div onClick="{{ item.onClick }}" style="{{ item.style }}"><span style="display:flex;width:18px;height:18px;color:{{ item.iconColor }}">{{ item.icon }}</span><span>{{ item.label }}</span></div>
+          <div onclick="{{ item.onClick }}" style="{{ item.style }}"><span style="display:flex;width:18px;height:18px;color:{{ item.iconColor }}">{{ item.icon }}</span><span>{{ item.label }}</span></div>
         </sc-for>
-        <div onClick="{{ startDemo }}" style="margin-top:14px;display:flex;align-items:center;gap:9px;padding:11px 12px;border-radius:10px;cursor:pointer;background:rgba(242,194,51,0.08);border:1px solid rgba(242,194,51,0.2)"><span style="width:7px;height:7px;border-radius:50%;background:#F2C233;animation:objxPulse 1.6s infinite"></span><span style="font-size:13px;font-weight:600;color:#F2C233">Investor Demo</span></div>
+        <div onclick="{{ startDemo }}" style="margin-top:14px;display:flex;align-items:center;gap:9px;padding:11px 12px;border-radius:10px;cursor:pointer;background:rgba(242,194,51,0.08);border:1px solid rgba(242,194,51,0.2)"><span style="width:7px;height:7px;border-radius:50%;background:#F2C233;animation:objxPulse 1.6s infinite"></span><span style="font-size:13px;font-weight:600;color:#F2C233">Investor Demo</span></div>
       </div>
       <div style="padding:14px;border-top:1px solid rgba(255,255,255,0.05)">
         <div style="display:flex;align-items:center;gap:11px;padding:8px;border-radius:10px;background:rgba(255,255,255,0.03)">
@@ -205,7 +403,7 @@
         <div>
           <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px">
             <div style="font-size:13px;color:#6c727d">{{ poolCount }} live pools · $127.5M community capital · 1,427 active circles</div>
-                        <button onClick="{{ openCreate }}" style="font-family:'Manrope';font-weight:600;font-size:13px;color:#F2C233;background:rgba(242,194,51,0.1);border:1px solid rgba(242,194,51,0.22);padding:8px 16px;border-radius:9px;cursor:pointer">+ Create Pool</button>
+                        <button onclick="{{ openCreate }}" style="font-family:'Manrope';font-weight:600;font-size:13px;color:#F2C233;background:rgba(242,194,51,0.1);border:1px solid rgba(242,194,51,0.22);padding:8px 16px;border-radius:9px;cursor:pointer">+ Create Pool</button>
           </div>
           <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px">
             <sc-for list="{{ pools }}" as="p" hint-placeholder-count="6">
@@ -228,7 +426,7 @@
                   <div style="height:6px;border-radius:4px;background:rgba(255,255,255,0.06);overflow:hidden"><div style="height:100%;width:{{ p.filledPct }}%;background:linear-gradient(90deg,#F2C233,#F7D06A);border-radius:4px"></div></div>
                 </div>
                 <div style="display:flex;align-items:center;gap:7px;margin-bottom:14px"><span style="width:6px;height:6px;border-radius:50%;background:#F2C233;animation:objxPulse 2s infinite"></span><span style="font-size:11.5px;color:#7d838f">{{ p.recent }}</span></div>
-                <button onClick="{{ p.onJoin }}" style="width:100%;font-family:'Manrope';font-weight:600;font-size:13.5px;color:{{ p.btnColor }};background:{{ p.btnBg }};border:1px solid {{ p.btnBorder }};padding:10px;border-radius:9px;cursor:pointer">{{ p.btnLabel }}</button>
+                <button onclick="{{ p.onJoin }}" style="width:100%;font-family:'Manrope';font-weight:600;font-size:13.5px;color:{{ p.btnColor }};background:{{ p.btnBg }};border:1px solid {{ p.btnBorder }};padding:10px;border-radius:9px;cursor:pointer">{{ p.btnLabel }}</button>
               </div>
             </sc-for>
           </div>
@@ -259,7 +457,7 @@
                 <div style="font-family:'Space Grotesk';font-weight:600;font-size:15px;margin-bottom:16px">Capital Composition</div>
                 <div style="display:flex;align-items:center;gap:22px"><div style="width:120px;height:120px;flex-shrink:0">{{ allocDonut }}</div><div style="flex:1;display:flex;flex-direction:column;gap:11px"><sc-for list="{{ allocLegend }}" as="l" hint-placeholder-count="3"><div style="display:flex;align-items:center;gap:9px"><span style="width:9px;height:9px;border-radius:3px;background:{{ l.color }}"></span><span style="font-size:13px;color:#aab0bb;flex:1">{{ l.label }}</span><span style="font-family:'JetBrains Mono';font-size:13px;font-weight:600">{{ l.value }}</span></div></sc-for></div></div>
               </div>
-              <div style="background:linear-gradient(135deg,rgba(242,194,51,0.1),rgba(242,194,51,0.02));border:1px solid rgba(242,194,51,0.2);border-radius:16px;padding:22px"><div style="font-size:12px;color:#7d838f;margin-bottom:6px">AVAILABLE TO WITHDRAW NOW</div><div style="font-family:'JetBrains Mono';font-weight:700;font-size:30px;color:#F2C233;letter-spacing:-1px">$820,000</div><button style="width:100%;margin-top:14px;font-family:'Manrope';font-weight:700;font-size:14px;color:#0A0E18;background:#F2C233;border:none;padding:12px;border-radius:10px;cursor:pointer">Withdraw Profits</button></div>
+              <div style="background:linear-gradient(135deg,rgba(242,194,51,0.1),rgba(242,194,51,0.02));border:1px solid rgba(242,194,51,0.2);border-radius:16px;padding:22px"><div style="font-size:12px;color:#7d838f;margin-bottom:6px">AVAILABLE TO WITHDRAW NOW</div><div style="font-family:'JetBrains Mono';font-weight:700;font-size:30px;color:#F2C233;letter-spacing:-1px">{{ pfWithdrawv }}</div><div style="font-size:11.5px;color:#7d838f;margin-top:5px">Contribution paid + trading profit · not your position size</div><button style="width:100%;margin-top:14px;font-family:'Manrope';font-weight:700;font-size:14px;color:#0A0E18;background:#F2C233;border:none;padding:12px;border-radius:10px;cursor:pointer">Withdraw Profits</button></div>
             </div>
           </div>
           <div style="background:#0E131F;border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:24px">
@@ -275,7 +473,7 @@
           <div style="background:#0E131F;border:1px solid rgba(255,255,255,0.07);border-radius:14px;overflow:hidden">
             <div style="padding:14px 16px;border-bottom:1px solid rgba(255,255,255,0.06);font-family:'Space Grotesk';font-weight:600;font-size:14px">Markets · Live</div>
             <sc-for list="{{ markets }}" as="m" hint-placeholder-count="5">
-              <div onClick="{{ m.onClick }}" style="padding:13px 16px;border-bottom:1px solid rgba(255,255,255,0.04);display:flex;align-items:center;gap:12px;cursor:pointer;background:{{ m.activeBg }}">
+              <div onclick="{{ m.onClick }}" style="padding:13px 16px;border-bottom:1px solid rgba(255,255,255,0.04);display:flex;align-items:center;gap:12px;cursor:pointer;background:{{ m.activeBg }}">
                 <div style="width:30px;height:30px;border-radius:8px;background:{{ m.iconBg }};display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;color:{{ m.iconColor }}">{{ m.sym }}</div>
                 <div style="flex:1"><div style="font-size:13.5px;font-weight:600">{{ m.key }}/USDT</div></div>
                 <div style="text-align:right"><div style="font-family:'JetBrains Mono';font-size:13px;font-weight:600">{{ m.price }}</div><div style="font-family:'JetBrains Mono';font-size:11px;color:{{ m.chgColor }}">{{ m.chg }}</div></div>
@@ -298,7 +496,7 @@
                     <span style="font-family:'JetBrains Mono';font-size:12.5px;color:#9aa1ad">{{ pos.entry }}</span>
                     <span style="font-family:'JetBrains Mono';font-size:12.5px;color:#9aa1ad">{{ pos.mark }}</span>
                     <span style="font-family:'JetBrains Mono';font-size:12.5px;font-weight:600;text-align:right;color:{{ pos.pnlColor }}">{{ pos.pnl }}</span>
-                    <span style="text-align:right"><button onClick="{{ pos.onClose }}" style="font-size:11px;font-weight:600;color:#9aa1ad;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);padding:4px 8px;border-radius:6px;cursor:pointer">Close</button></span>
+                    <span style="text-align:right"><button onclick="{{ pos.onClose }}" style="font-size:11px;font-weight:600;color:#9aa1ad;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);padding:4px 8px;border-radius:6px;cursor:pointer">Close</button></span>
                   </div>
                 </sc-for>
                 <sc-if value="{{ hasPositions }}" hint-placeholder-val="{{ true }}"><div></div></sc-if>
@@ -307,17 +505,17 @@
           </div>
           <div style="display:flex;flex-direction:column;gap:16px">
             <div style="background:#0E131F;border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:18px">
-              <div style="display:flex;gap:8px;margin-bottom:16px"><button onClick="{{ sideLong }}" style="{{ sideLongStyle }}">Long</button><button onClick="{{ sideShort }}" style="{{ sideShortStyle }}">Short</button></div>
+              <div style="display:flex;gap:8px;margin-bottom:16px"><button onclick="{{ sideLong }}" style="{{ sideLongStyle }}">Long</button><button onclick="{{ sideShort }}" style="{{ sideShortStyle }}">Short</button></div>
               <div style="display:flex;justify-content:space-between;margin-bottom:9px"><span style="font-size:11.5px;color:#6c727d">Position Size</span><span style="font-family:'JetBrains Mono';font-size:13px;font-weight:700">{{ sizeFmt }}</span></div>
-              <input type="range" min="50000" max="1000000" step="10000" value="{{ sizeRaw }}" onChange="{{ setTradeSize }}" style="width:100%;accent-color:#F2C233;margin-bottom:18px">
+              <input type="range" min="50000" max="1000000" step="10000" value="{{ sizeRaw }}" onchange="{{ setTradeSize }}" style="width:100%;accent-color:#F2C233;margin-bottom:18px">
               <div style="display:flex;justify-content:space-between;margin-bottom:9px"><span style="font-size:11.5px;color:#6c727d">Leverage</span><span style="font-family:'JetBrains Mono';font-size:13px;font-weight:700;color:#F2B04A">{{ levFmt }}</span></div>
-              <input type="range" min="1" max="10" step="1" value="{{ levRaw }}" onChange="{{ setTradeLev }}" style="width:100%;accent-color:#F2B04A;margin-bottom:18px">
+              <input type="range" min="1" max="10" step="1" value="{{ levRaw }}" onchange="{{ setTradeLev }}" style="width:100%;accent-color:#F2B04A;margin-bottom:18px">
               <div style="background:rgba(255,255,255,0.03);border-radius:10px;padding:13px;margin-bottom:16px;display:flex;flex-direction:column;gap:9px">
                 <div style="display:flex;justify-content:space-between"><span style="font-size:12px;color:#7d838f">Entry Price</span><span style="font-family:'JetBrains Mono';font-size:12.5px;font-weight:600">{{ orderEntry }}</span></div>
                 <div style="display:flex;justify-content:space-between"><span style="font-size:12px;color:#7d838f">Margin Required</span><span style="font-family:'JetBrains Mono';font-size:12.5px;font-weight:600">{{ orderMargin }}</span></div>
                 <div style="display:flex;justify-content:space-between"><span style="font-size:12px;color:#7d838f">Liquidation Price</span><span style="font-family:'JetBrains Mono';font-size:12.5px;font-weight:600;color:#FF6B6B">{{ orderLiq }}</span></div>
               </div>
-              <button onClick="{{ openTrade }}" style="{{ orderBtnStyle }}">{{ orderBtnLabel }}</button>
+              <button onclick="{{ openTrade }}" style="{{ orderBtnStyle }}">{{ orderBtnLabel }}</button>
             </div>
             <div style="background:#0E131F;border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:18px">
               <div style="font-family:'Space Grotesk';font-weight:600;font-size:14px;margin-bottom:14px">Account</div>
@@ -338,7 +536,7 @@
             <div style="display:flex;align-items:flex-end;gap:10px;height:180px;margin:24px 0 18px">
               <sc-for list="{{ oblBars }}" as="b" hint-placeholder-count="10"><div style="flex:1;display:flex;flex-direction:column;align-items:center;height:100%;justify-content:flex-end;opacity:{{ b.op }}"><div style="font-family:'JetBrains Mono';font-size:10px;color:#7d838f;margin-bottom:6px">{{ b.label }}</div><div style="width:100%;border-radius:5px 5px 0 0;background:{{ b.bg }};height:{{ b.h }}%;transition:opacity .3s"></div><div style="font-size:10px;color:#565C68;margin-top:7px">{{ b.month }}</div></div></sc-for>
             </div>
-            <div style="display:flex;align-items:center;gap:16px"><span style="font-size:12px;color:#7d838f;white-space:nowrap">Cycle 1</span><input type="range" min="1" max="10" step="1" value="{{ oblMonth }}" onChange="{{ setMonth }}" style="flex:1;accent-color:#F2C233"><span style="font-size:12px;color:#7d838f;white-space:nowrap">Cycle 10</span><span style="font-family:'JetBrains Mono';font-size:14px;font-weight:700;color:#F2C233;min-width:70px;text-align:right">Cycle {{ oblMonth }}</span></div>
+            <div style="display:flex;align-items:center;gap:16px"><span style="font-size:12px;color:#7d838f;white-space:nowrap">Cycle 1</span><input type="range" min="1" max="10" step="1" value="{{ oblMonth }}" onchange="{{ setMonth }}" style="flex:1;accent-color:#F2C233"><span style="font-size:12px;color:#7d838f;white-space:nowrap">Cycle 10</span><span style="font-family:'JetBrains Mono';font-size:14px;font-weight:700;color:#F2C233;min-width:70px;text-align:right">Cycle {{ oblMonth }}</span></div>
           </div>
           <div style="background:linear-gradient(135deg,rgba(255,107,107,0.07),transparent 50%),#0E131F;border:1px solid rgba(255,107,107,0.16);border-radius:16px;padding:22px;display:flex;align-items:center;gap:16px"><div style="width:42px;height:42px;border-radius:11px;background:rgba(255,107,107,0.12);color:#FF6B6B;display:flex;align-items:center;justify-content:center"><span style="display:flex;width:22px;height:22px">{{ shieldIcon }}</span></div><div><div style="font-family:'Space Grotesk';font-weight:700;font-size:16px">The Programmable Moat</div><div style="font-size:12.5px;color:#7d838f">Future contributions are secured and amortized by code. Profits stay withdrawable; commitments stay protected — with zero defaults possible.</div></div></div>
         </div>
@@ -350,6 +548,51 @@
           <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:18px">
             <sc-for list="{{ portfolioStats }}" as="p" hint-placeholder-count="6"><div style="background:#0E131F;border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:20px"><div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px"><span style="font-size:12px;color:#6c727d">{{ p.label }}</span><span style="font-size:11.5px;font-weight:600;color:{{ p.deltaColor }}">{{ p.delta }}</span></div><div style="font-family:'JetBrains Mono';font-weight:700;font-size:23px;color:{{ p.color }};letter-spacing:-0.5px">{{ p.value }}</div></div></sc-for>
           </div>
+          <!-- EXPLAINER: buying power -> position size -->
+          <div style="background:#0E131F;border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:24px;margin-bottom:18px">
+            <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:6px;flex-wrap:wrap;gap:8px"><div style="font-family:'Space Grotesk';font-weight:600;font-size:16px">How your buying power works</div><div style="font-size:12px;color:#7d838f">Pool of {{ pfMembersN }} members · {{ pfMonthlyV }}/mo each · {{ pfMembersN }}-month cycle</div></div>
+            <div style="font-size:13px;color:#9aa1ad;line-height:1.5;margin-bottom:20px;max-width:780px">Your monthly contributions unlock community-funded buying power 1:1. Leverage multiplies that into a larger <span style="color:#F2B04A;font-weight:600">position size</span> — but it never changes what you can withdraw or what you can lose.</div>
+            <div style="display:flex;align-items:stretch;gap:12px;flex-wrap:wrap">
+              <div style="flex:1;min-width:148px;background:#0B0F1B;border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:16px"><div style="font-size:11.5px;color:#6c727d;margin-bottom:8px">Contribution Paid</div><div style="font-family:'JetBrains Mono';font-weight:700;font-size:21px;color:#E9ECF1;letter-spacing:-0.5px">{{ pfPaidv }}</div><div style="font-size:11px;color:#7d838f;margin-top:5px">{{ pfMonthLabel }}</div></div>
+              <div style="display:flex;align-items:center;color:#565C68;font-size:18px">→</div>
+              <div style="flex:1;min-width:148px;background:rgba(242,194,51,0.05);border:1px solid rgba(242,194,51,0.2);border-radius:12px;padding:16px"><div style="font-size:11.5px;color:#6c727d;margin-bottom:8px">Buying Power</div><div style="font-family:'JetBrains Mono';font-weight:700;font-size:21px;color:#F2C233;letter-spacing:-0.5px">{{ pfBPv }}</div><div style="font-size:11px;color:#7d838f;margin-top:5px">Community-funded · 1:1 pool</div></div>
+              <div style="display:flex;align-items:center;color:#565C68;font-size:18px">×</div>
+              <div style="flex:1;min-width:148px;background:#0B0F1B;border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:16px"><div style="font-size:11.5px;color:#6c727d;margin-bottom:8px">Leverage</div><div style="font-family:'JetBrains Mono';font-weight:700;font-size:21px;color:#F2B04A;letter-spacing:-0.5px">{{ pfLevFmt }}</div><div style="font-size:11px;color:#7d838f;margin-top:5px">Adjustable below</div></div>
+              <div style="display:flex;align-items:center;color:#565C68;font-size:18px">=</div>
+              <div style="flex:1;min-width:148px;background:rgba(242,176,74,0.05);border:1px solid rgba(242,176,74,0.22);border-radius:12px;padding:16px"><div style="font-size:11.5px;color:#6c727d;margin-bottom:8px">Position Size</div><div style="font-family:'JetBrains Mono';font-weight:700;font-size:21px;color:#F2B04A;letter-spacing:-0.5px">{{ pfPositionv }}</div><div style="font-size:11px;color:#7d838f;margin-top:5px">Buying power × leverage</div></div>
+            </div>
+            <div style="margin-top:20px"><div style="display:flex;justify-content:space-between;margin-bottom:10px"><span style="font-size:12.5px;color:#9aa1ad;font-weight:600">Trading Leverage</span><span style="font-family:'JetBrains Mono';font-size:13px;color:#F2B04A;font-weight:700">{{ pfLevFmt }} · {{ pfPositionv }} position</span></div><input type="range" min="1" max="10" step="1" value="{{ pfLevRaw }}" onchange="{{ setPfLev }}" style="width:100%;accent-color:#F2B04A"></div>
+            <div style="margin-top:16px;background:rgba(91,141,239,0.06);border:1px solid rgba(91,141,239,0.18);border-radius:10px;padding:13px 15px;display:flex;gap:10px;align-items:flex-start"><span style="color:#5B8DEF;font-size:13px;line-height:1.3;font-weight:700">i</span><span style="font-size:12.5px;color:#aab0bb;line-height:1.5">Leverage scales your <span style="color:#F2B04A;font-weight:600">position size only</span>. Your withdrawable balance and maximum loss are always calculated from contribution paid + profit — never from the position size.</span></div>
+          </div>
+
+          <!-- WITHDRAWABLE + RISK -->
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px">
+            <div style="background:#0E131F;border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:24px">
+              <div style="font-family:'Space Grotesk';font-weight:600;font-size:16px;margin-bottom:4px">Withdrawable Balance</div>
+              <div style="font-size:12.5px;color:#7d838f;margin-bottom:20px">What you've paid in, plus what you've earned</div>
+              <div style="display:flex;align-items:stretch;gap:10px;margin-bottom:18px">
+                <div style="flex:1;text-align:center;background:#0B0F1B;border:1px solid rgba(255,255,255,0.07);border-radius:11px;padding:15px 8px"><div style="font-size:11px;color:#6c727d;margin-bottom:7px">Contribution Paid</div><div style="font-family:'JetBrains Mono';font-weight:700;font-size:18px;color:#E9ECF1">{{ pfPaidv }}</div></div>
+                <div style="display:flex;align-items:center;color:#565C68;font-size:16px">+</div>
+                <div style="flex:1;text-align:center;background:#0B0F1B;border:1px solid rgba(255,255,255,0.07);border-radius:11px;padding:15px 8px"><div style="font-size:11px;color:#6c727d;margin-bottom:7px">Trading Profit</div><div style="font-family:'JetBrains Mono';font-weight:700;font-size:18px;color:{{ pfProfitColor }}">{{ pfProfitv }}</div></div>
+                <div style="display:flex;align-items:center;color:#565C68;font-size:16px">=</div>
+                <div style="flex:1;text-align:center;background:rgba(242,194,51,0.07);border:1px solid rgba(242,194,51,0.28);border-radius:11px;padding:15px 8px"><div style="font-size:11px;color:#6c727d;margin-bottom:7px">Withdrawable</div><div style="font-family:'JetBrains Mono';font-weight:700;font-size:18px;color:#F2C233">{{ pfWithdrawv }}</div></div>
+              </div>
+              <div style="display:flex;justify-content:space-between;margin-bottom:10px"><span style="font-size:12.5px;color:#9aa1ad;font-weight:600">Months Paid Into Pool</span><span style="font-family:'JetBrains Mono';font-size:13px;color:#F2C233;font-weight:700">{{ pfMonthLabel }}</span></div>
+              <input type="range" min="1" max="10" step="1" value="{{ pfMonthRaw }}" onchange="{{ setPfMonth }}" style="width:100%;accent-color:#F2C233">
+              <div style="font-size:12px;color:#7d838f;line-height:1.5;margin-top:12px">Withdraw early and you take out only what you've contributed so far ({{ pfPaidv }}) plus profit. The rest of the cycle stays secured as your remaining obligation: <span style="color:#FF6B6B;font-weight:600">{{ pfRemainv }}</span>.</div>
+            </div>
+            <div style="background:#0E131F;border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:24px">
+              <div style="font-family:'Space Grotesk';font-weight:600;font-size:16px;margin-bottom:4px">Capital at Risk</div>
+              <div style="font-size:12.5px;color:#7d838f;margin-bottom:20px">You can only trade against what you actually hold</div>
+              <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:7px"><span style="font-size:12px;color:#9aa1ad">Position Size</span><span style="font-family:'JetBrains Mono';font-size:14px;color:#F2B04A;font-weight:700">{{ pfPositionv }}</span></div>
+              <div style="height:10px;border-radius:6px;background:rgba(242,176,74,0.12);margin-bottom:16px;overflow:hidden"><div style="height:100%;width:100%;background:repeating-linear-gradient(90deg,rgba(242,176,74,0.3) 0 6px,transparent 6px 12px)"></div></div>
+              <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:7px"><span style="font-size:12px;color:#9aa1ad">Your Capital at Risk</span><span style="font-family:'JetBrains Mono';font-size:14px;color:#F2C233;font-weight:700">{{ pfRiskv }}</span></div>
+              <div style="height:10px;border-radius:6px;background:rgba(255,255,255,0.05);margin-bottom:18px"><div style="height:100%;border-radius:6px;width:{{ pfRiskPct }}%;background:linear-gradient(90deg,#F2C233,#F2B04A)"></div></div>
+              <div style="background:rgba(242,194,51,0.06);border:1px solid rgba(242,194,51,0.2);border-radius:11px;padding:14px;text-align:center;margin-bottom:14px"><div style="font-size:11.5px;color:#6c727d;margin-bottom:6px">Maximum Loss = Contribution Paid + Profit</div><div style="font-family:'JetBrains Mono';font-weight:700;font-size:22px;color:#F2C233">{{ pfRiskv }}</div></div>
+              <div style="font-size:12px;color:#7d838f;line-height:1.5">Even though your position is {{ pfPositionv }}, the protocol can only ever draw against your paid-in capital plus profit. Community principal stays protected by the obligation engine.</div>
+            </div>
+          </div>
+
           <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:18px;margin-bottom:18px">
             <div style="background:#0E131F;border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:24px"><div style="font-family:'Space Grotesk';font-weight:600;font-size:16px;margin-bottom:18px">Portfolio Value</div><div style="height:230px">{{ portfolioChart }}</div></div>
             <div style="background:#0E131F;border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:24px"><div style="font-family:'Space Grotesk';font-weight:600;font-size:16px;margin-bottom:18px">Exposure</div><div style="display:flex;align-items:center;gap:20px"><div style="width:120px;height:120px;flex-shrink:0">{{ exposureDonut }}</div><div style="flex:1;display:flex;flex-direction:column;gap:11px"><sc-for list="{{ exposureLegend }}" as="l" hint-placeholder-count="4"><div style="display:flex;align-items:center;gap:9px"><span style="width:9px;height:9px;border-radius:3px;background:{{ l.color }}"></span><span style="font-size:12.5px;color:#aab0bb;flex:1">{{ l.label }}</span><span style="font-family:'JetBrains Mono';font-size:12.5px;font-weight:600">{{ l.value }}</span></div></sc-for></div></div></div>
@@ -399,12 +642,12 @@
           </div>
           <div style="display:grid;grid-template-columns:1fr 320px;gap:18px">
             <div style="background:#0E131F;border:1px solid rgba(255,255,255,0.07);border-radius:16px;overflow:hidden">
-              <div style="padding:18px 22px;border-bottom:1px solid rgba(255,255,255,0.06);display:flex;justify-content:space-between;align-items:center"><div style="font-family:'Space Grotesk';font-weight:600;font-size:16px">Allocations & Obligations</div><span style="font-size:12px;color:#F2C233;font-weight:600">● Nominal</span></div>
+              <div style="padding:18px 22px;border-bottom:1px solid rgba(255,255,255,0.06);display:flex;justify-content:space-between;align-items:center"><div style="font-family:'Space Grotesk';font-weight:600;font-size:16px">Allocations &amp; Obligations</div><span style="font-size:12px;color:#F2C233;font-weight:600">● Nominal</span></div>
               <div style="display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr 1fr;padding:12px 22px;font-size:11px;color:#565C68;font-weight:600"><span>POOL</span><span>EQUITY</span><span>OBLIGATION</span><span>WITHDRAWABLE</span><span style="text-align:right">RISK</span></div>
               <sc-for list="{{ adminRows }}" as="r" hint-placeholder-count="6"><div style="display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr 1fr;padding:13px 22px;border-top:1px solid rgba(255,255,255,0.04);align-items:center"><span style="font-size:13px;font-weight:500">{{ r.pool }}</span><span style="font-family:'JetBrains Mono';font-size:12.5px;color:#aab0bb">{{ r.equity }}</span><span style="font-family:'JetBrains Mono';font-size:12.5px;color:#FF6B6B">{{ r.obligation }}</span><span style="font-family:'JetBrains Mono';font-size:12.5px;color:#F2C233">{{ r.withdrawable }}</span><span style="text-align:right"><span style="font-size:10.5px;font-weight:700;padding:3px 9px;border-radius:6px;background:{{ r.riskBg }};color:{{ r.riskColor }}">{{ r.risk }}</span></span></div></sc-for>
             </div>
             <div style="display:flex;flex-direction:column;gap:18px">
-              <div style="background:#0E131F;border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:22px"><div style="font-family:'Space Grotesk';font-weight:600;font-size:15px;margin-bottom:16px">Risk & Liquidations</div><sc-for list="{{ riskMetrics }}" as="m" hint-placeholder-count="4"><div style="display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.04)"><span style="font-size:12.5px;color:#7d838f">{{ m.label }}</span><span style="font-family:'JetBrains Mono';font-size:13px;font-weight:600;color:{{ m.color }}">{{ m.value }}</span></div></sc-for></div>
+              <div style="background:#0E131F;border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:22px"><div style="font-family:'Space Grotesk';font-weight:600;font-size:15px;margin-bottom:16px">Risk &amp; Liquidations</div><sc-for list="{{ riskMetrics }}" as="m" hint-placeholder-count="4"><div style="display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.04)"><span style="font-size:12.5px;color:#7d838f">{{ m.label }}</span><span style="font-family:'JetBrains Mono';font-size:13px;font-weight:600;color:{{ m.color }}">{{ m.value }}</span></div></sc-for></div>
               <div style="background:#0E131F;border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:22px"><div style="font-family:'Space Grotesk';font-weight:600;font-size:15px;margin-bottom:16px">System Health</div><sc-for list="{{ systemHealth }}" as="h" hint-placeholder-count="4"><div style="display:flex;align-items:center;gap:10px;padding:8px 0"><span style="width:8px;height:8px;border-radius:50%;background:{{ h.dot }}"></span><span style="font-size:12.5px;color:#aab0bb;flex:1">{{ h.label }}</span><span style="font-size:12px;color:#7d838f">{{ h.value }}</span></div></sc-for></div>
             </div>
           </div>
@@ -423,7 +666,7 @@
     <div style="width:480px;max-width:100%;background:linear-gradient(180deg,#121A2C,#0C1019);border:1px solid rgba(255,255,255,0.1);border-radius:20px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,0.6)">
       <div style="height:3px;background:rgba(255,255,255,0.06)"><div style="height:100%;width:{{ joinProgress }}%;background:linear-gradient(90deg,#F2C233,#F7D06A);transition:width .4s"></div></div>
       <div style="padding:28px">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:22px"><span style="font-size:11px;font-weight:700;letter-spacing:1.2px;color:#F2C233">{{ joinStepData.tag }}</span><span onClick="{{ closeJoin }}" style="font-size:18px;color:#6c727d;cursor:pointer">✕</span></div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:22px"><span style="font-size:11px;font-weight:700;letter-spacing:1.2px;color:#F2C233">{{ joinStepData.tag }}</span><span onclick="{{ closeJoin }}" style="font-size:18px;color:#6c727d;cursor:pointer">✕</span></div>
         <div style="font-family:'Space Grotesk';font-weight:700;font-size:24px;letter-spacing:-0.5px;margin-bottom:20px">{{ joinStepData.title }}</div>
 
         <sc-if value="{{ joinIsLast }}" hint-placeholder-val="{{ false }}">
@@ -440,9 +683,9 @@
         </sc-if>
 
         <div style="display:flex;gap:10px">
-          <sc-if value="{{ joinNotLast }}" hint-placeholder-val="{{ true }}"><button onClick="{{ joinBack }}" style="flex:0 0 auto;font-family:'Manrope';font-weight:600;font-size:14px;color:#9aa1ad;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);padding:13px 20px;border-radius:11px;cursor:pointer">Back</button></sc-if>
-          <sc-if value="{{ joinNotLast }}" hint-placeholder-val="{{ true }}"><button onClick="{{ joinNext }}" style="flex:1;font-family:'Manrope';font-weight:700;font-size:14px;color:#0A0E18;background:#F2C233;border:none;padding:13px;border-radius:11px;cursor:pointer">Continue</button></sc-if>
-          <sc-if value="{{ joinIsLast }}" hint-placeholder-val="{{ false }}"><button onClick="{{ finishJoin }}" style="flex:1;font-family:'Manrope';font-weight:700;font-size:14px;color:#0A0E18;background:#F2C233;border:none;padding:13px;border-radius:11px;cursor:pointer">Enter Pool Dashboard →</button></sc-if>
+          <sc-if value="{{ joinNotLast }}" hint-placeholder-val="{{ true }}"><button onclick="{{ joinBack }}" style="flex:0 0 auto;font-family:'Manrope';font-weight:600;font-size:14px;color:#9aa1ad;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);padding:13px 20px;border-radius:11px;cursor:pointer">Back</button></sc-if>
+          <sc-if value="{{ joinNotLast }}" hint-placeholder-val="{{ true }}"><button onclick="{{ joinNext }}" style="flex:1;font-family:'Manrope';font-weight:700;font-size:14px;color:#0A0E18;background:#F2C233;border:none;padding:13px;border-radius:11px;cursor:pointer">Continue</button></sc-if>
+          <sc-if value="{{ joinIsLast }}" hint-placeholder-val="{{ false }}"><button onclick="{{ finishJoin }}" style="flex:1;font-family:'Manrope';font-weight:700;font-size:14px;color:#0A0E18;background:#F2C233;border:none;padding:13px;border-radius:11px;cursor:pointer">Enter Pool Dashboard →</button></sc-if>
         </div>
       </div>
     </div>
@@ -455,24 +698,24 @@
     <div style="width:430px;max-width:100%;background:linear-gradient(180deg,#121A2C,#0C1019);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:28px;box-shadow:0 30px 80px rgba(0,0,0,0.6)">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
         <div style="display:flex;align-items:center;gap:10px"><div style="width:28px;height:28px;border-radius:8px;background:#13192a;border:1px solid rgba(242,194,51,0.45);display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 32 32" style="width:18px;height:18px;display:block"><defs><clipPath id="ow"><circle cx="16" cy="16" r="10.5"></circle></clipPath></defs><circle cx="16" cy="16" r="10.8" fill="none" stroke="#F2C233" stroke-width="1" opacity="0.45"></circle><g clip-path="url(#ow)" fill="none" stroke="#F2C233" stroke-width="2.1" stroke-linecap="round"><path d="M3 11 q4.3 -3.4 8.5 0 t8.5 0 t8.5 0"></path><path d="M3 16 q4.3 -3.4 8.5 0 t8.5 0 t8.5 0"></path><path d="M3 21 q4.3 -3.4 8.5 0 t8.5 0 t8.5 0"></path></g></svg></div><span style="font-family:'Cormorant Garamond',serif;font-weight:700;font-size:21px;letter-spacing:2px;color:#F2C233">Join OBJEX</span></div>
-        <span onClick="{{ closeAuth }}" style="font-size:18px;color:#6c727d;cursor:pointer">✕</span>
+        <span onclick="{{ closeAuth }}" style="font-size:18px;color:#6c727d;cursor:pointer">✕</span>
       </div>
       <div style="display:flex;gap:4px;background:rgba(255,255,255,0.03);border-radius:10px;padding:4px;margin-bottom:22px">
-        <sc-for list="{{ authTabs }}" as="tab" hint-placeholder-count="3"><div onClick="{{ tab.onClick }}" style="{{ tab.style }}">{{ tab.label }}</div></sc-for>
+        <sc-for list="{{ authTabs }}" as="tab" hint-placeholder-count="3"><div onclick="{{ tab.onClick }}" style="{{ tab.style }}">{{ tab.label }}</div></sc-for>
       </div>
       <sc-if value="{{ authIsWallet }}" hint-placeholder-val="{{ true }}">
         <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:20px">
-          <sc-for list="{{ wallets }}" as="w" hint-placeholder-count="4"><div onClick="{{ doConnect }}" style="display:flex;align-items:center;gap:13px;padding:14px;border-radius:12px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);cursor:pointer"><div style="width:34px;height:34px;border-radius:9px;background:{{ w.c }};opacity:0.9"></div><span style="font-size:14px;font-weight:600;flex:1">{{ w.n }}</span><span style="color:#565C68">→</span></div></sc-for>
+          <sc-for list="{{ wallets }}" as="w" hint-placeholder-count="4"><div onclick="{{ doConnect }}" style="display:flex;align-items:center;gap:13px;padding:14px;border-radius:12px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);cursor:pointer"><div style="width:34px;height:34px;border-radius:9px;background:{{ w.c }};opacity:0.9"></div><span style="font-size:14px;font-weight:600;flex:1">{{ w.n }}</span><span style="color:#565C68">→</span></div></sc-for>
         </div>
         <div style="font-size:11.5px;color:#565C68;text-align:center">By connecting you agree to the protocol terms. Mock connection — no real wallet required.</div>
       </sc-if>
       <sc-if value="{{ authIsSignup }}" hint-placeholder-val="{{ false }}">
         <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:18px"><input type="text" placeholder="Full name"><input type="email" placeholder="Email address"><input type="password" placeholder="Create password"><div style="display:flex;align-items:center;gap:9px;font-size:12px;color:#7d838f"><span style="width:16px;height:16px;border-radius:5px;border:1px solid rgba(255,255,255,0.2);display:inline-block"></span>Begin identity verification (KYC) after sign up</div></div>
-        <button onClick="{{ doConnect }}" style="width:100%;font-family:'Manrope';font-weight:700;font-size:14px;color:#0A0E18;background:#F2C233;border:none;padding:13px;border-radius:11px;cursor:pointer">Create Account</button>
+        <button onclick="{{ doConnect }}" style="width:100%;font-family:'Manrope';font-weight:700;font-size:14px;color:#0A0E18;background:#F2C233;border:none;padding:13px;border-radius:11px;cursor:pointer">Create Account</button>
       </sc-if>
       <sc-if value="{{ authIsLogin }}" hint-placeholder-val="{{ false }}">
         <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:18px"><input type="email" placeholder="Email address"><input type="password" placeholder="Password"></div>
-        <button onClick="{{ doConnect }}" style="width:100%;font-family:'Manrope';font-weight:700;font-size:14px;color:#0A0E18;background:#F2C233;border:none;padding:13px;border-radius:11px;cursor:pointer">Log In</button>
+        <button onclick="{{ doConnect }}" style="width:100%;font-family:'Manrope';font-weight:700;font-size:14px;color:#0A0E18;background:#F2C233;border:none;padding:13px;border-radius:11px;cursor:pointer">Log In</button>
       </sc-if>
     </div>
   </div>
@@ -486,11 +729,11 @@
       <!-- step 0: connect wallet -->
       <sc-if value="{{ createStepConnect }}" hint-placeholder-val="{{ true }}">
       <div style="padding:28px">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px"><span style="font-size:11px;font-weight:700;letter-spacing:1.2px;color:#F2C233">CREATE POOL · CONNECT WALLET</span><span onClick="{{ closeCreate }}" style="font-size:18px;color:#6c727d;cursor:pointer">✕</span></div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px"><span style="font-size:11px;font-weight:700;letter-spacing:1.2px;color:#F2C233">CREATE POOL · CONNECT WALLET</span><span onclick="{{ closeCreate }}" style="font-size:18px;color:#6c727d;cursor:pointer">✕</span></div>
         <div style="font-family:'Space Grotesk';font-weight:700;font-size:23px;letter-spacing:-0.5px;margin-bottom:6px">Connect your wallet</div>
         <div style="font-size:13px;color:#7d838f;margin-bottom:22px">Connect a wallet to deploy your community pool on the protocol.</div>
         <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:18px">
-          <sc-for list="{{ wallets }}" as="w" hint-placeholder-count="4"><div onClick="{{ createConnect }}" style="display:flex;align-items:center;gap:13px;padding:14px;border-radius:12px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);cursor:pointer"><div style="width:34px;height:34px;border-radius:9px;background:{{ w.c }};opacity:0.9"></div><span style="font-size:14px;font-weight:600;flex:1">{{ w.n }}</span><span style="color:#565C68">→</span></div></sc-for>
+          <sc-for list="{{ wallets }}" as="w" hint-placeholder-count="4"><div onclick="{{ createConnect }}" style="display:flex;align-items:center;gap:13px;padding:14px;border-radius:12px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);cursor:pointer"><div style="width:34px;height:34px;border-radius:9px;background:{{ w.c }};opacity:0.9"></div><span style="font-size:14px;font-weight:600;flex:1">{{ w.n }}</span><span style="color:#565C68">→</span></div></sc-for>
         </div>
         <div style="font-size:11.5px;color:#565C68;text-align:center">Mock connection — no real wallet required.</div>
       </div>
@@ -499,15 +742,15 @@
       <!-- step 1: pool creation form -->
       <sc-if value="{{ createStepForm }}" hint-placeholder-val="{{ false }}">
       <div style="padding:28px">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px"><span style="font-size:11px;font-weight:700;letter-spacing:1.2px;color:#F2C233">CREATE POOL · DETAILS</span><span onClick="{{ closeCreate }}" style="font-size:18px;color:#6c727d;cursor:pointer">✕</span></div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px"><span style="font-size:11px;font-weight:700;letter-spacing:1.2px;color:#F2C233">CREATE POOL · DETAILS</span><span onclick="{{ closeCreate }}" style="font-size:18px;color:#6c727d;cursor:pointer">✕</span></div>
         <div style="display:flex;align-items:center;gap:9px;padding:10px 13px;border-radius:10px;background:rgba(242,194,51,0.08);border:1px solid rgba(242,194,51,0.2);margin-bottom:22px"><span style="width:18px;height:18px;border-radius:50%;background:#F2C233;color:#0A0E18;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800">✓</span><span style="font-size:12.5px;font-weight:600;color:#F2C233">Wallet connected successfully</span></div>
         <div style="font-family:'Space Grotesk';font-weight:700;font-size:22px;letter-spacing:-0.5px;margin-bottom:20px">Configure your pool</div>
 
         <div style="display:flex;flex-direction:column;gap:16px;margin-bottom:22px">
-          <div><div style="font-size:12px;color:#9aa1ad;font-weight:600;margin-bottom:7px">Pool Name</div><input type="text" value="{{ cpName }}" onInput="{{ onCpName }}" placeholder="e.g. Horizon Circle"></div>
+          <div><div style="font-size:12px;color:#9aa1ad;font-weight:600;margin-bottom:7px">Pool Name</div><input type="text" value="{{ cpName }}" oninput="{{ onCpName }}" placeholder="e.g. Horizon Circle"></div>
           <div style="display:flex;gap:14px">
-            <div style="flex:1"><div style="font-size:12px;color:#9aa1ad;font-weight:600;margin-bottom:7px">Monthly Contribution</div><input type="text" value="{{ cpContribution }}" onInput="{{ onCpContribution }}" placeholder="20000"></div>
-            <div style="flex:1"><div style="font-size:12px;color:#9aa1ad;font-weight:600;margin-bottom:7px">Participants</div><input type="text" value="{{ cpParticipants }}" onInput="{{ onCpParticipants }}" placeholder="10"></div>
+            <div style="flex:1"><div style="font-size:12px;color:#9aa1ad;font-weight:600;margin-bottom:7px">Monthly Contribution</div><input type="text" value="{{ cpContribution }}" oninput="{{ onCpContribution }}" placeholder="20000"></div>
+            <div style="flex:1"><div style="font-size:12px;color:#9aa1ad;font-weight:600;margin-bottom:7px">Participants</div><input type="text" value="{{ cpParticipants }}" oninput="{{ onCpParticipants }}" placeholder="10"></div>
           </div>
           <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;padding:16px;border-radius:12px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07)">
             <div><div style="font-size:11px;color:#6c727d;margin-bottom:5px">Pool Size</div><div style="font-family:'JetBrains Mono';font-weight:700;font-size:16px">{{ cpPoolSize }}</div></div>
@@ -515,18 +758,18 @@
             <div><div style="font-size:11px;color:#6c727d;margin-bottom:5px">Duration</div><div style="font-family:'JetBrains Mono';font-weight:700;font-size:16px">{{ cpDuration }}</div></div>
           </div>
         </div>
-        <button onClick="{{ submitCreate }}" style="width:100%;font-family:'Manrope';font-weight:700;font-size:14px;color:#0A0E18;background:#F2C233;border:none;padding:13px;border-radius:11px;cursor:pointer">Launch Pool</button>
+        <button onclick="{{ submitCreate }}" style="width:100%;font-family:'Manrope';font-weight:700;font-size:14px;color:#0A0E18;background:#F2C233;border:none;padding:13px;border-radius:11px;cursor:pointer">Launch Pool</button>
       </div>
       </sc-if>
 
       <!-- step 2: success -->
       <sc-if value="{{ createStepSuccess }}" hint-placeholder-val="{{ false }}">
       <div style="padding:28px;text-align:center">
-        <div style="display:flex;justify-content:flex-end;margin-bottom:4px"><span onClick="{{ closeCreate }}" style="font-size:18px;color:#6c727d;cursor:pointer">✕</span></div>
+        <div style="display:flex;justify-content:flex-end;margin-bottom:4px"><span onclick="{{ closeCreate }}" style="font-size:18px;color:#6c727d;cursor:pointer">✕</span></div>
         <div style="position:relative;width:88px;height:88px;margin:8px auto 22px"><div style="position:absolute;inset:0;border-radius:50%;background:rgba(242,194,51,0.15);animation:objxRing 1.6s ease-out infinite"></div><div style="position:absolute;inset:0;border-radius:50%;background:linear-gradient(135deg,#F2C233,#B9830F);display:flex;align-items:center;justify-content:center;animation:objxPop .5s ease both"><span style="font-size:40px;color:#0A0E18">✓</span></div></div>
         <div style="font-family:'Space Grotesk';font-weight:700;font-size:22px;letter-spacing:-0.5px;margin-bottom:8px">Pool created</div>
         <div style="font-size:14px;color:#9aa1ad;line-height:1.5;margin-bottom:6px"><span style="color:#F2C233;font-weight:700">{{ cpNameDisplay }}</span> is live with {{ cpPoolSize }} of community buying power.</div>
-        <button onClick="{{ finishCreate }}" style="width:100%;margin-top:18px;font-family:'Manrope';font-weight:700;font-size:14px;color:#0A0E18;background:#F2C233;border:none;padding:13px;border-radius:11px;cursor:pointer">View in Marketplace →</button>
+        <button onclick="{{ finishCreate }}" style="width:100%;margin-top:18px;font-family:'Manrope';font-weight:700;font-size:14px;color:#0A0E18;background:#F2C233;border:none;padding:13px;border-radius:11px;cursor:pointer">View in Marketplace →</button>
       </div>
       </sc-if>
 
@@ -540,15 +783,15 @@
     <div style="background:linear-gradient(180deg,#141C2F,#0E131F);border:1px solid rgba(242,194,51,0.25);border-radius:18px;padding:22px 24px;box-shadow:0 24px 60px rgba(0,0,0,0.6),0 0 40px rgba(242,194,51,0.08)">
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
         <div style="display:flex;align-items:center;gap:10px"><div style="width:30px;height:30px;border-radius:9px;background:rgba(242,194,51,0.12);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono';font-size:12px;font-weight:700;color:#F2C233">{{ demoData.n }}</div><span style="font-size:11px;font-weight:700;letter-spacing:1px;color:#F2C233">EXPERIENCE OBJEX · {{ demoStepNum }} / {{ demoTotal }}</span></div>
-        <span onClick="{{ endDemo }}" style="font-size:12.5px;color:#7d838f;cursor:pointer">Exit demo ✕</span>
+        <span onclick="{{ endDemo }}" style="font-size:12.5px;color:#7d838f;cursor:pointer">Exit demo ✕</span>
       </div>
       <div style="font-family:'Space Grotesk';font-weight:700;font-size:21px;letter-spacing:-0.5px;margin-bottom:8px">{{ demoData.title }}</div>
       <div style="font-size:13.5px;line-height:1.55;color:#9aa1ad;margin-bottom:18px">{{ demoData.body }}</div>
       <div style="height:4px;border-radius:3px;background:rgba(255,255,255,0.06);margin-bottom:16px;overflow:hidden"><div style="height:100%;width:{{ demoProgress }}%;background:linear-gradient(90deg,#F2C233,#F7D06A);transition:width .4s"></div></div>
       <div style="display:flex;gap:10px">
-        <button onClick="{{ demoBack }}" style="font-family:'Manrope';font-weight:600;font-size:13.5px;color:#9aa1ad;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);padding:11px 18px;border-radius:10px;cursor:pointer">Back</button>
-        <sc-if value="{{ demoNotLast }}" hint-placeholder-val="{{ true }}"><button onClick="{{ demoNext }}" style="flex:1;font-family:'Manrope';font-weight:700;font-size:13.5px;color:#0A0E18;background:#F2C233;border:none;padding:11px;border-radius:10px;cursor:pointer">Next →</button></sc-if>
-        <sc-if value="{{ demoIsLast }}" hint-placeholder-val="{{ false }}"><button onClick="{{ endDemo }}" style="flex:1;font-family:'Manrope';font-weight:700;font-size:13.5px;color:#0A0E18;background:#F2C233;border:none;padding:11px;border-radius:10px;cursor:pointer">Finish ✓</button></sc-if>
+        <button onclick="{{ demoBack }}" style="font-family:'Manrope';font-weight:600;font-size:13.5px;color:#9aa1ad;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);padding:11px 18px;border-radius:10px;cursor:pointer">Back</button>
+        <sc-if value="{{ demoNotLast }}" hint-placeholder-val="{{ true }}"><button onclick="{{ demoNext }}" style="flex:1;font-family:'Manrope';font-weight:700;font-size:13.5px;color:#0A0E18;background:#F2C233;border:none;padding:11px;border-radius:10px;cursor:pointer">Next →</button></sc-if>
+        <sc-if value="{{ demoIsLast }}" hint-placeholder-val="{{ false }}"><button onclick="{{ endDemo }}" style="flex:1;font-family:'Manrope';font-weight:700;font-size:13.5px;color:#0A0E18;background:#F2C233;border:none;padding:11px;border-radius:10px;cursor:pointer">Finish ✓</button></sc-if>
       </div>
     </div>
   </div>
@@ -556,14 +799,14 @@
 
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:900}}">
+<script type="text/x-dc" data-dc-script="" data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:900}}">
 class Component extends DCLogic {
   state = {
     view:'home', screen:'marketplace', seed:7,
     calc:{ contribution:20000, participants:10, leverage:5, allocPos:1, type:'standard' },
     market:'BTC', side:'long', size:250000, lev:5,
     positions:[ {id:1,market:'BTC',side:'long',size:620000,entry:66540,lev:5}, {id:2,market:'ETH',side:'long',size:280000,entry:3540,lev:4} ],
-    realized:0, oblMonth:3,
+    realized:0, oblMonth:3, pfMonth:3, pfLev:5,
     joinOpen:false, joinStep:0, joinPool:null,
     authOpen:false, authTab:'wallet', connected:false,
     createOpen:false, createStep:0, cpName:'', cpContribution:20000, cpParticipants:10,
@@ -630,6 +873,8 @@ class Component extends DCLogic {
   openTrade=()=>{ this.setState(s=>({positions:s.positions.concat([{id:Date.now(),market:s.market,side:s.side,size:s.size,entry:this.prices[s.market],lev:s.lev}])})); };
   closeTrade=(id)=>{ this.setState(s=>{ const p=s.positions.find(x=>x.id===id); let r=s.realized; if(p){ const mk=this.prices[p.market]; r+=(mk-p.entry)/p.entry*p.size*(p.side==='long'?1:-1); } return {positions:s.positions.filter(x=>x.id!==id),realized:r}; }); };
   setMonth=(ev)=>this.setState({oblMonth:+ev.target.value});
+  setPfMonth=(ev)=>this.setState({pfMonth:+ev.target.value});
+  setPfLev=(ev)=>this.setState({pfLev:+ev.target.value});
   // join flow
   openJoin=(pool)=>this.setState({joinOpen:true,joinStep:0,joinPool:pool});
   joinNext=()=>this.setState(s=>({joinStep:Math.min(s.joinStep+1,5)}));
@@ -708,7 +953,9 @@ class Component extends DCLogic {
     const totalPnl=s.positions.reduce((a,p)=>{ const mk=this.prices?this.prices[p.market]:p.entry; return a+(mk-p.entry)/p.entry*p.size*(p.side==='long'?1:-1); },0);
     const liqP=this.liq(curPx,s.side,s.lev);
     // obligation slider
-    const m=s.oblMonth; const oblRemaining=20000*(10-m); const oblEquity=1000000*Math.pow(1.038,m-1); const oblWithdraw=oblEquity-oblRemaining; const oblFuture=20000*(10-m);
+    // Obligation engine — same economics as portfolio: equity = buying power + profit; withdrawable = paid + profit
+    const m=s.oblMonth; const oblBP=200000; const oblPaid=20000*m; const oblRemaining=20000*(10-m);
+    const oblProfit=Math.round(200000*(Math.pow(1.055,m)-1)); const oblEquity=oblBP+oblProfit; const oblWithdraw=oblPaid+oblProfit; const oblFuture=20000*(10-m);
     const oblBars=d.obl.map((v,i)=>({label:'$'+v+'K',month:'M'+(i+1),h:Math.max(3,(v/180)*100),bg:i===(m-1)?'linear-gradient(180deg,#F2C233,#B9830F)':(v===0?'rgba(242,194,51,0.4)':'linear-gradient(180deg,#FF6B6B,#c43d3d)'),op:i<=m-1?1:0.45}));
     // nav
     const navItems=[['marketplace','Pool Marketplace'],['allocation','Capital Allocation'],['trading','Trading'],['obligation','Obligation Engine'],['portfolio','Portfolio'],['community','Community'],['analytics','Analytics'],['admin','Admin']];
@@ -723,6 +970,23 @@ class Component extends DCLogic {
         btnLabel:funded?'View Pool':'Join Pool', btnBg:funded?'rgba(255,255,255,0.04)':'rgba(242,194,51,0.12)', btnColor:funded?'#9aa1ad':'#F2C233', btnBorder:funded?'rgba(255,255,255,0.08)':'rgba(242,194,51,0.25)',
         recent:p.recent }); });
 
+    // ===== PORTFOLIO — corrected economics =====
+    // A pool has N members over N months. Buying power is funded 1:1 with the pool.
+    // What a member can WITHDRAW or LOSE is never the leveraged position — it is only
+    // the contribution they have paid into the pool so far, plus their trading profit.
+    const pfMonthly=20000, pfMembers=10, pfMonth=s.pfMonth, pfLev=s.pfLev;
+    const pfBP=pfMonthly*pfMembers;                 // community buying power (1:1 pool size) = $200K
+    const pfPaid=pfMonthly*pfMonth;                 // contribution paid so far (month 3 -> $60K)
+    const pfRemain=pfMonthly*(pfMembers-pfMonth);   // unpaid future obligation
+    const pfProfit=Math.max(0,totalPnl);            // trading profit (never negative for withdrawal)
+    const pfWithdraw=pfPaid+pfProfit;               // WITHDRAWABLE = paid-in + profit
+    const pfRisk=pfPaid+pfProfit;                   // max you can lose / trade against = paid-in + profit
+    const pfPosition=pfBP*pfLev;                    // position size = buying power × leverage
+    const pfOpenExposure=s.positions.reduce((a,p)=>a+p.size,0);
+    const pfEquity=pfBP+totalPnl;                   // account equity = buying power + live PnL
+    const pfRiskPct=Math.max(4,Math.min(100,pfRisk/pfPosition*100));
+    const pfPnlSigned=(totalPnl>=0?'+':'−')+this.money(Math.abs(totalPnl));
+    const pfProfitSigned=(totalPnl>=0?'+':'−')+this.money(Math.abs(pfProfit));
     return {
       isHome:s.view==='home', isApp:s.view==='app',
       launch:()=>this.go('marketplace'), goHome:()=>this.setState({view:'home'}),
@@ -738,7 +1002,7 @@ class Component extends DCLogic {
       tradRisk,objxRisk,tradRiskLabel:riskLabel(tradRisk),objxRiskLabel:riskLabel(objxRisk),
       // app shell
       nav, screenTitle:tt[0], screenSub:tt[1], walletStatus:s.connected?'Wallet Connected':'Member · Verified',
-      acctBP:'$200,000', acctEquity:this.money(1000000+totalPnl+s.realized), acctEqColor:(totalPnl+s.realized)>=0?'#E9ECF1':'#FF6B6B',
+      acctBP:'$200,000', acctEquity:this.money(200000+totalPnl+s.realized), acctEqColor:(totalPnl+s.realized)>=0?'#E9ECF1':'#FF6B6B',
       isMarketplace:s.screen==='marketplace',isAllocation:s.screen==='allocation',isTrading:s.screen==='trading',isObligation:s.screen==='obligation',isPortfolio:s.screen==='portfolio',isCommunity:s.screen==='community',isAnalytics:s.screen==='analytics',isAdmin:s.screen==='admin',
       pools, poolCount:d.pools.length,
       // trading
@@ -753,18 +1017,31 @@ class Component extends DCLogic {
       openTrade:this.openTrade, positions, totalPnl:(totalPnl>=0?'+':'')+this.money(totalPnl), totalPnlColor:totalPnl>=0?'#F2C233':'#FF6B6B', hasPositions:positions.length>0,
       tradeAccount:[{label:'Buying Power',value:'$200,000',color:'#F2C233'},{label:'Open Exposure',value:this.short(s.positions.reduce((a,p)=>a+p.size,0)),color:'#E9ECF1'},{label:'Unrealized PnL',value:(totalPnl>=0?'+':'')+this.money(totalPnl),color:totalPnl>=0?'#F2C233':'#FF6B6B'},{label:'Realized PnL',value:(s.realized>=0?'+':'')+this.money(s.realized),color:s.realized>=0?'#F2C233':'#FF6B6B'}],
       // allocation
-      allocEquation:[{label:'Current Equity',value:'$1,000,000',color:'#E9ECF1',note:'Live trading account',op:'−'},{label:'Remaining Obligation',value:'$180,000',color:'#FF6B6B',note:'Secured by code',op:'='},{label:'Withdrawable Balance',value:'$820,000',color:'#F2C233',note:'Profit available now',op:''}],
-      allocChart:this.multiArea([{vals:this.series(40,640000,0.012,0.04),color:'#F2C233',fill:true},{vals:Array.from({length:40},(_,i)=>180000*(1-i/39)),color:'#FF6B6B',fill:false,dash:'5 4'}],600,230),
-      allocDonut:this.donut([{value:820,color:'#F2C233'},{value:180,color:'#FF6B6B'},{value:200,color:'#5B8DEF'}],130,20),
-      allocLegend:[{label:'Withdrawable',color:'#F2C233',value:'$820K'},{label:'Obligation Reserve',color:'#FF6B6B',value:'$180K'},{label:'Community Principal',color:'#5B8DEF',value:'$200K'}],
-      allocRel:[{label:'Your Capital',value:'$20,000',color:'#9aa1ad',pct:2},{label:'Community Capital',value:'$200,000',color:'#5B8DEF',pct:20},{label:'Buying Power Access',value:'$200,000',color:'#F2C233',pct:20},{label:'Trading Capacity',value:'$1,000,000',color:'#F2B04A',pct:100}],
+      allocEquation:[{label:'Account Equity',value:this.money(pfEquity),color:'#E9ECF1',note:'Buying power + profit',op:'−'},{label:'Remaining Obligation',value:this.money(pfRemain),color:'#FF6B6B',note:'Secured by code',op:'='},{label:'Withdrawable Balance',value:this.money(pfWithdraw),color:'#F2C233',note:'Contribution paid + profit',op:''}],
+      allocChart:this.multiArea([{vals:this.series(40,150000,0.012,0.04),color:'#F2C233',fill:true},{vals:Array.from({length:40},(_,i)=>140000*(1-i/39)),color:'#FF6B6B',fill:false,dash:'5 4'}],600,230),
+      allocDonut:this.donut([{value:Math.max(1,pfPaid),color:'#F2C233'},{value:Math.max(1,pfRemain),color:'#5B8DEF'}],130,20),
+      allocLegend:[{label:'Your Contribution Paid',color:'#F2C233',value:this.short(pfPaid)},{label:'Community-Funded',color:'#5B8DEF',value:this.short(pfRemain)},{label:'Total Buying Power',color:'#565C68',value:this.short(pfBP)}],
+      allocRel:[{label:'Monthly Contribution',value:this.money(20000),color:'#9aa1ad',pct:5},{label:'Community Capital (Pool)',value:this.money(pfBP),color:'#5B8DEF',pct:20},{label:'Buying Power Access',value:this.money(pfBP),color:'#F2C233',pct:20},{label:'Trading Capacity ('+pfLev+'×)',value:this.money(pfPosition),color:'#F2B04A',pct:100}],
       // obligation interactive
       shieldIcon:this.icon('admin'),
       oblMonth:m, setMonth:this.setMonth,
-      oblLive:[{label:'Current Equity',value:this.money(oblEquity),color:'#E9ECF1'},{label:'Remaining Obligation',value:this.money(oblRemaining),color:'#FF6B6B'},{label:'Future Commitments',value:(10-m)+' cycles',color:'#F2B04A'},{label:'Withdrawable Balance',value:this.money(oblWithdraw),color:'#F2C233'}],
+      oblLive:[{label:'Contribution Paid',value:this.money(oblPaid),color:'#E9ECF1'},{label:'Remaining Obligation',value:this.money(oblRemaining),color:'#FF6B6B'},{label:'Account Equity',value:this.money(oblEquity),color:'#F2B04A'},{label:'Withdrawable Balance',value:this.money(oblWithdraw),color:'#F2C233'}],
       oblBars, oblCoverage:(oblRemaining>0?(oblEquity/oblRemaining).toFixed(1):'∞')+'×', oblProgressPct:m/10*100,
       // portfolio
-      portfolioStats:[{label:'Total Buying Power',value:'$200,000',color:'#F2C233',delta:'',deltaColor:'#F2C233'},{label:'Current Equity',value:this.money(1000000+totalPnl),color:'#E9ECF1',delta:'+12.4%',deltaColor:'#F2C233'},{label:'Trading PnL',value:(totalPnl>=0?'+':'')+this.money(totalPnl),color:totalPnl>=0?'#F2C233':'#FF6B6B',delta:'live',deltaColor:'#F2C233'},{label:'Withdrawable',value:'$820,000',color:'#F2C233',delta:'',deltaColor:'#F2C233'},{label:'Remaining Obligations',value:'$180,000',color:'#FF6B6B',delta:'−$20K/mo',deltaColor:'#FF6B6B'},{label:'Pools Joined',value:'3',color:'#E9ECF1',delta:'Active',deltaColor:'#5B8DEF'}],
+      portfolioStats:[
+        {label:'Buying Power',value:this.money(pfBP),color:'#F2C233',delta:'1:1 pool',deltaColor:'#6c727d'},
+        {label:'Contribution Paid',value:this.money(pfPaid),color:'#E9ECF1',delta:pfMonth+' of '+pfMembers+' mo',deltaColor:'#6c727d'},
+        {label:'Trading PnL',value:pfPnlSigned,color:totalPnl>=0?'#F2C233':'#FF6B6B',delta:'live',deltaColor:'#5B8DEF'},
+        {label:'Withdrawable',value:this.money(pfWithdraw),color:'#F2C233',delta:'paid + profit',deltaColor:'#6c727d'},
+        {label:'Remaining Obligation',value:this.money(pfRemain),color:'#FF6B6B',delta:(pfMembers-pfMonth)+' mo left',deltaColor:'#FF6B6B'},
+        {label:'Position Size',value:this.money(pfPosition),color:'#F2B04A',delta:pfLev+'× leverage',deltaColor:'#6c727d'}
+      ],
+      pfBPv:this.money(pfBP), pfPaidv:this.money(pfPaid), pfRemainv:this.money(pfRemain),
+      pfWithdrawv:this.money(pfWithdraw), pfPositionv:this.money(pfPosition), pfEquityv:this.money(pfEquity),
+      pfProfitv:pfProfitSigned, pfProfitColor:totalPnl>=0?'#F2C233':'#FF6B6B', pfRiskv:this.money(pfRisk),
+      pfOpenv:this.short(pfOpenExposure), pfMonthlyV:this.money(pfMonthly), pfMembersN:pfMembers,
+      pfMonthRaw:pfMonth, pfMonthLabel:'Month '+pfMonth+' / '+pfMembers, pfLevRaw:pfLev, pfLevFmt:pfLev+'×',
+      pfRiskPct:pfRiskPct.toFixed(1), setPfMonth:this.setPfMonth, setPfLev:this.setPfLev,
       portfolioChart:(this._pchart || (this._pchart=this.area(this.series(60,910000,0.003,0.03),'#F2C233','pc',600,230))),
       exposureDonut:this.donut([{value:620,color:'#F2B04A'},{value:280,color:'#5B8DEF'},{value:100,color:'#9b6bef'},{value:200,color:'#F2C233'}],130,20),
       exposureLegend:[{label:'BTC Long',color:'#F2B04A',value:'$620K'},{label:'ETH Long',color:'#5B8DEF',value:'$280K'},{label:'SOL Short',color:'#9b6bef',value:'$100K'},{label:'Cash',color:'#F2C233',value:'$200K'}],
