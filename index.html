@@ -28,6 +28,37 @@
   @keyframes objxSpin{to{transform:rotate(360deg)}}
   @keyframes objxPop{0%{transform:scale(0.7);opacity:0}60%{transform:scale(1.05)}100%{transform:scale(1);opacity:1}}
   @keyframes objxRing{0%{transform:scale(0.5);opacity:0.7}100%{transform:scale(1.5);opacity:0}}
+
+  /* ===================== MOBILE / RESPONSIVE ===================== */
+  @media (max-width:860px){
+    html,body{overflow-x:hidden;max-width:100%}
+    /* every multi-column grid stacks */
+    div[style*="grid-template-columns"]{grid-template-columns:1fr !important}
+    /* tighten the wide section padding */
+    div[style*="padding: 54px 32px"],div[style*="padding: 60px 32px"],div[style*="padding: 64px 32px"],div[style*="padding: 42px 32px"],div[style*="padding: 20px 32px"],div[style*="padding: 0px 32px 58px"],div[style*="padding: 0px 32px 60px"],div[style*="padding: 56px 32px"]{padding-left:18px !important;padding-right:18px !important}
+    /* hero + section headings scale down */
+    h1[style*="font-size: 62px"]{font-size:32px !important;letter-spacing:-1px !important}
+    h2[style*="font-size: 36px"]{font-size:25px !important}
+    h2[style*="font-size: 46px"]{font-size:30px !important}
+    /* landing top bar */
+    div[data-m="lphead"]{padding:12px 16px !important}
+    button[data-m="exp"]{display:none !important}
+    /* live counters: 5 across -> 2 across (after universal rule so it wins) */
+    div[style*="repeat(5, 1fr)"]{grid-template-columns:repeat(2,1fr) !important}
+    /* app shell: sidebar moves to a stacked top bar */
+    div[data-m="shell"]{flex-direction:column !important}
+    div[data-m="side"]{width:100% !important;height:auto !important;position:static !important;border-right:none !important;border-bottom:1px solid rgba(255,255,255,0.06) !important}
+    div[data-m="nav"]{display:flex !important;flex-direction:row !important;flex-wrap:nowrap !important;overflow-x:auto !important;padding:8px !important;gap:6px}
+    div[data-m="nav"]>div{flex:0 0 auto !important;margin-bottom:0 !important;white-space:nowrap}
+    div[data-m="apphead"]{flex-wrap:wrap !important;gap:10px !important;padding:12px 16px !important}
+    div[data-m="main"]{padding:18px 14px 70px !important}
+    /* flywheel ring scales to fit narrow screens */
+    div[data-m="flywheel"]{transform:scale(0.72);transform-origin:top center;margin-top:0 !important;margin-bottom:-110px !important}
+  }
+  @media (max-width:430px){
+    h1[style*="font-size: 62px"]{font-size:27px !important}
+    div[data-m="flywheel"]{transform:scale(0.58);margin-bottom:-180px !important}
+  }
 </style>
 </helmet>
 
@@ -38,13 +69,13 @@
   <div style="position:relative;overflow:hidden">
 
     <div style="position:sticky;top:0;z-index:40;backdrop-filter:blur(14px);background:rgba(10,11,14,0.72);border-bottom:1px solid rgba(255,255,255,0.06)">
-      <div style="max-width:1280px;margin:0 auto;padding:16px 32px;display:flex;align-items:center;justify-content:space-between">
+      <div data-m="lphead" style="max-width:1280px;margin:0 auto;padding:16px 32px;display:flex;align-items:center;justify-content:space-between">
         <div style="display:flex;align-items:center;gap:11px">
           <div style="width:30px;height:30px;border-radius:8px;background:#13192a;border:1px solid rgba(242,194,51,0.45);display:flex;align-items:center;justify-content:center;box-shadow:0 0 22px rgba(242,194,51,0.45)"><svg viewBox="0 0 32 32" style="width:20px;height:20px;display:block"><defs><clipPath id="ow"><circle cx="16" cy="16" r="10.5"></circle></clipPath></defs><circle cx="16" cy="16" r="10.8" fill="none" stroke="#F2C233" stroke-width="1" opacity="0.45"></circle><g clip-path="url(#ow)" fill="none" stroke="#F2C233" stroke-width="2.1" stroke-linecap="round"><path d="M3 11 q4.3 -3.4 8.5 0 t8.5 0 t8.5 0"></path><path d="M3 16 q4.3 -3.4 8.5 0 t8.5 0 t8.5 0"></path><path d="M3 21 q4.3 -3.4 8.5 0 t8.5 0 t8.5 0"></path></g></svg></div>
           <span style="font-family:'Cormorant Garamond',serif;font-weight:700;font-size:25px;letter-spacing:3px;color:#F2C233">OBJEX</span>
         </div>
         <div style="display:flex;align-items:center;gap:12px">
-          <button onclick="{{ startDemo }}" style="font-family:'Manrope';font-weight:600;font-size:13.5px;color:#E9ECF1;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);padding:9px 17px;border-radius:9px;cursor:pointer;display:flex;align-items:center;gap:7px"><span style="width:7px;height:7px;border-radius:50%;background:#F2C233;animation:objxPulse 1.6s infinite"></span>Experience OBJEX</button>
+          <button data-m="exp" onclick="{{ startDemo }}" style="font-family:'Manrope';font-weight:600;font-size:13.5px;color:#E9ECF1;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);padding:9px 17px;border-radius:9px;cursor:pointer;display:flex;align-items:center;gap:7px"><span style="width:7px;height:7px;border-radius:50%;background:#F2C233;animation:objxPulse 1.6s infinite"></span>Experience OBJEX</button>
           <button onclick="{{ openAuth }}" style="font-family:'Manrope';font-weight:600;font-size:13.5px;color:#9aa1ad;background:transparent;border:1px solid rgba(255,255,255,0.1);padding:9px 17px;border-radius:9px;cursor:pointer">Sign In</button>
           <button onclick="{{ launch }}" style="font-family:'Manrope';font-weight:700;font-size:13.5px;color:#0A0E18;background:#F2C233;border:none;padding:9px 18px;border-radius:9px;cursor:pointer;box-shadow:0 0 20px rgba(242,194,51,0.3)">Launch App</button>
         </div>
@@ -261,7 +292,7 @@
           <h2 style="font-family:'Space Grotesk';font-weight:700;font-size:36px;letter-spacing:-1.2px">The Community Liquidity Flywheel</h2>
           <p style="font-size:14.5px;color:#7d838f;margin-top:12px;max-width:660px;margin-left:auto;margin-right:auto;line-height:1.6">Liquidity on OBJEX isn't rented — it's manufactured by the protocol and recycled back into itself. Every turn makes the next one bigger.</p>
         </div>
-        <div style="position:relative;width:480px;height:480px;max-width:100%;margin:24px auto 6px">
+        <div data-m="flywheel" style="position:relative;width:480px;height:480px;max-width:100%;margin:24px auto 6px">
           <div style="position:absolute;left:50%;top:50%;width:300px;height:300px;transform:translate(-50%,-50%);border-radius:50%;border:1.5px dashed rgba(242,194,51,0.3)"></div>
           <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);text-align:center;width:160px"><div style="font-size:34px;color:#F2C233;line-height:1">↻</div><div style="font-family:'Space Grotesk';font-weight:700;font-size:15px;margin-top:6px;line-height:1.2">Liquidity<br>Flywheel</div><div style="font-size:11px;color:#7d838f;margin-top:7px;line-height:1.3">compounds<br>every cycle</div></div>
           <div style="position:absolute;left:240px;top:90px;transform:translate(-50%,-50%);width:150px;background:#0E131F;border:1px solid rgba(242,194,51,0.22);border-radius:12px;padding:12px 12px;text-align:center;box-shadow:0 6px 22px rgba(0,0,0,0.45)"><div style="font-family:'JetBrains Mono';font-size:11px;font-weight:700;color:#F2C233;margin-bottom:5px">01</div><div style="font-size:12.5px;font-weight:600;line-height:1.3">Communities form pools</div></div>
@@ -368,13 +399,13 @@
 
   <!-- ===================== APP ===================== -->
   <sc-if value="{{ isApp }}" hint-placeholder-val="{{ false }}">
-  <div style="display:flex;min-height:100vh">
-    <div style="width:236px;flex-shrink:0;background:#0C1019;border-right:1px solid rgba(255,255,255,0.06);display:flex;flex-direction:column;position:sticky;top:0;height:100vh">
+  <div data-m="shell" style="display:flex;min-height:100vh">
+    <div data-m="side" style="width:236px;flex-shrink:0;background:#0C1019;border-right:1px solid rgba(255,255,255,0.06);display:flex;flex-direction:column;position:sticky;top:0;height:100vh">
       <div onclick="{{ goHome }}" style="padding:20px 20px 18px;display:flex;align-items:center;gap:11px;cursor:pointer;border-bottom:1px solid rgba(255,255,255,0.05)">
         <div style="width:30px;height:30px;border-radius:8px;background:#13192a;border:1px solid rgba(242,194,51,0.45);display:flex;align-items:center;justify-content:center;box-shadow:0 0 22px rgba(242,194,51,0.4)"><svg viewBox="0 0 32 32" style="width:20px;height:20px;display:block"><defs><clipPath id="ow"><circle cx="16" cy="16" r="10.5"></circle></clipPath></defs><circle cx="16" cy="16" r="10.8" fill="none" stroke="#F2C233" stroke-width="1" opacity="0.45"></circle><g clip-path="url(#ow)" fill="none" stroke="#F2C233" stroke-width="2.1" stroke-linecap="round"><path d="M3 11 q4.3 -3.4 8.5 0 t8.5 0 t8.5 0"></path><path d="M3 16 q4.3 -3.4 8.5 0 t8.5 0 t8.5 0"></path><path d="M3 21 q4.3 -3.4 8.5 0 t8.5 0 t8.5 0"></path></g></svg></div>
         <span style="font-family:'Cormorant Garamond',serif;font-weight:700;font-size:24px;letter-spacing:3px;color:#F2C233">OBJEX</span>
       </div>
-      <div style="padding:12px 10px;flex:1;overflow-y:auto">
+      <div data-m="nav" style="padding:12px 10px;flex:1;overflow-y:auto">
         <sc-for list="{{ nav }}" as="item" hint-placeholder-count="8">
           <div onclick="{{ item.onClick }}" style="{{ item.style }}"><span style="display:flex;width:18px;height:18px;color:{{ item.iconColor }}">{{ item.icon }}</span><span>{{ item.label }}</span></div>
         </sc-for>
@@ -389,7 +420,7 @@
     </div>
 
     <div style="flex:1;min-width:0;display:flex;flex-direction:column">
-      <div style="position:sticky;top:0;z-index:30;backdrop-filter:blur(14px);background:rgba(10,11,14,0.78);border-bottom:1px solid rgba(255,255,255,0.06);padding:14px 28px;display:flex;align-items:center;justify-content:space-between">
+      <div data-m="apphead" style="position:sticky;top:0;z-index:30;backdrop-filter:blur(14px);background:rgba(10,11,14,0.78);border-bottom:1px solid rgba(255,255,255,0.06);padding:14px 28px;display:flex;align-items:center;justify-content:space-between">
         <div><div style="font-family:'Space Grotesk';font-weight:700;font-size:20px;letter-spacing:-0.5px">{{ screenTitle }}</div><div style="font-size:12.5px;color:#6c727d;margin-top:1px">{{ screenSub }}</div></div>
         <div style="display:flex;align-items:center;gap:12px">
           <div style="display:flex;align-items:center;gap:8px;padding:8px 14px;border-radius:10px;background:rgba(242,194,51,0.06);border:1px solid rgba(242,194,51,0.18)"><span style="font-size:11.5px;color:#7d838f;font-weight:500">Buying Power</span><span style="font-family:'JetBrains Mono';font-size:14px;font-weight:700;color:#F2C233">{{ acctBP }}</span></div>
@@ -397,7 +428,7 @@
         </div>
       </div>
 
-      <div style="flex:1;padding:26px 28px 80px;max-width:1500px;width:100%">
+      <div data-m="main" style="flex:1;padding:26px 28px 80px;max-width:1500px;width:100%">
         <!-- MARKETPLACE -->
         <sc-if value="{{ isMarketplace }}" hint-placeholder-val="{{ false }}">
         <div>
