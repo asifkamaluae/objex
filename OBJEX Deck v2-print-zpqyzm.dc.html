@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style data-omelette-print-defaults>
+@media print {
+  @page { margin: 0.5in; }
+  h1, h2, h3, h4, h5, h6 { break-after: avoid; }
+  figure, table, pre, blockquote, img, svg, tr, [class~="card" i] { break-inside: avoid; }
+  img, svg { max-width: 100%; }
+  p { orphans: 3; widows: 3; }
+}
+</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  @keyframes objxPulse{0%,100%{opacity:1}50%{opacity:0.35}}
+</style>
+</helmet>
+<x-import component-from-global-scope="deck-stage" from="./deck-stage.js" width="1920" height="1080" hint-size="100%,100%" data-uneditable="">
+
+<!-- 1 · TITLE -->
+<section data-label="Title" data-speaker-notes="OBJEX — the world's first programmable community capital protocol. We transform the world's oldest capital formation system into programmable buying power for liquid financial markets. Perpetual trading is only the first application. Currently raising a seed round." style="width:100%;height:100%;box-sizing:border-box;background:radial-gradient(ellipse at 50% 18%,rgba(242,194,51,0.1),transparent 55%),#0A0E18;color:#E9ECF1;font-family:'Manrope',sans-serif;padding:96px 110px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden">
+  <div style="display:flex;align-items:center;gap:18px">
+    <img src="objex-badge.png" alt="OBJEX" style="height:132px;width:auto;display:block;filter:drop-shadow(0 0 40px rgba(242,194,51,0.28))">
+  </div>
+  <div>
+    <div style="font:700 24px/1 'Space Grotesk';letter-spacing:4px;color:#F2C233;text-transform:uppercase;margin-bottom:30px">The First Programmable Community Capital Protocol</div>
+    <h1 style="font-family:'Cormorant Garamond',serif;font-weight:700;font-size:100px;line-height:0.98;letter-spacing:-2px;max-width:1480px">The operating system for community capital.</h1>
+    <p style="font:400 30px/1.5 'Manrope';color:#9aa1ad;margin-top:34px;max-width:1180px">Transforming the world's oldest capital formation system into programmable buying power for liquid financial markets — governed by the <span style="color:#E9ECF1;font-weight:600">Obligation Engine</span>. Perpetual trading is the first application.</p>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:center">
+    <div style="font:500 24px 'JetBrains Mono';color:#565C68">objex.world</div>
+    <div style="display:flex;align-items:center;gap:12px;background:rgba(242,194,51,0.08);border:1px solid rgba(242,194,51,0.25);border-radius:100px;padding:12px 24px"><span style="width:9px;height:9px;border-radius:50%;background:#F2C233;animation:objxPulse 1.6s infinite"></span><span style="font:600 24px 'Space Grotesk';color:#F2C233">Raising a Seed Round</span></div>
+  </div>
+</section>
+
+<!-- 2 · WHAT IS OBJEX -->
+<section data-label="What" data-speaker-notes="What is OBJEX. Not another exchange — a new financial primitive: programmable community capital. Read the architecture top to bottom: ROSCA behaviour becomes community pools; the Obligation Engine governs them; that produces buying power; buying power deploys into liquid markets; perpetual trading is the first deployment market. The protocol is the company — trading is an application." style="width:100%;height:100%;box-sizing:border-box;background:#0A0E18;color:#E9ECF1;font-family:'Manrope',sans-serif;padding:80px 120px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden">
+  <div style="font:700 24px/1 'Space Grotesk';letter-spacing:4px;color:#5B8DEF;text-transform:uppercase;margin-bottom:28px">What is OBJEX</div>
+  <h2 style="font:600 60px/1.14 'Space Grotesk';letter-spacing:-1.6px;max-width:1560px;margin-bottom:50px">A new financial primitive: <span style="color:#F2C233">Programmable Community Capital</span>.</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">
+    <div style="display:flex;flex-direction:column;align-items:stretch">
+      <div style="background:#0E131F;border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:18px 28px;display:flex;justify-content:space-between;align-items:center"><span style="font:600 25px 'Space Grotesk'">ROSCA</span><span style="font:400 18px 'Manrope';color:#565C68">humanity's oldest capital system</span></div>
+      <div style="height:22px;width:2px;background:rgba(242,194,51,0.35);margin-left:40px"></div>
+      <div style="background:#0E131F;border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:18px 28px;display:flex;justify-content:space-between;align-items:center"><span style="font:600 25px 'Space Grotesk'">Community Pools</span><span style="font:400 18px 'Manrope';color:#565C68">recurring monthly formation</span></div>
+      <div style="height:22px;width:2px;background:rgba(91,141,239,0.4);margin-left:40px"></div>
+      <div style="background:rgba(91,141,239,0.05);border:1px solid rgba(91,141,239,0.3);border-radius:14px;padding:18px 28px;display:flex;justify-content:space-between;align-items:center"><span style="font:600 25px 'Space Grotesk';color:#5B8DEF">Obligation Engine</span><span style="font:400 18px 'Manrope';color:#565C68">the coordination layer</span></div>
+      <div style="height:22px;width:2px;background:rgba(242,194,51,0.35);margin-left:40px"></div>
+      <div style="background:rgba(242,194,51,0.06);border:1px solid rgba(242,194,51,0.32);border-radius:14px;padding:18px 28px;display:flex;justify-content:space-between;align-items:center"><span style="font:600 25px 'Space Grotesk';color:#F2C233">Buying Power</span><span style="font:400 18px 'Manrope';color:#565C68">programmable capital access</span></div>
+      <div style="height:22px;width:2px;background:rgba(242,176,74,0.35);margin-left:40px"></div>
+      <div style="background:#0E131F;border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:18px 28px;display:flex;justify-content:space-between;align-items:center"><span style="font:600 25px 'Space Grotesk'">Liquid Markets</span><span style="font:400 18px 'Manrope';color:#565C68">continuous settlement</span></div>
+      <div style="height:22px;width:2px;background:rgba(242,176,74,0.35);margin-left:40px"></div>
+      <div style="background:#0E131F;border:1px solid rgba(242,176,74,0.26);border-radius:14px;padding:18px 28px;display:flex;justify-content:space-between;align-items:center"><span style="font:600 25px 'Space Grotesk';color:#F2B04A">Perpetual Trading</span><span style="font:400 18px 'Manrope';color:#565C68">the first application</span></div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:24px">
+      <div style="font:400 28px/1.55 'Manrope';color:#c3c9d4">For thousands of years communities have coordinated capital through ROSCA. OBJEX transforms that behaviour into <span style="color:#E9ECF1;font-weight:600">programmable financial infrastructure</span>.</div>
+      <div style="background:#0B0F1B;border:1px solid rgba(242,194,51,0.22);border-radius:16px;padding:28px 32px"><div style="font:500 25px/1.45 'Manrope';color:#c3c9d4">Traditional finance <span style="color:#9aa1ad">moves</span> capital.<br><span style="color:#F2C233;font-weight:700">OBJEX creates programmable community capital.</span></div></div>
+      <div style="font:400 24px/1.5 'Manrope';color:#7d838f">The protocol is the company. Trading is an application.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 · PROBLEM 1 -->
+<section data-label="Problem" data-speaker-notes="The central problem statement. Modern financial infrastructure solved trading, borrowing, execution and leverage — every layer that operates on capital that already exists. Nobody solved the layer before markets begin: capital formation. That is the gap OBJEX occupies." style="width:100%;height:100%;box-sizing:border-box;background:#0A0E18;color:#E9ECF1;font-family:'Manrope',sans-serif;padding:96px 110px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden">
+  <div style="font:700 24px/1 'Space Grotesk';letter-spacing:4px;color:#FF6B6B;text-transform:uppercase;margin-bottom:26px">The Problem</div>
+  <h2 style="font:600 66px/1.08 'Space Grotesk';letter-spacing:-1.6px;max-width:1560px;margin-bottom:56px">Financial infrastructure solved trading.<br>Nobody solved capital formation.</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:stretch">
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div style="font:700 20px 'Space Grotesk';letter-spacing:1.5px;color:#7d838f;text-transform:uppercase;margin-bottom:4px">Solved</div>
+      <div style="display:flex;justify-content:space-between;align-items:center;background:#0E131F;border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:20px 28px"><span style="font:600 26px 'Space Grotesk'">Trading</span><span style="font:400 20px 'Manrope';color:#565C68">exchanges</span></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;background:#0E131F;border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:20px 28px"><span style="font:600 26px 'Space Grotesk'">Borrowing</span><span style="font:400 20px 'Manrope';color:#565C68">lending protocols</span></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;background:#0E131F;border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:20px 28px"><span style="font:600 26px 'Space Grotesk'">Execution</span><span style="font:400 20px 'Manrope';color:#565C68">matching engines</span></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;background:#0E131F;border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:20px 28px"><span style="font:600 26px 'Space Grotesk'">Leverage</span><span style="font:400 20px 'Manrope';color:#565C68">perpetual exchanges</span></div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div style="font:700 20px 'Space Grotesk';letter-spacing:1.5px;color:#FF6B6B;text-transform:uppercase;margin-bottom:4px">Unsolved</div>
+      <div style="flex:1;background:linear-gradient(180deg,rgba(242,194,51,0.07),transparent);border:1px solid rgba(242,194,51,0.3);border-radius:20px;padding:38px;display:flex;flex-direction:column;justify-content:center">
+        <div style="font:700 46px 'Space Grotesk';color:#F2C233;letter-spacing:-1px;margin-bottom:18px">Capital Formation</div>
+        <div style="font:400 25px/1.55 'Manrope';color:#9aa1ad">Every layer above assumes the capital already exists. No infrastructure has ever addressed how capital is <span style="color:#E9ECF1;font-weight:600">created, coordinated and deployed</span> — the layer before markets begin.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 · PROBLEM 2 -->
+<section data-label="Problem · Capital" data-speaker-notes="Two capital problems nobody connected. Traders are capped by their own money. Meanwhile 1B+ people pool savings in ROSCAs ($500B+/yr) but it's trust-based and collapses the moment someone is paid early and walks." style="width:100%;height:100%;box-sizing:border-box;background:#0A0E18;color:#E9ECF1;font-family:'Manrope',sans-serif;padding:96px 110px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden">
+  <div style="font:700 24px/1 'Space Grotesk';letter-spacing:4px;color:#FF6B6B;text-transform:uppercase;margin-bottom:26px">Problem 02 · Two capital problems nobody connected</div>
+  <h2 style="font:600 58px/1.12 'Space Grotesk';letter-spacing:-1.4px;max-width:1500px;margin-bottom:56px">Traders have no capital. The unbanked have no trust.</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:30px">
+    <div style="background:linear-gradient(180deg,rgba(255,107,107,0.06),transparent);border:1px solid rgba(255,107,107,0.2);border-radius:22px;padding:42px">
+      <div style="font:700 26px 'Space Grotesk';margin-bottom:18px">The trader's ceiling</div>
+      <div style="font:400 25px/1.5 'Manrope';color:#9aa1ad;margin-bottom:26px">Leverage only multiplies capital a trader already owns. No bankroll, no size. Access to capital — not execution — is the real ceiling on every market.</div>
+      <div style="font:700 56px 'JetBrains Mono';color:#FF6B6B;letter-spacing:-1.5px">Your own money</div>
+      <div style="font:400 20px 'Manrope';color:#7d838f;margin-top:8px">is the hard cap on every position.</div>
+    </div>
+    <div style="background:linear-gradient(180deg,rgba(242,194,51,0.06),transparent);border:1px solid rgba(242,194,51,0.22);border-radius:22px;padding:42px">
+      <div style="font:700 26px 'Space Grotesk';margin-bottom:18px">The community's flaw</div>
+      <div style="font:400 25px/1.5 'Manrope';color:#9aa1ad;margin-bottom:26px">For 1,000 years, billions have pooled savings in rotating circles — ROSCAs, tandas, susus, chit funds. One member is paid each cycle. It works until someone takes an early payout and walks.</div>
+      <div style="display:flex;gap:40px"><div><div style="font:700 56px 'JetBrains Mono';color:#F2C233;letter-spacing:-1.5px">1B+</div><div style="font:400 20px 'Manrope';color:#7d838f;margin-top:4px">people in savings circles</div></div><div><div style="font:700 56px 'JetBrains Mono';color:#F2C233;letter-spacing:-1.5px">$500B+</div><div style="font:400 20px 'Manrope';color:#7d838f;margin-top:4px">pooled informally / year</div></div></div>
+    </div>
+  </div>
+  <div style="font:500 18px 'JetBrains Mono';color:#565C68;margin-top:30px">Sources: World Bank (1B+ in informal savings groups); Statista / national stokvel &amp; chit-fund data.</div>
+</section>
+
+<!-- 5 · INSIGHT -->
+<section data-label="Insight" data-speaker-notes="The insight: these are the same problem. Smart contracts make obligations programmable — so community savings can safely become trading capital, and that capital finally has a productive home: a perp DEX." style="width:100%;height:100%;box-sizing:border-box;background:radial-gradient(ellipse at 50% 40%,rgba(242,194,51,0.08),transparent 60%),#0A0E18;color:#E9ECF1;font-family:'Manrope',sans-serif;padding:120px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;position:relative;overflow:hidden">
+  <div style="font:700 24px/1 'Space Grotesk';letter-spacing:4px;color:#F2C233;text-transform:uppercase;margin-bottom:40px">The Insight</div>
+  <h2 style="font-family:'Cormorant Garamond',serif;font-weight:700;font-size:96px;line-height:1.02;letter-spacing:-1.5px;max-width:1500px;margin-bottom:40px">Two broken systems. One fix.</h2>
+  <p style="font:400 33px/1.5 'Manrope';color:#aab0bb;max-width:1280px">Programmable smart contracts remove the default risk that killed pooled savings — and give that newly-trustless capital a productive destination. Community savings become <span style="color:#F2C233;font-weight:600">buying power</span>; buying power becomes <span style="color:#F2C233;font-weight:600">positions</span>; code guarantees every obligation.</p>
+  <div style="display:flex;align-items:center;gap:26px;margin-top:64px;font:600 28px 'Space Grotesk';color:#E9ECF1;flex-wrap:wrap;justify-content:center">
+    <span style="background:#0E131F;border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:16px 28px">Community Savings</span>
+    <span style="color:#F2C233;font-size:32px">→</span>
+    <span style="background:#0E131F;border:1px solid rgba(242,194,51,0.3);border-radius:14px;padding:16px 28px;color:#F2C233">Buying Power</span>
+    <span style="color:#F2C233;font-size:32px">→</span>
+    <span style="background:#0E131F;border:1px solid rgba(242,176,74,0.3);border-radius:14px;padding:16px 28px;color:#F2B04A">Perp Positions</span>
+  </div>
+</section>
+
+<!-- 6 · SOLUTION / BUYING POWER LOGIC -->
+<section data-label="Community Capital Flow" data-speaker-notes="The community capital flow, end to end. Members coordinate, contribute monthly, and the protocol turns that behaviour into a programmable pool. The Obligation Engine governs it; buying power is created; it deploys into liquid financial markets — perpetual trading first. Traditional finance moves capital that already exists. OBJEX creates programmable community capital." style="width:100%;height:100%;box-sizing:border-box;background:#0A0E18;color:#E9ECF1;font-family:'Manrope',sans-serif;padding:80px 104px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden">
+  <div style="text-align:center;margin-bottom:40px"><div style="font:700 24px/1 'Space Grotesk';letter-spacing:4px;color:#F2C233;text-transform:uppercase;margin-bottom:18px">The Community Capital Flow</div><h2 style="font:600 54px/1.1 'Space Grotesk';letter-spacing:-1.4px">How community behaviour becomes market capital</h2></div>
+  <div style="display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;max-width:1700px;margin:0 auto">
+    <div style="background:#0E131F;border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:24px 26px;text-align:center;min-width:200px"><div style="font:600 23px 'Space Grotesk'">Community<br>Members</div></div>
+    <div style="color:#565C68;font-size:28px">→</div>
+    <div style="background:#0E131F;border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:24px 26px;text-align:center;min-width:200px"><div style="font:600 23px 'Space Grotesk'">Monthly<br>Contributions</div></div>
+    <div style="color:#565C68;font-size:28px">→</div>
+    <div style="background:#0E131F;border:1px solid rgba(242,194,51,0.24);border-radius:16px;padding:24px 26px;text-align:center;min-width:220px"><div style="font:600 23px 'Space Grotesk'">Programmable<br>Community Pool</div></div>
+    <div style="color:#565C68;font-size:28px">→</div>
+    <div style="background:rgba(91,141,239,0.06);border:1px solid rgba(91,141,239,0.32);border-radius:16px;padding:24px 26px;text-align:center;min-width:200px"><div style="font:600 23px 'Space Grotesk';color:#5B8DEF">Obligation<br>Engine</div></div>
+  </div>
+  <div style="display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;max-width:1700px;margin:22px auto 0">
+    <div style="background:rgba(242,194,51,0.07);border:1px solid rgba(242,194,51,0.35);border-radius:16px;padding:24px 26px;text-align:center;min-width:200px"><div style="font:600 23px 'Space Grotesk';color:#F2C233">Buying<br>Power</div></div>
+    <div style="color:#565C68;font-size:28px">→</div>
+    <div style="background:#0E131F;border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:24px 26px;text-align:center;min-width:220px"><div style="font:600 23px 'Space Grotesk'">Liquid Financial<br>Markets</div></div>
+    <div style="color:#565C68;font-size:28px">→</div>
+    <div style="background:#0E131F;border:1px solid rgba(242,176,74,0.28);border-radius:16px;padding:24px 26px;text-align:center;min-width:200px"><div style="font:600 23px 'Space Grotesk';color:#F2B04A">Perpetual<br>Trading</div></div>
+  </div>
+  <div style="text-align:center;margin-top:48px"><div style="display:inline-block;background:#0B0F1B;border:1px solid rgba(242,194,51,0.22);border-radius:16px;padding:24px 40px"><span style="font:500 27px 'Manrope';color:#9aa1ad">Traditional finance moves capital. </span><span style="font:700 27px 'Manrope';color:#F2C233">OBJEX creates programmable community capital.</span></div></div>
+</section>
+
+<!-- 6b · THE FINANCIAL PRIMITIVE -->
+<section data-label="Financial Primitive" data-speaker-notes="This is the intellectual core. Buying Power is not leverage. Leverage multiplies capital you already own; buying power determines the capital you can access. For decades markets optimized execution, liquidity and leverage — all of which assume the capital already exists. OBJEX solves the layer before that: capital formation. Nothing changes about market mathematics; everything changes about where the capital comes from. That is a new financial primitive — programmable community capital." style="width:100%;height:100%;box-sizing:border-box;background:#0A0E18;color:#E9ECF1;font-family:'Manrope',sans-serif;padding:90px 104px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden">
+  <div style="font:700 24px/1 'Space Grotesk';letter-spacing:4px;color:#F2C233;text-transform:uppercase;margin-bottom:24px">The Financial Primitive</div>
+  <h2 style="font:600 66px/1.08 'Space Grotesk';letter-spacing:-1.6px;margin-bottom:48px;max-width:1500px">Capital Formation. Not Leverage.</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:34px">
+    <div style="background:#0E131F;border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:40px"><div style="font:700 24px 'Space Grotesk';color:#9aa1ad;margin-bottom:14px">Leverage</div><div style="font:400 27px/1.45 'Manrope';color:#c3c9d4">Multiplies <span style="color:#E9ECF1;font-weight:600">exposure</span> on capital you already own. Markets determine exposure — identical everywhere.</div></div>
+    <div style="background:linear-gradient(180deg,rgba(242,194,51,0.07),transparent);border:1px solid rgba(242,194,51,0.28);border-radius:20px;padding:40px"><div style="font:700 24px 'Space Grotesk';color:#F2C233;margin-bottom:14px">Buying Power</div><div style="font:400 27px/1.45 'Manrope';color:#c3c9d4">Expands <span style="color:#F2C233;font-weight:600">access to capital</span> — created through community coordination. OBJEX creates buying power.</div></div>
+  </div>
+  <div style="font:400 26px/1.55 'Manrope';color:#9aa1ad;max-width:1560px;margin-bottom:30px">For decades, markets have optimized execution, liquidity and leverage — all of which assume the capital already exists. By bringing ROSCA on-chain, OBJEX transforms coordinated community savings into programmable buying power, letting communities — not banks, proprietary trading firms or centralized lenders — become capital providers for global markets.</div>
+  <div style="background:#0B0F1B;border:1px solid rgba(242,194,51,0.2);border-radius:16px;padding:26px 34px;display:flex;align-items:center;gap:28px;flex-wrap:wrap">
+    <div style="font:500 24px 'Manrope';color:#c3c9d4">Nothing changes about market mathematics. <span style="color:#E9ECF1;font-weight:600">Everything changes about capital access.</span></div>
+    <div style="flex:1"></div>
+    <div style="font:700 24px 'Space Grotesk';color:#F2C233;white-space:nowrap">A new primitive: Programmable Community Capital</div>
+  </div>
+</section>
+
+<!-- 6c · DUAL VALUE PROPOSITION -->
+<section data-label="Dual Value" data-speaker-notes="OBJEX creates value through two independent financial primitives. Community Buying Power is the Capital Formation Layer — access to capital beyond your own balance sheet. Community Capital Yield is the second, separate primitive: the protocol's discount-based pool allocation mechanism creates additional economic value for participants — members who receive capital later benefit from the discount created by earlier allocations. Community participation itself becomes economically productive, even before any trading happens." style="width:100%;height:100%;box-sizing:border-box;background:#0A0E18;color:#E9ECF1;font-family:'Manrope',sans-serif;padding:90px 104px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden">
+  <div style="font:700 24px/1 'Space Grotesk';letter-spacing:4px;color:#F2C233;text-transform:uppercase;margin-bottom:24px">Two Independent Primitives</div>
+  <h2 style="font:600 58px/1.1 'Space Grotesk';letter-spacing:-1.4px;margin-bottom:50px;max-width:1560px">OBJEX creates value in two ways — not one.</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:26px">
+    <div style="background:linear-gradient(180deg,rgba(242,194,51,0.07),transparent);border:1px solid rgba(242,194,51,0.28);border-radius:22px;padding:40px">
+      <div style="font:700 17px 'Space Grotesk';letter-spacing:1.5px;color:#F2C233;text-transform:uppercase;margin-bottom:10px">Primitive 01 · Capital Formation Layer</div>
+      <div style="font:700 32px 'Space Grotesk';color:#E9ECF1;margin-bottom:16px">Community Buying Power</div>
+      <div style="font:400 24px/1.5 'Manrope';color:#9aa1ad">The protocol transforms coordinated community capital into programmable buying power, letting traders access capital beyond their individual balance sheet.</div>
+    </div>
+    <div style="background:linear-gradient(180deg,rgba(91,141,239,0.07),transparent);border:1px solid rgba(91,141,239,0.28);border-radius:22px;padding:40px">
+      <div style="font:700 17px 'Space Grotesk';letter-spacing:1.5px;color:#5B8DEF;text-transform:uppercase;margin-bottom:10px">Primitive 02 · Pool Economics</div>
+      <div style="font:700 32px 'Space Grotesk';color:#E9ECF1;margin-bottom:16px">Community Capital Yield</div>
+      <div style="font:400 24px/1.5 'Manrope';color:#9aa1ad">The protocol's discount-based allocation mechanism creates additional economic value for participants — members who receive capital later benefit from the Capital Efficiency Yield created by earlier allocations.</div>
+    </div>
+  </div>
+  <div style="background:#0B0F1B;border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:26px 34px;margin-top:26px;display:flex;align-items:center;gap:24px;flex-wrap:wrap"><div style="font:500 24px/1.4 'Manrope';color:#c3c9d4">Community participation itself becomes <span style="color:#E9ECF1;font-weight:700">economically productive</span> — independent of, and in addition to, any trading activity.</div></div>
+</section>
+
+<!-- 7 · HOW IT WORKS -->
+<section data-label="How it works" data-speaker-notes="Four steps. Join a pool, receive buying power, trade the perp DEX, withdraw your paid-in plus profit while the obligation engine amortizes the rest. Every member is served, every cycle." style="width:100%;height:100%;box-sizing:border-box;background:#0A0E18;color:#E9ECF1;font-family:'Manrope',sans-serif;padding:100px 110px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden">
+  <div style="font:700 24px/1 'Space Grotesk';letter-spacing:4px;color:#F2C233;text-transform:uppercase;margin-bottom:28px">How it works</div>
+  <h2 style="font:600 60px/1.1 'Space Grotesk';letter-spacing:-1.5px;margin-bottom:66px">From monthly savings to live positions</h2>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px">
+    <div style="background:#0E131F;border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:34px"><div style="font:700 22px 'JetBrains Mono';color:#F2C233;margin-bottom:22px">01</div><div style="font:600 27px 'Space Grotesk';margin-bottom:12px">Join a Pool</div><div style="font:400 22px/1.5 'Manrope';color:#9aa1ad">Commit a fixed monthly contribution to a community savings circle.</div></div>
+    <div style="background:#0E131F;border:1px solid rgba(242,194,51,0.2);border-radius:20px;padding:34px"><div style="font:700 22px 'JetBrains Mono';color:#F2C233;margin-bottom:22px">02</div><div style="font:600 27px 'Space Grotesk';margin-bottom:12px">Receive Buying Power</div><div style="font:400 22px/1.5 'Manrope';color:#9aa1ad">Win your allocation; the protocol grants buying power 1:1, instantly and non-custodially.</div></div>
+    <div style="background:#0E131F;border:1px solid rgba(242,176,74,0.22);border-radius:20px;padding:34px"><div style="font:700 22px 'JetBrains Mono';color:#F2B04A;margin-bottom:22px">03</div><div style="font:600 27px 'Space Grotesk';margin-bottom:12px">Trade the Perp DEX</div><div style="font:400 22px/1.5 'Manrope';color:#9aa1ad">Deploy that buying power across global perpetual markets at the leverage you choose.</div></div>
+    <div style="background:#0E131F;border:1px solid rgba(91,141,239,0.22);border-radius:20px;padding:34px"><div style="font:700 22px 'JetBrains Mono';color:#5B8DEF;margin-bottom:22px">04</div><div style="font:600 27px 'Space Grotesk';margin-bottom:12px">Withdraw &amp; Amortize</div><div style="font:400 22px/1.5 'Manrope';color:#9aa1ad">Take out paid-in + profit. The Obligation Engine secures every future commitment in code.</div></div>
+  </div>
+</section>
+
+<!-- 7b · WHY PERPETUAL TRADING -->
+<section data-label="Why Perpetual Trading" data-speaker-notes="Why perpetual trading first — this is a deliberate architectural decision, not opportunism. OBJEX is fundamentally a monthly recurring capital formation protocol. The Obligation Engine requires continuous liquidity, continuous settlement, continuous accounting and continuous obligation management. Liquid financial markets naturally support all four — so perpetual trading becomes the first deployment market. Future expansion happens only into markets whose liquidity characteristics remain compatible with the protocol." style="width:100%;height:100%;box-sizing:border-box;background:#0A0E18;color:#E9ECF1;font-family:'Manrope',sans-serif;padding:90px 104px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden">
+  <div style="font:700 24px/1 'Space Grotesk';letter-spacing:4px;color:#F2B04A;text-transform:uppercase;margin-bottom:24px">Why Perpetual Trading?</div>
+  <h2 style="font:600 58px/1.1 'Space Grotesk';letter-spacing:-1.4px;margin-bottom:26px;max-width:1560px">The first deployment market is an architectural decision.</h2>
+  <p style="font:400 27px/1.5 'Manrope';color:#9aa1ad;max-width:1400px;margin-bottom:46px">OBJEX is fundamentally a <span style="color:#E9ECF1;font-weight:600">monthly recurring capital formation protocol</span>. The Obligation Engine imposes four requirements on any market it deploys into:</p>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-bottom:36px">
+    <div style="background:#0E131F;border:1px solid rgba(255,255,255,0.08);border-radius:18px;padding:32px"><div style="font:700 25px 'Space Grotesk';color:#F2C233;margin-bottom:10px">Continuous liquidity</div><div style="font:400 21px/1.5 'Manrope';color:#7d838f">Capital must deploy and unwind at any moment in the cycle.</div></div>
+    <div style="background:#0E131F;border:1px solid rgba(255,255,255,0.08);border-radius:18px;padding:32px"><div style="font:700 25px 'Space Grotesk';color:#F2C233;margin-bottom:10px">Continuous settlement</div><div style="font:400 21px/1.5 'Manrope';color:#7d838f">Obligations settle on protocol time, not market hours.</div></div>
+    <div style="background:#0E131F;border:1px solid rgba(255,255,255,0.08);border-radius:18px;padding:32px"><div style="font:700 25px 'Space Grotesk';color:#F2C233;margin-bottom:10px">Continuous accounting</div><div style="font:400 21px/1.5 'Manrope';color:#7d838f">Positions must be marked and audited in real time.</div></div>
+    <div style="background:#0E131F;border:1px solid rgba(255,255,255,0.08);border-radius:18px;padding:32px"><div style="font:700 25px 'Space Grotesk';color:#F2C233;margin-bottom:10px">Continuous obligations</div><div style="font:400 21px/1.5 'Manrope';color:#7d838f">Contribution schedules run every month, without pause.</div></div>
+  </div>
+  <div style="background:linear-gradient(135deg,rgba(242,176,74,0.08),transparent);border:1px solid rgba(242,176,74,0.25);border-radius:16px;padding:26px 34px"><div style="font:500 25px/1.5 'Manrope';color:#c3c9d4">Liquid financial markets naturally support all four — so <span style="color:#F2B04A;font-weight:700">perpetual trading becomes the first deployment market</span>. Future expansion will occur only into markets whose liquidity characteristics remain compatible with the protocol.</div></div>
+</section>
+
+<!-- 8 · OBLIGATION ENGINE -->
+<section data-label="Obligation Engine" data-speaker-notes="The Obligation Engine is the coordination layer — not merely anti-default. It governs contribution schedules, future obligations, withdrawals, buying power, accounting, settlement, allocation and protocol rules. The key insight: it separates capital access from capital ownership. Worked example: 10 members, 10 months, $20K each — full buying power on day one, while protocol rules govern every remaining obligation." style="width:100%;height:100%;box-sizing:border-box;background:#0A0E18;color:#E9ECF1;font-family:'Manrope',sans-serif;padding:90px 104px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden">
+  <div style="font:700 24px/1 'Space Grotesk';letter-spacing:4px;color:#5B8DEF;text-transform:uppercase;margin-bottom:24px">The Obligation Engine · The Coordination Layer</div>
+  <h2 style="font:600 56px/1.1 'Space Grotesk';letter-spacing:-1.4px;margin-bottom:46px;max-width:1560px">It separates <span style="color:#F2C233">capital access</span> from <span style="color:#5B8DEF">capital ownership</span>.</h2>
+  <div style="display:grid;grid-template-columns:1.05fr 0.95fr;gap:50px;align-items:center">
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div style="display:flex;justify-content:space-between;align-items:center;background:#0B0F1B;border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:22px 28px"><span style="font:500 24px 'Manrope';color:#9aa1ad">Pool · 10 members × 10 months × $20K</span><span style="font:700 30px 'JetBrains Mono';color:#E9ECF1">$200K</span></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;background:#0B0F1B;border:1px solid rgba(242,194,51,0.2);border-radius:14px;padding:22px 28px"><span style="font:500 24px 'Manrope';color:#9aa1ad">Buying power, day one</span><span style="font:700 30px 'JetBrains Mono';color:#F2C233">$200K</span></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;background:#0B0F1B;border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:22px 28px"><span style="font:500 24px 'Manrope';color:#9aa1ad">Paid in by month 3</span><span style="font:700 30px 'JetBrains Mono';color:#E9ECF1">$60K</span></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;background:#0B0F1B;border:1px solid rgba(255,107,107,0.2);border-radius:14px;padding:22px 28px"><span style="font:500 24px 'Manrope';color:#9aa1ad">Remaining obligation (secured)</span><span style="font:700 30px 'JetBrains Mono';color:#FF6B6B">$140K</span></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;background:rgba(242,194,51,0.07);border:1px solid rgba(242,194,51,0.3);border-radius:14px;padding:22px 28px"><span style="font:600 24px 'Manrope';color:#F2C233">Withdrawable = paid + profit</span><span style="font:700 30px 'JetBrains Mono';color:#F2C233">$60K + PnL</span></div>
+    </div>
+    <div style="background:linear-gradient(135deg,rgba(91,141,239,0.08),transparent),#0E131F;border:1px solid rgba(91,141,239,0.2);border-radius:22px;padding:38px">
+      <div style="font:700 26px 'Space Grotesk';color:#E9ECF1;margin-bottom:8px">Not anti-default. The coordination layer.</div>
+      <div style="font:400 22px/1.5 'Manrope';color:#9aa1ad;margin-bottom:24px">Participants receive access before completing every future contribution, while protocol rules continue governing everything that remains:</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+        <div style="background:#0B0F1B;border:1px solid rgba(255,255,255,0.06);border-radius:11px;padding:14px 18px;font:600 20px 'Space Grotesk'">Contribution schedules</div>
+        <div style="background:#0B0F1B;border:1px solid rgba(255,255,255,0.06);border-radius:11px;padding:14px 18px;font:600 20px 'Space Grotesk'">Future obligations</div>
+        <div style="background:#0B0F1B;border:1px solid rgba(255,255,255,0.06);border-radius:11px;padding:14px 18px;font:600 20px 'Space Grotesk'">Withdrawals</div>
+        <div style="background:#0B0F1B;border:1px solid rgba(255,255,255,0.06);border-radius:11px;padding:14px 18px;font:600 20px 'Space Grotesk'">Buying power</div>
+        <div style="background:#0B0F1B;border:1px solid rgba(255,255,255,0.06);border-radius:11px;padding:14px 18px;font:600 20px 'Space Grotesk'">Accounting</div>
+        <div style="background:#0B0F1B;border:1px solid rgba(255,255,255,0.06);border-radius:11px;padding:14px 18px;font:600 20px 'Space Grotesk'">Settlement</div>
+        <div style="background:#0B0F1B;border:1px solid rgba(255,255,255,0.06);border-radius:11px;padding:14px 18px;font:600 20px 'Space Grotesk'">Allocation</div>
+        <div style="background:#0B0F1B;border:1px solid rgba(255,255,255,0.06);border-radius:11px;padding:14px 18px;font:600 20px 'Space Grotesk'">Protocol rules</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8b · RISK & SOLVENCY -->
+<section data-label="Risk &amp; Solvency" data-speaker-notes="This is the slide that kills the 'undercollateralized lending' objection. A member can only ever lose their own paid-in capital plus realized profit — community principal is ring-fenced in code. Every unit of buying power is backed 1:1 by committed, on-chain contribution obligations held in escrow, not by an external lender's balance sheet. No interest, no rehypothecation, no counterparty. Solvency is a property of the code, not a promise of the operator." style="width:100%;height:100%;box-sizing:border-box;background:#0A0E18;color:#E9ECF1;font-family:'Manrope',sans-serif;padding:90px 104px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden">
+  <div style="font:700 24px/1 'Space Grotesk';letter-spacing:4px;color:#5B8DEF;text-transform:uppercase;margin-bottom:24px">Risk &amp; Solvency</div>
+  <h2 style="font:600 60px/1.08 'Space Grotesk';letter-spacing:-1.5px;margin-bottom:52px;max-width:1500px">Why this is not undercollateralized lending.</h2>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:32px">
+    <div style="background:#0E131F;border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:36px"><div style="font:700 26px 'Space Grotesk';color:#F2C233;margin-bottom:16px">Who takes the loss?</div><div style="font:400 23px/1.5 'Manrope';color:#9aa1ad">A member can only lose their own paid-in capital plus realized profit. Community principal is ring-fenced and can never be drawn below secured contributions.</div></div>
+    <div style="background:#0E131F;border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:36px"><div style="font:700 26px 'Space Grotesk';color:#F2C233;margin-bottom:16px">What is the collateral?</div><div style="font:400 23px/1.5 'Manrope';color:#9aa1ad">Every unit of buying power is backed 1:1 by committed, on-chain contribution obligations held in escrow — not by an external lender's balance sheet.</div></div>
+    <div style="background:#0E131F;border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:36px"><div style="font:700 26px 'Space Grotesk';color:#F2C233;margin-bottom:16px">Why not just lending?</div><div style="font:400 23px/1.5 'Manrope';color:#9aa1ad">No interest, no rehypothecation, no counterparty. Capital originates from the community and is capped in code — the protocol cannot extend risk beyond secured capital.</div></div>
+  </div>
+  <div style="background:linear-gradient(135deg,rgba(91,141,239,0.08),transparent);border:1px solid rgba(91,141,239,0.25);border-radius:16px;padding:26px 34px;display:flex;align-items:center;gap:22px"><div style="font:700 34px 'JetBrains Mono';color:#5B8DEF">§</div><div style="font:500 26px/1.4 'Manrope';color:#c3c9d4">Solvency is a property of the <span style="color:#E9ECF1;font-weight:700">code</span>, not a promise of the operator. Exposure can never exceed capital the protocol already holds.</div></div>
+</section>
+
+<!-- 8c · PRECEDENT · HAKBAH -->
+<section data-label="Precedent · Hakbah" data-speaker-notes="This is the proof the model works. Hakbah, licensed by the Saudi Central Bank (SAMA), digitized ROSCA offchain and rotated 20.5 billion dollars within the Saudi market alone — while still carrying the full default risk that OBJEX removes in code. If the digitized-ROSCA model already moves this much capital WITH default risk present, in one country, the trustless, programmable, global version is a step-change in potential." style="width:100%;height:100%;box-sizing:border-box;background:radial-gradient(ellipse at 75% 30%,rgba(242,194,51,0.09),transparent 55%),#0A0E18;color:#E9ECF1;font-family:'Manrope',sans-serif;padding:90px 104px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden">
+  <div style="font:700 24px/1 'Space Grotesk';letter-spacing:4px;color:#F2C233;text-transform:uppercase;margin-bottom:24px">Precedent · Proof the model works</div>
+  <h2 style="font:600 56px/1.1 'Space Grotesk';letter-spacing:-1.4px;margin-bottom:50px;max-width:1560px">Digitized ROSCA already moved <span style="color:#F2C233">$20.5B</span> — with default risk still on the table.</h2>
+  <div style="display:grid;grid-template-columns:0.95fr 1.05fr;gap:56px;align-items:center">
+    <div>
+      <div style="font:700 130px/0.9 'JetBrains Mono';color:#F2C233;letter-spacing:-4px">$20.5B</div>
+      <div style="font:500 26px/1.4 'Manrope';color:#c3c9d4;margin-top:20px">rotated through digitized ROSCA in the Saudi market — offchain, and while default risk was still present.</div>
+      <div style="font:500 17px 'JetBrains Mono';color:#565C68;margin-top:24px">Source: Hakbah — licensed by the Saudi Central Bank (SAMA).</div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:18px">
+      <div style="background:#0E131F;border:1px solid rgba(242,194,51,0.2);border-radius:16px;padding:28px 32px"><div style="font:700 24px 'Space Grotesk';color:#F2C233;margin-bottom:8px">Central-bank licensed</div><div style="font:400 22px/1.45 'Manrope';color:#9aa1ad">Hakbah operates ROSCA at national scale under Saudi Central Bank (SAMA) authorization — regulators already embrace the primitive.</div></div>
+      <div style="background:#0E131F;border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:28px 32px"><div style="font:700 24px 'Space Grotesk';margin-bottom:8px">One country. Offchain. Default risk present.</div><div style="font:400 22px/1.45 'Manrope';color:#9aa1ad">That $20.5B was achieved with the exact failure mode OBJEX removes still in play — and in a single market.</div></div>
+      <div style="background:linear-gradient(135deg,rgba(242,194,51,0.08),transparent);border:1px solid rgba(242,194,51,0.28);border-radius:16px;padding:28px 32px"><div style="font:600 25px/1.4 'Manrope';color:#E9ECF1">OBJEX makes it <span style="color:#F2C233;font-weight:700">trustless, programmable and global</span> — and adds a productive destination for the capital.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 9 · LIQUIDITY FLYWHEEL -->
+<section data-label="Liquidity Flywheel" data-speaker-notes="This is the moat that compounds. Pools form, buying power is minted, volume floods our perp DEX, fees are captured, revenue funds new pools. Liquidity is owned, not rented — so it deepens every cycle instead of fleeing when incentives end." style="width:100%;height:100%;box-sizing:border-box;background:#0A0E18;color:#E9ECF1;font-family:'Manrope',sans-serif;padding:80px 104px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden">
+  <div style="text-align:center;margin-bottom:8px"><div style="font:700 24px/1 'Space Grotesk';letter-spacing:4px;color:#F2C233;text-transform:uppercase;margin-bottom:18px">The Moat</div><h2 style="font:600 56px/1.1 'Space Grotesk';letter-spacing:-1.4px">The Community Liquidity Flywheel</h2></div>
+  <div style="display:grid;grid-template-columns:560px 1fr;gap:50px;align-items:center;margin-top:10px">
+    <div style="position:relative;width:540px;height:540px;margin:0 auto">
+      <div style="position:absolute;left:50%;top:50%;width:340px;height:340px;transform:translate(-50%,-50%);border-radius:50%;border:1.5px dashed rgba(242,194,51,0.3)"></div>
+      <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);text-align:center;width:200px"><div style="font-size:46px;color:#F2C233;line-height:1">↻</div><div style="font:700 24px 'Space Grotesk';margin-top:8px;line-height:1.2">Liquidity<br>Flywheel</div><div style="font:400 17px 'Manrope';color:#7d838f;margin-top:8px">compounds every cycle</div></div>
+      <div style="position:absolute;left:270px;top:88px;transform:translate(-50%,-50%);width:188px;background:#0E131F;border:1px solid rgba(242,194,51,0.24);border-radius:14px;padding:16px;text-align:center;box-shadow:0 8px 28px rgba(0,0,0,0.5)"><div style="font:700 15px 'JetBrains Mono';color:#F2C233;margin-bottom:6px">01</div><div style="font:600 19px/1.25 'Space Grotesk'">Communities form pools</div></div>
+      <div style="position:absolute;left:450px;top:212px;transform:translate(-50%,-50%);width:188px;background:#0E131F;border:1px solid rgba(242,194,51,0.24);border-radius:14px;padding:16px;text-align:center;box-shadow:0 8px 28px rgba(0,0,0,0.5)"><div style="font:700 15px 'JetBrains Mono';color:#F2C233;margin-bottom:6px">02</div><div style="font:600 19px/1.25 'Space Grotesk'">Buying power minted 1:1</div></div>
+      <div style="position:absolute;left:381px;top:430px;transform:translate(-50%,-50%);width:188px;background:#0E131F;border:1px solid rgba(242,176,74,0.26);border-radius:14px;padding:16px;text-align:center;box-shadow:0 8px 28px rgba(0,0,0,0.5)"><div style="font:700 15px 'JetBrains Mono';color:#F2B04A;margin-bottom:6px">03</div><div style="font:600 19px/1.25 'Space Grotesk'">Volume floods the Perp DEX</div></div>
+      <div style="position:absolute;left:159px;top:430px;transform:translate(-50%,-50%);width:188px;background:#0E131F;border:1px solid rgba(242,194,51,0.24);border-radius:14px;padding:16px;text-align:center;box-shadow:0 8px 28px rgba(0,0,0,0.5)"><div style="font:700 15px 'JetBrains Mono';color:#F2C233;margin-bottom:6px">04</div><div style="font:600 19px/1.25 'Space Grotesk'">Fees &amp; spreads captured</div></div>
+      <div style="position:absolute;left:90px;top:212px;transform:translate(-50%,-50%);width:188px;background:#0E131F;border:1px solid rgba(91,141,239,0.26);border-radius:14px;padding:16px;text-align:center;box-shadow:0 8px 28px rgba(0,0,0,0.5)"><div style="font:700 15px 'JetBrains Mono';color:#5B8DEF;margin-bottom:6px">05</div><div style="font:600 19px/1.25 'Space Grotesk'">Revenue funds new pools</div></div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:22px">
+      <div style="background:#0B0F1B;border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:30px"><div style="font:600 26px 'Space Grotesk';color:#F2C233;margin-bottom:10px">Owned, not rented</div><div style="font:400 23px/1.5 'Manrope';color:#9aa1ad">Members fund the book. It can't flee to the next farm — depth stays through every market.</div></div>
+      <div style="background:#0B0F1B;border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:30px"><div style="font:600 26px 'Space Grotesk';color:#F2C233;margin-bottom:10px">Deeper every turn</div><div style="font:400 23px/1.5 'Manrope';color:#9aa1ad">Each cycle adds buying power and volume. Books thicken, spreads tighten, slippage falls.</div></div>
+      <div style="background:#0B0F1B;border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:30px"><div style="font:600 26px 'Space Grotesk';color:#F2C233;margin-bottom:10px">Cheaper for the next trader</div><div style="font:400 23px/1.5 'Manrope';color:#9aa1ad">The protocol gets better as it grows, not worse. That's a real moat — not an emissions budget.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 9b · TWO FLYWHEELS -->
+<section data-label="Two Flywheels" data-speaker-notes="OBJEX runs on two reinforcing flywheels, not one. The Capital Formation Flywheel: more communities, more buying power, more trading volume, more protocol revenue, more community pools. The Community Capital Flywheel: more members, more competitive discount allocation, more economic value distributed, higher retention, larger communities, more buying power. These two flywheels reinforce each other and create a compounding network effect that traditional perpetual exchanges cannot replicate." style="width:100%;height:100%;box-sizing:border-box;background:#0A0E18;color:#E9ECF1;font-family:'Manrope',sans-serif;padding:86px 104px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden">
+  <div style="text-align:center;margin-bottom:44px"><div style="font:700 24px/1 'Space Grotesk';letter-spacing:4px;color:#F2C233;text-transform:uppercase;margin-bottom:18px">The Compounding Moat</div><h2 style="font:600 54px/1.1 'Space Grotesk';letter-spacing:-1.4px">Two flywheels, reinforcing each other</h2></div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:30px">
+    <div style="background:#0E131F;border:1px solid rgba(242,194,51,0.24);border-radius:22px;padding:36px">
+      <div style="font:700 24px 'Space Grotesk';color:#F2C233;margin-bottom:22px">Capital Formation Flywheel</div>
+      <div style="display:flex;flex-direction:column">
+        <div style="font:500 21px 'Manrope';color:#c3c9d4;padding:12px 0">More Communities</div><div style="color:#565C68;font-size:20px;padding-left:4px">↓</div>
+        <div style="font:500 21px 'Manrope';color:#c3c9d4;padding:12px 0">More Buying Power</div><div style="color:#565C68;font-size:20px;padding-left:4px">↓</div>
+        <div style="font:500 21px 'Manrope';color:#c3c9d4;padding:12px 0">More Trading Volume</div><div style="color:#565C68;font-size:20px;padding-left:4px">↓</div>
+        <div style="font:500 21px 'Manrope';color:#c3c9d4;padding:12px 0">More Protocol Revenue</div><div style="color:#565C68;font-size:20px;padding-left:4px">↓</div>
+        <div style="font:700 21px 'Manrope';color:#F2C233;padding:12px 0">More Community Pools</div>
+      </div>
+    </div>
+    <div style="background:#0E131F;border:1px solid rgba(91,141,239,0.24);border-radius:22px;padding:36px">
+      <div style="font:700 24px 'Space Grotesk';color:#5B8DEF;margin-bottom:22px">Community Capital Flywheel</div>
+      <div style="display:flex;flex-direction:column">
+        <div style="font:500 21px 'Manrope';color:#c3c9d4;padding:12px 0">More Members</div><div style="color:#565C68;font-size:20px;padding-left:4px">↓</div>
+        <div style="font:500 21px 'Manrope';color:#c3c9d4;padding:12px 0">More Competitive Discount Allocation</div><div style="color:#565C68;font-size:20px;padding-left:4px">↓</div>
+        <div style="font:500 21px 'Manrope';color:#c3c9d4;padding:12px 0">More Economic Value Distributed</div><div style="color:#565C68;font-size:20px;padding-left:4px">↓</div>
+        <div style="font:500 21px 'Manrope';color:#c3c9d4;padding:12px 0">Higher Retention · Larger Communities</div><div style="color:#565C68;font-size:20px;padding-left:4px">↓</div>
+        <div style="font:700 21px 'Manrope';color:#5B8DEF;padding:12px 0">More Buying Power</div>
+      </div>
+    </div>
+  </div>
+  <div style="background:linear-gradient(135deg,rgba(242,194,51,0.08),rgba(91,141,239,0.06));border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:24px 32px;margin-top:26px;text-align:center"><div style="font:500 23px/1.5 'Manrope';color:#c3c9d4">Each flywheel feeds the other's inputs — a compounding network effect <span style="color:#E9ECF1;font-weight:700">traditional perpetual exchanges cannot replicate</span>.</div></div>
+</section>
+
+<!-- 10 · WHY TRADERS SWITCH -->
+<section data-label="Why traders switch" data-speaker-notes="Traders join OBJEX for three independent reasons. First: access community-funded buying power instead of relying solely on personal capital. Second: participate in a community capital market that generates value through its discount allocation mechanism — Community Capital Yield. Third: trade on a familiar perpetual exchange powered by an entirely new capital formation layer. Buying Power expands access to capital; community participation creates additional economic value; together they create a financial experience no existing perpetual exchange offers." style="width:100%;height:100%;box-sizing:border-box;background:#0A0E18;color:#E9ECF1;font-family:'Manrope',sans-serif;padding:90px 104px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden">
+  <div style="font:700 24px/1 'Space Grotesk';letter-spacing:4px;color:#F2B04A;text-transform:uppercase;margin-bottom:24px">For Traders</div>
+  <h2 style="font:600 56px/1.1 'Space Grotesk';letter-spacing:-1.4px;margin-bottom:52px;max-width:1560px">Three independent reasons to trade on OBJEX</h2>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-bottom:34px">
+    <div style="background:linear-gradient(180deg,rgba(242,194,51,0.07),transparent);border:1px solid rgba(242,194,51,0.26);border-radius:20px;padding:36px">
+      <div style="font:700 20px 'JetBrains Mono';color:#F2C233;margin-bottom:16px">01</div>
+      <div style="font:700 27px 'Space Grotesk';margin-bottom:14px">Community-funded buying power</div>
+      <div style="font:400 22px/1.5 'Manrope';color:#9aa1ad">Access capital beyond your personal balance sheet, instead of relying solely on your own bankroll.</div>
+    </div>
+    <div style="background:linear-gradient(180deg,rgba(91,141,239,0.07),transparent);border:1px solid rgba(91,141,239,0.26);border-radius:20px;padding:36px">
+      <div style="font:700 20px 'JetBrains Mono';color:#5B8DEF;margin-bottom:16px">02</div>
+      <div style="font:700 27px 'Space Grotesk';margin-bottom:14px">A community capital market</div>
+      <div style="font:400 22px/1.5 'Manrope';color:#9aa1ad">Participate in a market that generates Community Capital Yield through its discount allocation mechanism — value beyond trading alone.</div>
+    </div>
+    <div style="background:#0E131F;border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:36px">
+      <div style="font:700 20px 'JetBrains Mono';color:#F2B04A;margin-bottom:16px">03</div>
+      <div style="font:700 27px 'Space Grotesk';margin-bottom:14px">A familiar trading experience</div>
+      <div style="font:400 22px/1.5 'Manrope';color:#9aa1ad">Full order book, global perps, the controls traders expect — powered by an entirely new capital formation layer underneath.</div>
+    </div>
+  </div>
+  <div style="background:#0B0F1B;border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:26px 34px"><div style="font:500 24px/1.5 'Manrope';color:#c3c9d4"><span style="color:#F2C233;font-weight:700">Buying Power</span> expands access to capital. <span style="color:#5B8DEF;font-weight:700">Community participation</span> creates additional economic value. Together, a financial experience no existing perpetual exchange offers.</div></div>
+</section>
+
+<!-- 11 · MARKET TAM/SAM/SOM -->
+<section data-label="Market · TAM/SAM/SOM" data-speaker-notes="The market. Global crypto perpetual futures run ~$85T of annual notional — that's the TAM. The on-chain slice, perp DEXs, did ~$12T in 2025 and is growing fast — our SAM. Capturing a low-single-digit share via community buying power is ~$250B of annual volume — a credible SOM. And our wedge to mint that capital is 1B+ ROSCA savers." style="width:100%;height:100%;box-sizing:border-box;background:#0A0E18;color:#E9ECF1;font-family:'Manrope',sans-serif;padding:88px 104px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden">
+  <div style="font:700 24px/1 'Space Grotesk';letter-spacing:4px;color:#F2C233;text-transform:uppercase;margin-bottom:24px">Market Opportunity</div>
+  <h2 style="font:600 56px/1.1 'Space Grotesk';letter-spacing:-1.4px;margin-bottom:50px">A trillion-dollar market with a billion-person on-ramp</h2>
+  <div style="display:grid;grid-template-columns:540px 1fr;gap:64px;align-items:center">
+    <div style="position:relative;width:520px;height:440px;margin:0 auto">
+      <div style="position:absolute;left:0;top:0;width:440px;height:440px;border-radius:50%;background:rgba(242,194,51,0.05);border:1px solid rgba(242,194,51,0.22);display:flex;flex-direction:column;align-items:center;padding-top:30px"><div style="font:700 16px 'Space Grotesk';letter-spacing:2px;color:#F2C233">TAM</div><div style="font:700 40px 'JetBrains Mono';color:#F2C233;letter-spacing:-1px">$85T</div></div>
+      <div style="position:absolute;left:78px;top:118px;width:300px;height:300px;border-radius:50%;background:rgba(242,176,74,0.07);border:1px solid rgba(242,176,74,0.3);display:flex;flex-direction:column;align-items:center;padding-top:26px"><div style="font:700 16px 'Space Grotesk';letter-spacing:2px;color:#F2B04A">SAM</div><div style="font:700 36px 'JetBrains Mono';color:#F2B04A;letter-spacing:-1px">$12T</div></div>
+      <div style="position:absolute;left:150px;top:212px;width:172px;height:172px;border-radius:50%;background:rgba(242,194,51,0.16);border:1px solid rgba(242,194,51,0.5);display:flex;flex-direction:column;align-items:center;justify-content:center"><div style="font:700 15px 'Space Grotesk';letter-spacing:2px;color:#F2C233">SOM</div><div style="font:700 32px 'JetBrains Mono';color:#F2C233;letter-spacing:-1px">$250B</div></div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:24px">
+      <div style="border-left:3px solid #F2C233;padding-left:24px"><div style="font:700 28px 'Space Grotesk';color:#F2C233">$85T · TAM</div><div style="font:400 23px/1.45 'Manrope';color:#9aa1ad;margin-top:6px">Global crypto perpetual futures — annual notional. Monthly volume grew from $4.1T (Jan 2024) to $7.2T (Jan 2026).</div></div>
+      <div style="border-left:3px solid #F2B04A;padding-left:24px"><div style="font:700 28px 'Space Grotesk';color:#F2B04A">$12T · SAM</div><div style="font:400 23px/1.45 'Manrope';color:#9aa1ad;margin-top:6px">On-chain perp-DEX volume in 2025 — already ~1 in 10 perp dollars, and the fastest-growing slice of DeFi.</div></div>
+      <div style="border-left:3px solid #F2C233;padding-left:24px"><div style="font:700 28px 'Space Grotesk';color:#F2C233">$250B · SOM</div><div style="font:400 23px/1.45 'Manrope';color:#9aa1ad;margin-top:6px">~2% of perp-DEX volume captured via community-funded buying power within three years.</div></div>
+      <div style="background:rgba(91,141,239,0.06);border:1px solid rgba(91,141,239,0.2);border-radius:14px;padding:20px 24px"><div style="font:600 22px 'Space Grotesk';color:#5B8DEF;margin-bottom:6px">The bridge</div><div style="font:400 22px/1.4 'Manrope';color:#9aa1ad">ROSCA (1B+ participants) and global perpetual markets have never been connected. OBJEX is the first protocol to convert coordinated community capital into programmable buying power.</div></div>
+    </div>
+  </div>
+  <div style="font:500 17px 'JetBrains Mono';color:#565C68;margin-top:26px">Sources: DefiLlama &amp; The Block (perp-DEX volume); KuCoin Research (perp futures market $4.14T→$7.24T monthly); World Bank (ROSCA participation). Figures illustrative.</div>
+</section>
+
+<!-- 11b · BOTTOMS-UP MODEL -->
+<section data-label="Market · Bottoms-up" data-speaker-notes="This replaces the top-down hand-wave with a bottoms-up build. Committed community capital converts 1:1 into buying power, which is deployed and turned over on the perp DEX to produce annual volume, on which the protocol earns fees. 125,000 pools at $200K each is $25B of committed capital; deployed and turned over roughly ten times a year that is ~$250B of annual volume; at ~5bps that is well over $100M in protocol revenue. Every number here is a lever, not a guess." style="width:100%;height:100%;box-sizing:border-box;background:#0A0E18;color:#E9ECF1;font-family:'Manrope',sans-serif;padding:90px 104px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden">
+  <div style="font:700 24px/1 'Space Grotesk';letter-spacing:4px;color:#F2B04A;text-transform:uppercase;margin-bottom:24px">Market · Bottoms-up</div>
+  <h2 style="font:600 56px/1.1 'Space Grotesk';letter-spacing:-1.4px;margin-bottom:52px">The SOM, built from the ground up.</h2>
+  <div style="display:flex;align-items:stretch;gap:14px;margin-bottom:34px">
+    <div style="flex:1;background:#0B0F1B;border:1px solid rgba(255,255,255,0.08);border-radius:18px;padding:30px"><div style="font:500 19px 'Manrope';color:#7d838f;margin-bottom:12px">Committed community capital</div><div style="font:700 46px 'JetBrains Mono';color:#E9ECF1;letter-spacing:-1px">$25B</div><div style="font:400 17px 'Manrope';color:#565C68;margin-top:8px">125,000 pools × $200K</div></div>
+    <div style="display:flex;align-items:center;color:#565C68;font-size:30px">→</div>
+    <div style="flex:1;background:rgba(242,194,51,0.06);border:1px solid rgba(242,194,51,0.28);border-radius:18px;padding:30px"><div style="font:500 19px 'Manrope';color:#7d838f;margin-bottom:12px">Buying power minted</div><div style="font:700 46px 'JetBrains Mono';color:#F2C233;letter-spacing:-1px">$25B</div><div style="font:400 17px 'Manrope';color:#565C68;margin-top:8px">1:1 with committed capital</div></div>
+    <div style="display:flex;align-items:center;color:#565C68;font-size:30px">→</div>
+    <div style="flex:1;background:rgba(242,176,74,0.06);border:1px solid rgba(242,176,74,0.3);border-radius:18px;padding:30px"><div style="font:500 19px 'Manrope';color:#7d838f;margin-bottom:12px">Annual perp volume</div><div style="font:700 46px 'JetBrains Mono';color:#F2B04A;letter-spacing:-1px">$250B</div><div style="font:400 17px 'Manrope';color:#565C68;margin-top:8px">deployed × ~10 turns / yr</div></div>
+    <div style="display:flex;align-items:center;color:#565C68;font-size:30px">→</div>
+    <div style="flex:1;background:rgba(91,141,239,0.06);border:1px solid rgba(91,141,239,0.3);border-radius:18px;padding:30px"><div style="font:500 19px 'Manrope';color:#7d838f;margin-bottom:12px">Protocol revenue</div><div style="font:700 46px 'JetBrains Mono';color:#5B8DEF;letter-spacing:-1px">$125M+</div><div style="font:400 17px 'Manrope';color:#565C68;margin-top:8px">fee capture at ~5 bps</div></div>
+  </div>
+  <div style="font:400 24px/1.5 'Manrope';color:#9aa1ad;max-width:1560px">Each figure is a <span style="color:#E9ECF1;font-weight:600">lever</span>, not a guess: pool count, contribution size, leverage, turnover and fee rate. For context, Hakbah rotated <span style="color:#F2C233;font-weight:600">$20.5B</span> in one country offchain — the committed-capital assumption here is a fraction of proven, real-world ROSCA throughput.</div>
+</section>
+
+<!-- 12 · COMPETITION -->
+<section data-label="Competition" data-speaker-notes="Hyperliquid, Aster, Gravity and the rest compete on execution and incentives — but every one of them still asks the trader to bring their own capital. OBJEX changes where the capital comes from. We don't beat them at being a perp; we add the layer none of them have." style="width:100%;height:100%;box-sizing:border-box;background:#0A0E18;color:#E9ECF1;font-family:'Manrope',sans-serif;padding:84px 100px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden">
+  <div style="font:700 24px/1 'Space Grotesk';letter-spacing:4px;color:#F2C233;text-transform:uppercase;margin-bottom:22px">Competitive Landscape</div>
+  <h2 style="font:600 54px/1.1 'Space Grotesk';letter-spacing:-1.4px;margin-bottom:40px">They compete on execution. We change where the capital comes from.</h2>
+  <div style="background:#0E131F;border:1px solid rgba(255,255,255,0.08);border-radius:18px;overflow:hidden">
+    <div style="display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr 1.2fr;padding:20px 30px;border-bottom:1px solid rgba(255,255,255,0.08);font:700 17px 'Space Grotesk';letter-spacing:0.5px;color:#7d838f"><span></span><span>Hyperliquid</span><span>Aster</span><span>Gravity / others</span><span style="color:#F2C233">OBJEX</span></div>
+    <div style="display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr 1.2fr;padding:22px 30px;border-bottom:1px solid rgba(255,255,255,0.05);align-items:center"><span style="font:500 22px 'Manrope';color:#9aa1ad">Trader capital</span><span style="font:500 21px 'Manrope';color:#c3c9d4">Own bankroll</span><span style="font:500 21px 'Manrope';color:#c3c9d4">Own bankroll</span><span style="font:500 21px 'Manrope';color:#c3c9d4">Own bankroll</span><span style="font:700 21px 'Manrope';color:#F2C233">Community-funded</span></div>
+    <div style="display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr 1.2fr;padding:22px 30px;border-bottom:1px solid rgba(255,255,255,0.05);align-items:center"><span style="font:500 22px 'Manrope';color:#9aa1ad">Liquidity</span><span style="font:500 21px 'Manrope';color:#c3c9d4">Own vault (HLP)</span><span style="font:500 21px 'Manrope';color:#c3c9d4">Incentivized</span><span style="font:500 21px 'Manrope';color:#c3c9d4">Rented</span><span style="font:700 21px 'Manrope';color:#F2C233">Community-owned</span></div>
+    <div style="display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr 1.2fr;padding:22px 30px;border-bottom:1px solid rgba(255,255,255,0.05);align-items:center"><span style="font:500 22px 'Manrope';color:#9aa1ad">Growth engine</span><span style="font:500 21px 'Manrope';color:#c3c9d4">UX + airdrop</span><span style="font:500 21px 'Manrope';color:#c3c9d4">Emissions</span><span style="font:500 21px 'Manrope';color:#c3c9d4">Emissions</span><span style="font:700 21px 'Manrope';color:#F2C233">Self-funding flywheel</span></div>
+    <div style="display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr 1.2fr;padding:22px 30px;align-items:center"><span style="font:500 22px 'Manrope';color:#9aa1ad">Category</span><span style="font:500 21px 'Manrope';color:#c3c9d4">Perp DEX</span><span style="font:500 21px 'Manrope';color:#c3c9d4">Perp DEX</span><span style="font:500 21px 'Manrope';color:#c3c9d4">Perp DEX</span><span style="font:700 21px 'Manrope';color:#F2C233">Community Capital Protocol</span></div>
+  </div>
+  <div style="font:400 24px/1.5 'Manrope';color:#9aa1ad;margin-top:34px;max-width:1560px">Every incumbent optimizes execution, matching, liquidity and leverage — all of which assume the capital already exists. OBJEX solves the layer before trading begins: <span style="color:#F2C233;font-weight:600">capital formation</span>. That is not a better perp; it is a new category they cannot copy without becoming us.</div>
+</section>
+
+<!-- 13 · BUSINESS MODEL -->
+<section data-label="Business Model" data-speaker-notes="Revenue is conventional perp-DEX economics on top of a non-conventional capital source. Trading fees, funding spreads, liquidation fees, and pool origination. A slice of every fee recapitalizes new pools — the flywheel is also the growth budget, so we don't pay for liquidity, it pays us." style="width:100%;height:100%;box-sizing:border-box;background:#0A0E18;color:#E9ECF1;font-family:'Manrope',sans-serif;padding:96px 110px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden">
+  <div style="font:700 24px/1 'Space Grotesk';letter-spacing:4px;color:#F2C233;text-transform:uppercase;margin-bottom:24px">Business Model</div>
+  <h2 style="font:600 58px/1.1 'Space Grotesk';letter-spacing:-1.5px;margin-bottom:58px">Perp-DEX economics on a captive capital base</h2>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-bottom:34px">
+    <div style="background:#0E131F;border:1px solid rgba(255,255,255,0.08);border-radius:18px;padding:32px"><div style="font:600 25px 'Space Grotesk';color:#F2C233;margin-bottom:12px">Trading fees</div><div style="font:400 21px/1.5 'Manrope';color:#7d838f">Maker / taker fees on every perp trade routed through community buying power.</div></div>
+    <div style="background:#0E131F;border:1px solid rgba(255,255,255,0.08);border-radius:18px;padding:32px"><div style="font:600 25px 'Space Grotesk';color:#F2C233;margin-bottom:12px">Funding &amp; spread</div><div style="font:400 21px/1.5 'Manrope';color:#7d838f">Funding-rate and spread capture on open interest held within the protocol.</div></div>
+    <div style="background:#0E131F;border:1px solid rgba(255,255,255,0.08);border-radius:18px;padding:32px"><div style="font:600 25px 'Space Grotesk';color:#F2C233;margin-bottom:12px">Liquidation fees</div><div style="font:400 21px/1.5 'Manrope';color:#7d838f">Standard penalty fees on liquidations, consistent with perpetual-exchange economics.</div></div>
+    <div style="background:#0E131F;border:1px solid rgba(255,255,255,0.08);border-radius:18px;padding:32px"><div style="font:600 25px 'Space Grotesk';color:#F2C233;margin-bottom:12px">Pool origination</div><div style="font:400 21px/1.5 'Manrope';color:#7d838f">A protocol fee on buying power minted as each savings circle is funded.</div></div>
+  </div>
+  <div style="background:linear-gradient(135deg,rgba(242,194,51,0.08),transparent);border:1px solid rgba(242,194,51,0.25);border-radius:20px;padding:34px 40px;display:flex;align-items:center;gap:28px">
+    <div style="font:700 40px 'JetBrains Mono';color:#F2C233">↻</div>
+    <div style="font:400 26px/1.5 'Manrope';color:#c3c9d4"><span style="color:#F2C233;font-weight:700">The flywheel is the growth budget.</span> A slice of every fee recapitalizes new pools — so liquidity acquisition pays <span style="font-style:italic">us</span>, instead of us paying mercenary LPs to rent it.</div>
+  </div>
+</section>
+
+<!-- 13b · REGULATORY & COMPLIANCE -->
+<section data-label="Regulatory" data-speaker-notes="We are building inside the regulatory perimeter, not around it. OBJEX operates under a VASP — Virtual Asset Service Provider — registration in Poland, an EU-aligned framework, positioning us for MiCA and compliant virtual-asset services across the EEA. Every pool member is KYC-verified; obligations and flows are transparent on-chain. And there is clear regulatory precedent: the Saudi Central Bank already licenses digitized ROSCA through Hakbah." style="width:100%;height:100%;box-sizing:border-box;background:#0A0E18;color:#E9ECF1;font-family:'Manrope',sans-serif;padding:90px 104px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden">
+  <div style="font:700 24px/1 'Space Grotesk';letter-spacing:4px;color:#5B8DEF;text-transform:uppercase;margin-bottom:24px">Regulatory &amp; Compliance</div>
+  <h2 style="font:600 60px/1.08 'Space Grotesk';letter-spacing:-1.5px;margin-bottom:52px;max-width:1500px">Built inside the regulatory perimeter — not around it.</h2>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:22px">
+    <div style="background:linear-gradient(180deg,rgba(91,141,239,0.08),transparent);border:1px solid rgba(91,141,239,0.28);border-radius:20px;padding:34px"><div style="font:700 24px 'Space Grotesk';color:#5B8DEF;margin-bottom:14px">VASP License · Poland</div><div style="font:400 21px/1.5 'Manrope';color:#9aa1ad">OBJEX operates under a Virtual Asset Service Provider registration in Poland — an EU-aligned framework for compliant virtual-asset services.</div></div>
+    <div style="background:#0E131F;border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:34px"><div style="font:700 24px 'Space Grotesk';margin-bottom:14px">MiCA-ready</div><div style="font:400 21px/1.5 'Manrope';color:#9aa1ad">Positioned for Europe's MiCA regime, opening a compliant path across the EEA rather than an offshore gray zone.</div></div>
+    <div style="background:#0E131F;border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:34px"><div style="font:700 24px 'Space Grotesk';margin-bottom:14px">KYC / AML by default</div><div style="font:400 21px/1.5 'Manrope';color:#9aa1ad">Every pool member is verified; contributions, obligations and payouts are transparent and auditable on-chain.</div></div>
+    <div style="background:#0E131F;border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:34px"><div style="font:700 24px 'Space Grotesk';margin-bottom:14px">Regulatory precedent</div><div style="font:400 21px/1.5 'Manrope';color:#9aa1ad">The Saudi Central Bank already licenses digitized ROSCA via Hakbah — the primitive is recognized, not experimental.</div></div>
+  </div>
+</section>
+
+<!-- 14 · ROADMAP -->
+<section data-label="Roadmap" data-speaker-notes="Where we are and where we're going. The full product is already live as an interactive prototype at objex.world. Next: testnet pools and the obligation engine, then mainnet perp DEX with our first community cohorts, then regional scale across the ROSCA heartlands." style="width:100%;height:100%;box-sizing:border-box;background:#0A0E18;color:#E9ECF1;font-family:'Manrope',sans-serif;padding:96px 110px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden">
+  <div style="font:700 24px/1 'Space Grotesk';letter-spacing:4px;color:#F2C233;text-transform:uppercase;margin-bottom:24px">Roadmap</div>
+  <h2 style="font:600 58px/1.1 'Space Grotesk';letter-spacing:-1.5px;margin-bottom:64px">From live prototype to global rails</h2>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative">
+    <div style="position:absolute;top:14px;left:8%;right:8%;height:2px;background:linear-gradient(90deg,#F2C233,rgba(242,194,51,0.15))"></div>
+    <div style="padding-right:30px"><div style="width:30px;height:30px;border-radius:50%;background:#F2C233;box-shadow:0 0 24px rgba(242,194,51,0.5);margin-bottom:28px"></div><div style="font:700 21px 'JetBrains Mono';color:#F2C233;margin-bottom:10px">NOW</div><div style="font:600 26px 'Space Grotesk';margin-bottom:12px">Live Prototype + VASP</div><div style="font:400 21px/1.5 'Manrope';color:#7d838f">Full product playable at objex.world; VASP registration secured in Poland; obligation-engine design validated against real-world ROSCA precedent.</div></div>
+    <div style="padding-right:30px"><div style="width:30px;height:30px;border-radius:50%;background:#0E131F;border:2px solid rgba(242,194,51,0.5);margin-bottom:28px"></div><div style="font:700 21px 'JetBrains Mono';color:#9aa1ad;margin-bottom:10px">NEXT</div><div style="font:600 26px 'Space Grotesk';margin-bottom:12px">Testnet &amp; Audits</div><div style="font:400 21px/1.5 'Manrope';color:#7d838f">Obligation Engine smart contracts on testnet; first security audits; closed pool pilots.</div></div>
+    <div style="padding-right:30px"><div style="width:30px;height:30px;border-radius:50%;background:#0E131F;border:2px solid rgba(255,255,255,0.2);margin-bottom:28px"></div><div style="font:700 21px 'JetBrains Mono';color:#9aa1ad;margin-bottom:10px">MAINNET</div><div style="font:600 26px 'Space Grotesk';margin-bottom:12px">Perp DEX + First Cohorts</div><div style="font:400 21px/1.5 'Manrope';color:#7d838f">Public mainnet launch with native perpetuals and the first community pools funding real buying power.</div></div>
+    <div style="padding-right:0"><div style="width:30px;height:30px;border-radius:50%;background:#0E131F;border:2px solid rgba(255,255,255,0.2);margin-bottom:28px"></div><div style="font:700 21px 'JetBrains Mono';color:#9aa1ad;margin-bottom:10px">EXPAND</div><div style="font:600 26px 'Space Grotesk';margin-bottom:12px">Additional Liquid Markets</div><div style="font:400 21px/1.5 'Manrope';color:#7d838f">Money markets, tokenized treasuries, institutional liquidity products — only where liquidity and settlement remain compatible with the Obligation Engine.</div></div>
+  </div>
+</section>
+
+<!-- 15 · WHY NOW -->
+<section data-label="Why now" data-speaker-notes="Why now: perp DEX volume just crossed $1T/month and is taking share from CEXs; on-chain capital is mainstream; and for the first time, programmable obligations make trustless pooled savings actually possible. The three curves cross exactly now." style="width:100%;height:100%;box-sizing:border-box;background:radial-gradient(ellipse at 50% 20%,rgba(242,194,51,0.07),transparent 60%),#0A0E18;color:#E9ECF1;font-family:'Manrope',sans-serif;padding:100px 110px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden">
+  <div style="font:700 24px/1 'Space Grotesk';letter-spacing:4px;color:#F2C233;text-transform:uppercase;margin-bottom:24px">Why Now</div>
+  <h2 style="font:600 60px/1.1 'Space Grotesk';letter-spacing:-1.5px;margin-bottom:64px">Three curves cross — exactly now</h2>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:30px">
+    <div style="background:#0E131F;border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:40px"><div style="font:700 64px 'JetBrains Mono';color:#F2C233;letter-spacing:-2px;margin-bottom:16px">$1T+</div><div style="font:600 26px 'Space Grotesk';margin-bottom:12px">Perps went on-chain</div><div style="font:400 22px/1.5 'Manrope';color:#9aa1ad">Monthly perp-DEX volume crossed $1T and is taking share from centralized exchanges every quarter.</div></div>
+    <div style="background:#0E131F;border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:40px"><div style="font:700 64px 'JetBrains Mono';color:#F2C233;letter-spacing:-2px;margin-bottom:16px">1B+</div><div style="font:600 26px 'Space Grotesk';margin-bottom:12px">Savers ready to plug in</div><div style="font:400 22px/1.5 'Manrope';color:#9aa1ad">A billion people already trust the pooled-savings behavior. They just need rails that can't break.</div></div>
+    <div style="background:#0E131F;border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:40px"><div style="font:700 64px 'JetBrains Mono';color:#F2C233;letter-spacing:-2px;margin-bottom:16px">0</div><div style="font:600 26px 'Space Grotesk';margin-bottom:12px">Trust required</div><div style="font:400 22px/1.5 'Manrope';color:#9aa1ad">Programmable obligations finally remove the default risk — the one thing that made pooled capital fail for 1,000 years.</div></div>
+  </div>
+</section>
+
+<!-- 15c · TEAM -->
+
+
+<!-- 15b · INSTITUTIONAL THESIS -->
+<section data-label="Thesis" data-speaker-notes="The institutional thesis, stated plainly. OBJEX is not building another perpetual exchange. It is building the capital formation layer the industry has never had. By transforming ROSCA into programmable community buying power, communities — not financial institutions — become the source of capital for global trading markets. Every exchange optimizes trading; OBJEX optimizes how trading capital is created." style="width:100%;height:100%;box-sizing:border-box;background:radial-gradient(ellipse at 50% 30%,rgba(242,194,51,0.07),transparent 60%),#0A0E18;color:#E9ECF1;font-family:'Manrope',sans-serif;padding:110px 120px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden">
+  <div style="font:700 24px/1 'Space Grotesk';letter-spacing:4px;color:#F2C233;text-transform:uppercase;margin-bottom:36px">The Thesis</div>
+  <h2 style="font-family:'Cormorant Garamond',serif;font-weight:700;font-size:72px;line-height:1.06;letter-spacing:-1.5px;max-width:1600px;margin-bottom:36px">Every perpetual exchange optimizes trading. OBJEX optimizes capital creation.</h2>
+  <p style="font:400 29px/1.5 'Manrope';color:#aab0bb;max-width:1420px;margin-bottom:50px">By combining programmable buying power with community capital economics, OBJEX transforms ROSCA into the world's first on-chain capital formation network for global trading markets — where communities are both the source of trading capital and participants in the economic value it creates.</p>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:1400px">
+    <div style="background:#0E131F;border:1px solid rgba(255,255,255,0.08);border-radius:18px;padding:34px"><div style="font:600 30px/1.3 'Space Grotesk';color:#9aa1ad">Every exchange optimizes <span style="color:#E9ECF1">trading</span>.</div></div>
+    <div style="background:linear-gradient(135deg,rgba(242,194,51,0.08),transparent);border:1px solid rgba(242,194,51,0.28);border-radius:18px;padding:34px"><div style="font:600 30px/1.3 'Space Grotesk';color:#F2C233">OBJEX optimizes how trading capital is created.</div></div>
+  </div>
+</section>
+
+<!-- 16 · CLOSE -->
+<section data-label="Close" data-speaker-notes="The close. Every exchange optimizes trading; OBJEX optimizes how capital is created. By bringing ROSCA on-chain through the Obligation Engine, OBJEX transforms coordinated community savings into programmable buying power for liquid financial markets. We are not building another exchange — we are introducing a new financial primitive. Raising a seed round." style="width:100%;height:100%;box-sizing:border-box;background:radial-gradient(ellipse at 50% 70%,rgba(242,194,51,0.1),transparent 55%),#0A0E18;color:#E9ECF1;font-family:'Manrope',sans-serif;padding:110px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;position:relative;overflow:hidden">
+  <div style="display:flex;align-items:center;justify-content:center;margin-bottom:44px"><img src="objex-badge.png" alt="OBJEX" style="height:150px;width:auto;display:block;filter:drop-shadow(0 0 46px rgba(242,194,51,0.3))"></div>
+  <h2 style="font-family:'Cormorant Garamond',serif;font-weight:700;font-size:84px;line-height:1.02;letter-spacing:-1.5px;max-width:1500px;margin-bottom:34px">We're building the world's first programmable community capital protocol.</h2>
+  <p style="font:400 29px/1.55 'Manrope';color:#aab0bb;max-width:1240px;margin-bottom:26px">Every exchange optimizes trading. OBJEX optimizes how capital is created. By bringing ROSCA on-chain through the Obligation Engine, coordinated community savings become programmable buying power for liquid financial markets.</p>
+  <p style="font:600 30px/1.4 'Manrope';color:#E9ECF1;max-width:1100px;margin-bottom:50px">We are not building another exchange.<br><span style="color:#F2C233">We are introducing a new financial primitive.</span></p>
+  <div style="display:flex;align-items:center;gap:30px;font:600 24px 'JetBrains Mono';color:#9aa1ad"><span>objex.world</span><span style="color:#3a3f48">·</span><span style="color:#F2C233">Raising a Seed Round</span></div>
+</section>
+
+</x-import>
+</x-dc>
+<script>
+(async () => {
+  if (!document.title || !document.title.trim()) document.title = "OBJEX Deck v2";
+  // rAF raced with a short timeout: inside a cross-origin iframe (PrintMode),
+  // rAF can be throttled or paused even while the tab is focused, which would
+  // hang the scroll loop and never reach print(). Same pattern as
+  // buildExportSettleScript (export/shared.ts).
+  var raf = function () {
+    return Promise.race([
+      new Promise(function (r) { requestAnimationFrame(r); }),
+      new Promise(function (r) { setTimeout(r, 50); }),
+    ]);
+  };
+  var t0 = performance.now();
+  var mark = function (phase) {
+    var ms = Math.round(performance.now() - t0);
+    console.info('[autoprint]', phase, ms + 'ms');
+    try { parent.postMessage({ __omelette_autoprint: { phase: phase, ms: ms } }, '*'); } catch (e) {}
+  };
+  mark('start');
+  // Prepend so page-supplied @page / break rules (deck-stage's margin:0,
+  // author CSS) keep source-order precedence over the baseline.
+  const baseCss = document.createElement('style');
+  baseCss.textContent = "@media print {\n  figure, table { break-inside: avoid; }\n  *, *::before, *::after {\n    print-color-adjust: exact; -webkit-print-color-adjust: exact;\n    backdrop-filter: none !important; -webkit-backdrop-filter: none !important;\n    animation-delay: -99s !important; animation-duration: .001s !important;\n    animation-iteration-count: 1 !important; animation-fill-mode: both !important;\n    animation-play-state: running !important; transition-duration: 0s !important;\n  }\n}";
+  document.head.prepend(baseCss);
+  if (document.readyState === 'loading') {
+    await new Promise((r) => document.addEventListener('DOMContentLoaded', r, { once: true }));
+  }
+  let ds = document.querySelector('deck-stage');
+  // whenDefined never resolves when nothing registers the element, so only
+  // await it when a <deck-stage> tag exists (and race a timeout regardless).
+  if (ds && !customElements.get('deck-stage')) {
+    try {
+      await Promise.race([
+        customElements.whenDefined('deck-stage'),
+        new Promise((r) => setTimeout(r, 3000)),
+      ]);
+    } catch (e) {}
+    ds = document.querySelector('deck-stage');
+  }
+  // dc-runtime assigns window.DCLogic at init and mounts into #dc-root on
+  // DOMContentLoaded; settle on that subtree so React has rendered before
+  // print(). Non-DC pages fall through to weighing body.
+  const isDc = !ds && 'DCLogic' in window;
+  const settleRoot = ds || (isDc ? document.getElementById('dc-root') : null) || document.body;
+  if (settleRoot) {
+    // Weigh only content children — skip script/style/template so inline
+    // Babel/CSS doesn't register as stable "content" before the framework
+    // has mounted anything.
+    const MEDIA = 'img,svg,canvas,video,picture,iframe,embed,object';
+    const weigh = () => {
+      let text = 0, media = 0;
+      for (const c of settleRoot.children) {
+        const t = c.tagName;
+        if (t === 'SCRIPT' || t === 'STYLE' || t === 'TEMPLATE') continue;
+        text += (c.textContent || '').trim().length;
+        media += c.querySelectorAll(MEDIA).length + (c.matches(MEDIA) ? 1 : 0);
+      }
+      return text + media * 100;
+    };
+    // "Non-zero and stable" alone is not sufficient to mean rendered: generic
+    // body can carry a static shell while async main content is pending, and
+    // #dc-root can carry the root DC's static text while child refs are still
+    // .sc-placeholder boxes. Gate generic on readyState 'complete', and never
+    // accept stability while a dc-runtime placeholder is present.
+    const isGeneric = settleRoot === document.body;
+    // A placeholder whose fetch failed (.sc-placeholder-error inside) keeps
+    // .sc-placeholder forever — don't wait on it. JS loop, not :has(), so an
+    // engine without :has() support can't throw out of the while and skip
+    // print() entirely.
+    var pendingPlaceholders = function () {
+      var all = settleRoot.querySelectorAll('.sc-placeholder'), n = 0;
+      for (var i = 0; i < all.length; i++)
+        if (!all[i].querySelector('.sc-placeholder-error')) n++;
+      return n;
+    };
+    const deadline = Date.now() + 15000;
+    let last = -1, stable = 0;
+    while (Date.now() < deadline) {
+      const n = weigh();
+      const ready =
+        (!isGeneric || document.readyState === 'complete') &&
+        pendingPlaceholders() === 0;
+      if (n > 0 && n === last && ready) { if (++stable >= 2) break; } else { stable = 0; }
+      last = n;
+      await new Promise((r) => setTimeout(r, 250));
+    }
+  }
+  mark('settle-done' + (settleRoot ? ' (errs=' + settleRoot.querySelectorAll('.sc-placeholder-error').length + ' pending=' + pendingPlaceholders() + ')' : ''));
+  // Project support.js may predate runtime default-seeding; push via bridge.
+  if (isDc && window.__dcSetProps && window.__dcRootName) {
+    try {
+      const dpEl = document.querySelector('script[data-dc-script]');
+      const meta = JSON.parse((dpEl && dpEl.getAttribute('data-props')) || '{}');
+      const bag = {};
+      for (const k in meta)
+        if (k[0] !== '$' && meta[k] && meta[k].default !== undefined)
+          bag[k] = meta[k].default;
+      if (Object.keys(bag).length) {
+        window.__dcSetProps(window.__dcRootName(), bag);
+        await new Promise((r) => setTimeout(r, 50));
+      }
+    } catch (e) {}
+  }
+  // Reveal content gated on scroll or visibility before printing. Lazy <img>,
+  // IntersectionObserver fade-ins, and collapsed <details> don't render while
+  // off-screen, so a long page would print with them blank or closed. Open
+  // every <details>, force native-lazy images eager, and scroll the document
+  // through its full height to trip lazy-load + IO; then wait (bounded) for the
+  // newly-triggered images. Inert for deck-stage (slides aren't scroll-gated).
+  try {
+    for (const d of document.querySelectorAll('details')) d.open = true;
+    for (const img of document.querySelectorAll('img[loading="lazy"]'))
+      img.loading = 'eager';
+    const scroller = document.scrollingElement || document.documentElement;
+    const full = Math.max(scroller.scrollHeight, document.body.scrollHeight);
+    const step = window.innerHeight || 800;
+    var scrollDeadline = Date.now() + 4000;
+    for (let y = 0; y <= full && Date.now() < scrollDeadline; y += step) {
+      window.scrollTo(0, y);
+      await raf();
+    }
+    window.scrollTo(0, 0);
+    await Promise.race([
+      Promise.all(
+        [...document.images].map((img) =>
+          img.complete
+            ? null
+            : new Promise((res) => {
+                img.addEventListener('load', res, { once: true });
+                img.addEventListener('error', res, { once: true });
+              })
+        )
+      ),
+      new Promise((r) => setTimeout(r, 4000)),
+    ]);
+  } catch (e) {}
+  mark('scroll-done');
+  try { await Promise.race([document.fonts.ready, new Promise((r) => setTimeout(r, 3000))]); } catch (e) {}
+  mark('fonts-done');
+  // Jump every animation to its end state so print() never captures a slide
+  // mid-entrance. Ordering matters: the 0s-transition style must be live
+  // BEFORE data-deck-active is set so attribute-keyed transitions don't
+  // start a (now-0s) run from the pre-active base.
+  const st = document.createElement('style');
+  st.textContent = '*,*::before,*::after{animation-delay:-99s !important;animation-duration:.001s !important;animation-iteration-count:1 !important;animation-fill-mode:both !important;animation-play-state:running !important;transition-duration:0s !important}';
+  document.head.appendChild(st);
+  for (const d of document.querySelectorAll('deck-stage')) {
+    for (const c of d.children) {
+      const t = c.tagName;
+      if (t === 'SCRIPT' || t === 'STYLE' || t === 'TEMPLATE') continue;
+      c.setAttribute('data-deck-active', '');
+    }
+  }
+  // Re-append deck-stage's @page last so no author @page can add a margin and
+  // spill each full-bleed slide onto two sheets. Backstop for old copies.
+  if (ds) {
+    let pg = document.getElementById('deck-stage-print-page');
+    if (!pg) {
+      pg = document.createElement('style');
+      pg.textContent = '@page{size:' + (+ds.getAttribute('width') || 1920) +
+        'px ' + (+ds.getAttribute('height') || 1080) + 'px;margin:0}';
+    }
+    document.body.appendChild(pg);
+  }
+  try {
+    const sweep = () => {
+      for (const a of document.getAnimations()) {
+        try { a.finish(); } catch (e) {
+          try { a.currentTime = (a.effect && a.effect.getComputedTiming().duration) || 0; a.pause(); } catch (e2) {}
+        }
+      }
+    };
+    sweep();
+    await raf();
+    sweep();
+    await raf();
+  } catch (e) {}
+  // A document that owns its print CSS (the doc-page starter injects the
+  // meta at runtime; hand-rolled print designs author it) gets no automatic
+  // page geometry and keeps its forced breaks: strip the injected default
+  // @page — write time cannot see a runtime-injected meta — skip the frame
+  // override below, and skip the fakepage-flattening further down. What
+  // still applies: the print baseline and break-hygiene defaults (no @page
+  // in either; low specificity, so the document's own print CSS wins) and
+  // the break-inside relaxation on >page elements (avoid on those cannot
+  // be honored whoever authored it).
+  var ownsPrint = !!document.querySelector('meta[name="omelette-owns-print" i]');
+  if (ownsPrint) {
+    var dst = document.querySelector('style[data-omelette-print-defaults]');
+    if (dst && dst.textContent) {
+      dst.textContent = dst.textContent.replace(/@page\b[^{}]*\{[^}]*\}/, '');
+    }
+  }
+  // Size the PDF page to the rendered design unless the file opted into
+  // standard paper via @page{size:letter|A4|…} or declared print ownership
+  // via the meta above. Decks own their own @page.
+  // Wrappers (body, …) lose padding+margin so the frame sits at (0,0); the
+  // frame itself loses only margin — its padding is INSIDE the measured
+  // rect and must stay, or content shifts and leaves a gap at bottom/right.
+  var __m = null;
+  try { __m = (() => {
+  var STAMP = true;
+  var docEl = document.documentElement;
+  var doc = { width: docEl.scrollWidth, height: docEl.scrollHeight };
+  // Name-presence check, case-insensitive — the same contract as the
+  // instant-PDF path's runtime check in deck-stage-export.ts. The name is
+  // a string literal here because that file interpolates this script into
+  // its print script, so importing a shared constant from it would be a
+  // cycle; measure.test.ts pins the literal so the two cannot drift apart
+  // silently.
+  var ownsPrint = !!document.querySelector('meta[name="omelette-owns-print" i]');
+
+  var ds = document.querySelector('deck-stage');
+  if (ds) {
+    var dw = Number(ds.getAttribute('width')) || 1920;
+    var dh = Number(ds.getAttribute('height')) || 1080;
+    var n = typeof ds.length === 'number' ? ds.length : ds.children.length;
+    var idx = typeof ds.index === 'number' ? ds.index : 0;
+    var frames = [];
+    for (var i = 0; i < n; i++) frames.push({ left: 0, top: 0, width: dw, height: dh });
+    return { kind: 'deck', source: 'declared', doc: doc, frames: frames,
+      authored: frames.map(function(){return{width:true,height:true}}),
+      deck: { width: dw, height: dh, slideCount: n, index: idx },
+      signals: { paperPage: false, pxPage: false, ownsPrint: ownsPrint } };
+  }
+
+  // Declared kind: a doc-page tag names the kind outright, so no signal
+  // heuristics run (like the deck branch above, signals report false —
+  // they describe inferred classifications only). The tag alone is not
+  // trusted: the element must have upgraded (shadowRoot present), so a
+  // leftover tag whose script was deleted falls through to the heuristics
+  // that handle plain markup.
+  var stageSx = window.scrollX || 0, stageSy = window.scrollY || 0;
+  var dp = document.querySelector('doc-page');
+  if (dp && dp.shadowRoot) {
+    // Crop to the sheet, not the host — the desk around it is screen-only
+    // chrome that must not land in PNG exports.
+    var sheet = dp.shadowRoot.querySelector('.sheet');
+    var sr = (sheet || dp).getBoundingClientRect();
+    return { kind: 'paper-doc', source: 'declared', doc: doc,
+      frames: [{ left: sr.left + stageSx, top: sr.top + stageSy,
+        width: sr.width, height: sr.height }],
+      authored: [{ width: false, height: false }],
+      signals: { paperPage: false, pxPage: false, ownsPrint: ownsPrint } };
+  }
+  var paperPage = false, pxPage = false;
+  var eachRule = function (fn) {
+    for (var s = 0; s < document.styleSheets.length; s++) {
+      var rs; try { rs = document.styleSheets[s].cssRules; } catch (e) { continue; }
+      for (var r = 0; r < rs.length; r++) {
+        fn(rs[r]);
+        if (rs[r].cssRules) for (var n = 0; n < rs[r].cssRules.length; n++) fn(rs[r].cssRules[n]);
+      }
+    }
+  };
+  eachRule(function (r) {
+    if (r.type !== 6) return;
+    var m = /\bsize\s*:\s*([^;}]+)/i.exec(r.cssText || '');
+    if (!m) return;
+    if (/\b(letter|a[3-5]|legal|ledger)\b/i.test(m[1])) paperPage = true;
+    if (/\d+(?:\.\d+)?px\b/i.test(m[1])) pxPage = true;
+  });
+  var signals = { paperPage: paperPage, pxPage: pxPage, ownsPrint: ownsPrint };
+
+  var pxVal = function (v) {
+    var m = /^(\d+(?:\.\d+)?)px$/.exec(v || ''); return m ? +m[1] : 0;
+  };
+  var authoredPx = function (el, prop) {
+    if (pxVal(el.style[prop])) return true;
+    var attr = el.getAttribute(prop);
+    if (attr && /^\d+$/.test(attr)) return true;
+    var hit = false;
+    eachRule(function (r) {
+      if (hit || r.type !== 1 || !r.style) return;
+      try { if (el.matches(r.selectorText) && pxVal(r.style[prop])) hit = true; } catch (e) {}
+    });
+    return hit;
+  };
+
+  var el = document.body, rootPxW = false;
+  for (;;) {
+    var kids = [];
+    for (var c = 0; c < el.children.length; c++) {
+      var t = el.children[c].tagName;
+      if (t !== 'SCRIPT' && t !== 'STYLE' && t !== 'TEMPLATE') kids.push(el.children[c]);
+    }
+    if (kids.length !== 1 || !(kids[0] instanceof HTMLElement)) break;
+    if (STAMP) el.setAttribute('data-om-frame-wrap', '');
+    el = kids[0];
+    rootPxW = authoredPx(el, 'width');
+    if (rootPxW) break;
+  }
+  if (!rootPxW) rootPxW = authoredPx(el, 'width');
+
+  // @page{size:letter} alone is a flowing doc; with a px-width root it's a
+  // fixed sheet pretending to be paper — fall through and size to render.
+  if (paperPage && !rootPxW) {
+    return { kind: 'paper-doc', source: 'inferred', doc: doc, signals: signals,
+      frames: [{ left: 0, top: 0, width: doc.width, height: doc.height }],
+      authored: [{ width: false, height: false }] };
+  }
+
+  var sx = window.scrollX || 0, sy = window.scrollY || 0;
+  var rectOf = function (e) {
+    var r = e.getBoundingClientRect();
+    var oy; try { oy = getComputedStyle(e).overflowY; } catch (err) {}
+    var h = oy === 'visible' ? Math.max(r.height, e.scrollHeight || 0) : r.height;
+    return { left: r.left + sx, top: r.top + sy, width: r.width, height: h };
+  };
+
+  // Multi-frame: off unless the page opts in via data-om-multi-frame on the
+  // stop element — the explicit opt-in is what guards against card grids
+  // and pricing tables that match the geometry but aren't separate
+  // canvases. Two ways to name the frames, explicit first:
+  // 1. Descendants marked data-om-frame-export (the social-frames starter
+  //    marks each asset frame; shells/panels around them are presentation,
+  //    so nesting is expected). Document order.
+  // 2. Fallback, no marked descendants: direct children with an authored px
+  //    width AND height (the original geometry heuristic).
+  // Frames may be different sizes (a gallery mixes 1080×1920 stories with
+  // 728×90 banners); data-om-frame-label rides along for export filenames.
+  if (el.hasAttribute('data-om-multi-frame')) {
+    var visOk = function (e) {
+      var cs; try { cs = getComputedStyle(e); } catch (err) { return false; }
+      return cs.display !== 'none' && cs.visibility !== 'hidden' && cs.position !== 'fixed';
+    };
+    // A frame's crop is its VISUAL box — never the scrollHeight-inflated
+    // rect that rectOf computes for page roots. Shadow-DOM hover controls
+    // (image-slot's Replace bar parks 29px below its host) and similar
+    // escaping UI contribute scrollable overflow to the frame, and the
+    // inflated height both squashes the nominal-size resize and drags
+    // content below the frame into the crop. Zoom-independent; bit every
+    // slot-bearing frame.
+    var frameRectOf = function (e) {
+      var r = e.getBoundingClientRect();
+      return { left: r.left + sx, top: r.top + sy, width: r.width, height: r.height };
+    };
+    var pushCand = function (list, e) {
+      if (!visOk(e)) return;
+      var rc = frameRectOf(e);
+      if (rc.width < 2 || rc.height < 2) return;
+      var lbl = e.getAttribute('data-om-frame-label');
+      if (lbl) rc.label = lbl;
+      list.push(rc);
+    };
+    var cands = [];
+    var marked = el.querySelectorAll('[data-om-frame-export]');
+    if (marked.length) {
+      for (var mk = 0; mk < marked.length; mk++) pushCand(cands, marked[mk]);
+    } else {
+      for (var k = 0; k < el.children.length; k++) {
+        var ch = el.children[k];
+        if (!authoredPx(ch, 'width') || !authoredPx(ch, 'height')) continue;
+        pushCand(cands, ch);
+      }
+    }
+    if (cands.length >= 2) {
+      return { kind: 'multi-frame', source: 'inferred', doc: doc, signals: signals,
+        frames: cands, authored: cands.map(function(){return{width:true,height:true}}) };
+    }
+  }
+
+  if (STAMP) el.setAttribute('data-om-frame', '');
+  return { kind: 'single-canvas', source: 'inferred', doc: doc, signals: signals,
+    frames: [rectOf(el)],
+    authored: [{ width: rootPxW, height: authoredPx(el, 'height') }] };
+})(); } catch (e) {}
+  var frame = null;
+  if (!ownsPrint && __m && __m.kind === 'single-canvas') {
+    var f = __m.frames && __m.frames[0];
+    if (f && f.width >= 200 && f.height >= 200) {
+      frame = f;
+      var fst = document.createElement('style');
+      fst.textContent = '@media print{@page{size:' + Math.ceil(f.width) + 'px ' +
+        Math.ceil(f.height) + 'px;margin:0}' +
+        'html,body,[data-om-frame-wrap]{padding:0!important;margin:0!important;background:none!important}' +
+        '[data-om-frame]{margin:0!important}}';
+      document.body.appendChild(fst);
+    }
+  }
+  // Relax break-inside on oversized elements. An element taller than a
+  // printable page can't honor break-inside: avoid — browsers either overflow
+  // it or push it whole to the next page, leaving a blank gap, then break it
+  // anyway at an arbitrary point. After the final layout (content revealed,
+  // animations jumped), find elements taller than a page that still compute
+  // break-inside: avoid and reset them to auto, so the browser breaks them at
+  // their children's boundaries instead (children keep their own avoid). PAGE_PX
+  // is a conservative portrait estimate at 96 CSS px/in — Letter/A4 usable
+  // height minus our 0.5in margins — so only clearly-oversized elements are
+  // touched and under-page elements still stay whole. Skipped for decks (slides
+  // are sized to the page) and for fixed-size canvases (frame set, or an author
+  // px-based @page) — runs as before for flowing docs on letter/A4.
+  try {
+    if (!ds && !frame && !(__m && __m.signals && __m.signals.pxPage)) {
+      const PAGE_PX = 1024;
+      // Our print defaults add a real @page margin only when the source has
+      // no @page of its own; computed style can't tell us (it reports screen
+      // media), so read the injected rule directly.
+      const defaults = document.querySelector('style[data-omelette-print-defaults]');
+      const pageInset = /@page\s*\{[^}]*margin/.test(defaults ? defaults.textContent || '' : '');
+      const SEL = 'section,article,figure,table,pre,blockquote,[class~="card" i],[class~="page" i],[class~="sheet" i]';
+      for (const el of document.body.querySelectorAll(SEL)) {
+        if (el instanceof HTMLElement && el.offsetHeight > PAGE_PX) {
+          el.setAttribute('data-om-oversized', '');
+          // Fake-paged docs simulate sheets with over-tall break-after:page
+          // boxes; honoring the break spills half-blank pages and ends a
+          // colored box mid-sheet. Flow them, and (only when we own the page
+          // inset) drop the redundant padding/background via the rule below.
+          const cs = getComputedStyle(el);
+          // An owns-print doc's forced breaks are intentional sheet
+          // boundaries, never fake-paged simulation — don't strip them.
+          // The break-inside relaxation above still applies: avoid on a
+          // >page element is impossible to honor whoever authored it.
+          if (
+            !ownsPrint &&
+            (cs.breakAfter === 'page' || cs.pageBreakAfter === 'always')
+          ) {
+            el.setAttribute('data-om-fakepage', '');
+          }
+        }
+      }
+      const ost = document.createElement('style');
+      ost.textContent = '@media print{' +
+        '[data-om-oversized]{break-inside:auto !important;page-break-inside:auto !important}' +
+        '[data-om-fakepage]{break-after:auto !important;page-break-after:auto !important}' +
+        (pageInset ? '[data-om-fakepage]{padding:0 !important;background:none !important}' : '') +
+        '}';
+      document.head.appendChild(ost);
+    }
+  } catch (e) {}
+  // macOS Preview renders Skia-PDF Luminosity soft-masks as opaque grey boxes;
+  // swap the CSS that triggers them for Preview-safe forms.
+  try {
+    for (const el of document.body.querySelectorAll('*')) {
+      const cs = getComputedStyle(el);
+
+      if (cs.boxShadow !== 'none' && cs.filter === 'none') {
+        const outs = [], kept = [];
+        for (const s of cs.boxShadow.split(/,(?![^(]*[)])/)) {
+          const t = s.trim();
+          const m = t.match(/^(rgba?[(][^)]+[)]) (-?[0-9.]+px) (-?[0-9.]+px) ([0-9.]+px) -?[0-9.]+px$/);
+          if (m && parseFloat(m[4]) > 0) outs.push('drop-shadow(' + m[2] + ' ' + m[3] + ' ' + m[4] + ' ' + m[1] + ')');
+          else kept.push(t);
+        }
+        if (outs.length) {
+          el.style.setProperty('filter', outs.join(' '), 'important');
+          el.style.setProperty('box-shadow', kept.join(', ') || 'none', 'important');
+        }
+      }
+
+      const mask = cs.maskImage && cs.maskImage !== 'none' ? cs.maskImage : cs.webkitMaskImage;
+      if (mask && mask !== 'none' && cs.filter === 'none') el.style.setProperty('filter', 'opacity(1)', 'important');
+    }
+  } catch (e) {}
+  mark('print-calling');
+  setTimeout(() => { try { window.print(); } catch (e) {} }, 200);
+})();
+</script>
+</body>
+</html>
